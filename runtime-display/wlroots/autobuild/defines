@@ -13,3 +13,5 @@ MESON_AFTER="-Dxwayland=enabled \
 	-Drenderers=gles2,vulkan \
 	-Dbackends=drm,libinput,x11 \
 	-Dsession=enabled"
+
+PKGBREAK="sway<=1.9-2 scenefx<=0.1 swayfx<=0.4-2"
