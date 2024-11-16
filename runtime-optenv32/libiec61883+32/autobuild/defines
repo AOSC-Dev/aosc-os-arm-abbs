@@ -1,6 +1,8 @@
 PKGNAME=libiec61883+32
 PKGSEC=libs
 PKGDEP="libraw1394+32"
-PKGDES="A higher level API for streaming DV, MPEG-2 and audio over Linux IEEE 1394 (optenv32)"
+BUILDDEP="devel-base+32"
+PKGDES="A higher level API for streaming DV, MPEG-2 and audio over Linux IEEE 1394 (32-bit x86 runtime)"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
