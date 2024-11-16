@@ -2,7 +2,7 @@ PKGNAME=ncurses+32
 PKGSEC=libs
 PKGDEP="glibc+32"
 BUILDDEP="devel-base+32"
-PKGDES="System V Release 4.0 curses emulation library (optenv32)"
+PKGDES="System V Release 4.0 curses emulation library (32-bit x86 runtime)"
 
 AUTOTOOLS_AFTER=(
 	"--with-pkg-config-libdir=/opt/32/lib/pkgconfig"
