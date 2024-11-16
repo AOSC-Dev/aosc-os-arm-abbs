@@ -1,6 +1,8 @@
-install -dm755 $PKGDIR/opt/32/include/gdbm
-ln -sf ../gdbm.h $PKGDIR/opt/32/include/gdbm/gdbm.h
-ln -sf ../ndbm.h $PKGDIR/opt/32/include/gdbm/ndbm.h
-ln -sf ../dbm.h  $PKGDIR/opt/32/include/gdbm/dbm.h
-
-rm -rf $PKGDIR/opt/32/share/info/dir
+abinfo "Creating compatibility symlinks for gdbm headers ..."
+install -dm755 "$PKGDIR"/opt/32/include/gdbm
+ln -sv ../gdbm.h \
+    "$PKGDIR"/opt/32/include/gdbm/gdbm.h
+ln -sv ../ndbm.h \
+    "$PKGDIR"/opt/32/include/gdbm/ndbm.h
+ln -sv ../dbm.h \
+    "$PKGDIR"/opt/32/include/gdbm/dbm.h
