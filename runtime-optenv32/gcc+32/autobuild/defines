@@ -1,5 +1,5 @@
 PKGNAME=gcc+32
-PKGDES="GNU Compiler Collection (optenv32)"
+PKGDES="GNU Compiler Collection (32-bit x86 runtime)"
 PKGSEC=devel
 PKGDEP="binutils+32 gmp+32 mpfr+32 mpc+32 zlib+32 glibc+32 linux+api+32 libxcrypt+32"
 BUILDDEP="devel-base+32"
