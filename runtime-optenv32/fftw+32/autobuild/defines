@@ -1,8 +1,9 @@
 PKGNAME=fftw+32
 PKGSEC=libs
 PKGDEP="glibc+32"
-PKGDES="Library for computing the discrete Fourier transform (DFT) (optenv32)"
+PKGDES="Library for computing the discrete Fourier transform (DFT) (32-bit x86 runtime)"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
 
 BUILDDEP="gcc+32"
