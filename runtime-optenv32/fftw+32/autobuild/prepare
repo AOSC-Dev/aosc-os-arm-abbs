@@ -1,0 +1,4 @@
+for i in single double long-double; do
+    abinfo "Making a copy of the source tree for variant: $i ..."
+    cp -av fftw-$PKGVER fftw-$PKGVER-${i}
+done
