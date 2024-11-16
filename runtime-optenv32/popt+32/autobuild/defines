@@ -1,11 +1,10 @@
 PKGNAME=popt+32
 PKGSEC=utils
 PKGDEP="glibc+32"
-PKGDES="A command line option parser (optenv32)"
+BUILDDEP="devel-base+32"
+PKGDES="A command line option parser (32-bit x86 runtime)"
 
-NOSTATIC=no
 AUTOTOLS_AFTER="--enable-static"
-ABSHADOW=no
-RECONF=0
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
