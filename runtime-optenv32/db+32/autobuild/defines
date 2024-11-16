@@ -1,5 +1,5 @@
 PKGNAME=db+32
-PKGDES="Berkeley DB embedded database system (optenv32)"
+PKGDES="Berkeley DB embedded database system (32-bit x86 runtime)"
 PKGSEC=database
 PKGDEP="glibc+32"
 BUILDDEP="devel-base+32"
