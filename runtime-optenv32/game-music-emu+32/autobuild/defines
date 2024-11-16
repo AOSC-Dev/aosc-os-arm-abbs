@@ -1,6 +1,8 @@
 PKGNAME=game-music-emu+32
 PKGSEC=libs
 PKGDEP="glibc+32"
-PKGDES="Video game music file emulation/playback library (optenv32)"
+BUILDDEP="devel-base+32"
+PKGDES="Video game music file emulation/playback library (32-bit x86 runtime)"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
