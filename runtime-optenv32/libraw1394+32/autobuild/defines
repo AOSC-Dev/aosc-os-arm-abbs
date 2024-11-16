@@ -1,8 +1,8 @@
 PKGNAME=libraw1394+32
 PKGSEC=libs
 PKGDEP="glibc+32"
-PKGDES="API for the Linux IEEE1394 driver stack (optenv32)"
+BUILDDEP="devel-base+32"
+PKGDES="API for the Linux IEEE1394 driver stack (32-bit x86 runtime)"
 
-ABSHADOW=no
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
