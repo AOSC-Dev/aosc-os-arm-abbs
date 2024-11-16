@@ -2,7 +2,7 @@ PKGNAME=glibc+32
 PKGSEC=libs
 PKGDEP="tzdata"
 BUILDDEP="devel-base+32"
-PKGDES="GNU C Library (optenv32)"
+PKGDES="GNU C Library (32-bit x86 runtime)"
 
 AUTOTOOLS_STRICT=0
 AUTOTOOLS_AFTER=(
