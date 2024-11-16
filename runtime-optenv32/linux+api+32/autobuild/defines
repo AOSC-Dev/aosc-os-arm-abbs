@@ -1,6 +1,6 @@
 PKGNAME=linux+api+32
 PKGSEC=devel
-PKGDES="Linux API Headers for glibc (optenv32)"
+PKGDES="Linux API Headers for glibc (32-bit x86 runtime)"
 NOLTO=1
 
 ABHOST=optenv32
