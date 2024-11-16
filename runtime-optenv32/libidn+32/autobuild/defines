@@ -1,6 +1,8 @@
 PKGNAME=libidn+32
 PKGSEC=libs
-PKGDES="Implementation of the Stringprep, Punycode and IDNA specifications (optenv32)"
-PKGDEP=glibc+32
+PKGDEP="glibc+32"
+BUILDDEP="devel-base+32 gtk-doc"
+PKGDES="Implementation of the Stringprep, Punycode and IDNA specifications (32-bit x86 runtime)"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
