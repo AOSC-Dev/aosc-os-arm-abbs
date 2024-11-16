@@ -1,9 +1,13 @@
 PKGNAME=srtp+32
 PKGSEC=net
 PKGDEP="glibc+32"
-PKGDES="Open-source implementation of the Secure Real-time Transport Protocol (SRTP) (optenv32)"
+BUILDDEP="devel-base+32"
+PKGDES="Open-source implementation of the Secure Real-time Transport Protocol (SRTP) (32-bit x86 runtime)"
 
-ABMK="libsrtp.a shared_library"
-NOSTATIC=no
+# FIXME: Missing file `ar-lib'.
+RECONF=0
 NOLTO=1
-ABHOST=noarch
+
+ABMK="shared_library"
+
+ABHOST=optenv32
