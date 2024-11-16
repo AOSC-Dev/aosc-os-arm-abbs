@@ -2,10 +2,10 @@ PKGNAME=readline+32
 PKGSEC=libs
 PKGDEP="glibc+32 ncurses+32"
 BUILDDEP="devel-base+32"
-PKGDES="GNU readline library (optenv32)"
+PKGDES="GNU readline library (32-bit x86 runtime)"
 
-AUTOTOOLS_DEF=(
-	”--with-curses“
+AUTOTOOLS_AFTER=(
+	"--with-curses"
 	"--enable-multibyte"
 	"--enable-shared"
 )
