@@ -1,6 +1,14 @@
 PKGNAME=libtool+32
-PKGDES="GNU generic library support script"
-PKGDEP="glibc+32"
 PKGSEC=devel
+PKGDEP="glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="GNU generic library support script (32-bit x86 runtime)"
+
+# FIXME:
+#
+# bootstrap: error: Bootstrapping from a non-checked-out distribution is
+# risky. If you wish to bootstrap anyway, use the '--force' option.
+RECONF=0
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
