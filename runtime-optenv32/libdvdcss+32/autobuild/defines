@@ -1,6 +1,8 @@
 PKGNAME=libdvdcss+32
 PKGSEC=libs
 PKGDEP="glibc+32"
-PKGDES="Portable abstraction library for DVD decryption (optenv32)"
+BUILDDEP="devel-base+32"
+PKGDES="Portable abstraction library for DVD decryption (32-bit x86 runtime)"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
