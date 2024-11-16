@@ -1,5 +1,5 @@
 PKGNAME=expat+32
-PKGDES="A stream oriented C library for parsing XML (optenv32)"
+PKGDES="A stream oriented C library for parsing XML (32-bit x86 runtime)"
 PKGSEC=libs
 PKGDEP="glibc+32"
 BUILDDEP="devel-base+32"
