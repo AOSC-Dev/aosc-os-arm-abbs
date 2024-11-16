@@ -1,9 +1,12 @@
 PKGNAME=libdv+32
 PKGSEC=libs
 PKGDEP="popt+32"
-PKGDES="The Quarsar DV codec (optenv32)"
+BUILDDEP="autoconf-archive devel-base+32"
+PKGDES="The Quarsar DV codec (32-bit x86 runtime)"
 
 AUTOTOOLS_AFTER="--disable-gtk"
-ABSHADOW=no
+RECONF=0
+ABSHADOW=0
 NOLTO=1
-ABHOST=noarch
+
+ABHOST=optenv32
