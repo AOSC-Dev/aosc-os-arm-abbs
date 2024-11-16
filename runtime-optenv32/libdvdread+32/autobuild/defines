@@ -1,6 +1,8 @@
 PKGNAME=libdvdread+32
 PKGSEC=libs
 PKGDEP="libdvdcss+32"
-PKGDES="Provides a simple foundation for reading DVD video disks (optenv32)"
+BUILDDEP="devel-base+32"
+PKGDES="Provides a simple foundation for reading DVD video disks (32-bit x86 runtime)"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
