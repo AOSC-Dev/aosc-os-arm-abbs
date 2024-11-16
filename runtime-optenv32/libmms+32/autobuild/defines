@@ -1,6 +1,8 @@
 PKGNAME=libmms+32
 PKGSEC=libs
 PKGDEP="glibc+32"
-PKGDES="MMS stream protocol library (optenv32)"
+BUILDDEP="devel-base+32"
+PKGDES="MMS stream protocol library (32-bit x86 runtime)"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
