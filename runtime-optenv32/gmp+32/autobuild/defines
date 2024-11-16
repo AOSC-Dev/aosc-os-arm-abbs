@@ -2,7 +2,7 @@ PKGNAME=gmp+32
 PKGSEC=libs
 PKGDEP="glibc+32"
 BUILDDEP="devel-base+32"
-PKGDES="GNU Multiprecision library (optenv32)"
+PKGDES="GNU Multiprecision library (32-bit x86 runtime)"
 
 AUTOTOOLS_AFTER=(
 	"--enable-static"
