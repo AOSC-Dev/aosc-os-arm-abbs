@@ -2,7 +2,6 @@ PKGNAME=bzip2+32
 PKGSEC=utils
 PKGDEP="glibc+32"
 BUILDDEP="devel-base+32"
-PKGDES="A freely available, patent free, high-quality data compressor (optenv32)"
+PKGDES="A freely available, patent free, high-quality data compressor (32-bit x86 runtime)"
 
 ABHOST=optenv32
-AB_FLAGS_SPECS=0
