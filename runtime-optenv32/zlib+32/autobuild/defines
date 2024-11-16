@@ -1,5 +1,5 @@
 PKGNAME=zlib+32
-PKGDES="A Massively Spiffy Yet Delicately Unobtrusive Compression Library (optenv32)"
+PKGDES="A Massively Spiffy Yet Delicately Unobtrusive Compression Library (32-bit x86 runtime)"
 PKGSEC=libs
 PKGDEP="glibc+32"
 BUILDDEP="devel-base+32"
