@@ -1,7 +1,7 @@
 PKGNAME=libxcrypt+32
 PKGSEC=libs
 PKGDEP="glibc+32"
-PKGDES="Library for one-way hashing of passwords (optenv32)"
+PKGDES="Library for one-way hashing of passwords (32-bit x86 runtime)"
 BUILDDEP="devel-base+32"
 ABHOST=optenv32
 
