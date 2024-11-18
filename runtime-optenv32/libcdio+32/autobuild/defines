@@ -1,8 +1,10 @@
 PKGNAME=libcdio+32
-PKGDES="GNU compact disk input and control library (optenv32)"
 PKGSEC=libs
 PKGDEP="libcddb+32 ncurses+32"
+BUILDDEP="devel-base+32"
+PKGDES="GNU compact disk input and control library (32-bit x86 runtime)"
 
 AUTOTOOLS_AFTER="--enable-cpp-progs"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
