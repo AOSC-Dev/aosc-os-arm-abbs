@@ -1,6 +1,8 @@
 PKGNAME=libsidplay+32
 PKGSEC=libs
-PKGDEP="gcc+32"
-PKGDES="A library for playing SID music files (optenv32)"
+PKGDEP="glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="A library for playing SID music files (32-bit x86 runtime)"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
