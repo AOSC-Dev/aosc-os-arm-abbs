@@ -1,5 +1,4 @@
-VER=2.12.01
-SRCS="tbl::https://www.nasm.us/pub/nasm/releasebuilds/$VER/nasm-$VER.tar.gz"
-CHKSUMS="sha256::6a6b06de279b4ce8749d924a5d46bc29edff50126c57dcbc9d23e0f0f1375f17"
-REL=2
+VER=2.16.03
+SRCS="tbl::https://www.nasm.us/pub/nasm/releasebuilds/$VER/nasm-$VER.tar.xz"
+CHKSUMS="sha256::1412a1c760bbd05db026b6c0d1657affd6631cd0a63cddb6f73cc6d4aa616148"
 CHKUPDATE="anitya::id=2048"
