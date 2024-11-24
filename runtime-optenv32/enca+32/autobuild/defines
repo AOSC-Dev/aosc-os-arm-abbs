@@ -1,10 +1,11 @@
 PKGNAME=enca+32
 PKGSEC=utils
-PKGDEP="recode"
-PKGDES="Charset analyzer and converter"
+PKGDEP="recode+32"
+BUILDDEP="devel-base+32"
+PKGDES="Charset analyzer and converter (32-bit x86 runtime)"
 
 AUTOTOOLS_AFTER="--with-librecode=/usr --enable-external"
+ABSHADOW=0
 
-ABSHADOW=no
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
