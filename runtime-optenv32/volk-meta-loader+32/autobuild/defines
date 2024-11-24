@@ -1,8 +1,8 @@
 PKGNAME=volk-meta-loader+32
 PKGSEC=libs
 PKGDEP="vulkan-headers+32"
-BUILDDEP="32subsystem"
-PKGDES="Meta loader for Vulkan API (optenv32)"
+BUILDDEP="devel-base+32"
+PKGDES="Meta loader for Vulkan API (32-bit x86 runtime)"
 
 CMAKE_AFTER="-DVOLK_PULL_IN_VULKAN=ON \
              -DVOLK_INSTALL=ON \
@@ -12,5 +12,4 @@ CMAKE_AFTER="-DVOLK_PULL_IN_VULKAN=ON \
 NOSTATIC=0
 ABSPLITDBG=0
 
-# optenv32 - mark noarch
-ABHOST=noarch
+ABHOST=optenv32
