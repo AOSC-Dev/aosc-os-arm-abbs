@@ -1,8 +1,10 @@
 PKGNAME=recode+32
 PKGSEC=utils
 PKGDEP="glibc+32"
-PKGDES="Converts file between various character sets and usages (opten32)"
+BUILDDEP="devel-base+32"
+PKGDES="Converts file between various character sets and usages (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--without-included-gettext"
+AUTOTOOLS_AFTER="PYTHON=/usr/bin/python3"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
