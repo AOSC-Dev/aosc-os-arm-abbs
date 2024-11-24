@@ -1,5 +1,4 @@
-VER=3.6
-SRCS="tbl::http://http.debian.net/debian/pool/main/r/recode/recode_$VER.orig.tar.gz"
-CHKSUMS="sha256::e3e6a4f3f8e5c6052ab70155990c074d87aa0b614fc1be31d194750d1d962fcf"
-REL=2
+VER=3.7.14
+SRCS="tbl::https://github.com/rrthomas/recode/releases/download/v$VER/recode-$VER.tar.gz"
+CHKSUMS="sha256::786aafd544851a2b13b0a377eac1500f820ce62615ccc2e630b501e7743b9f33"
 CHKUPDATE="anitya::id=4176"
