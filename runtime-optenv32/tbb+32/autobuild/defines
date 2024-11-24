@@ -1,7 +1,0 @@
-PKGNAME=tbb+32
-PKGSEC=libs
-PKGDEP="glibc+32"
-PKGDES="Intel Threading Building Blocks - high level abstract threading library (optenv32)"
-
-NOLTO=1
-ABHOST=noarch
