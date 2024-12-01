@@ -1,9 +1,10 @@
 PKGNAME=libbluray+32
 PKGSEC=libs
-PKGDES="Library to access Blu-Ray disks for video playback (opten32)"
 PKGDEP="libxml2+32 freetype+32"
-BUILDDEP="32subsystem"
+BUILDDEP="devel-base+32"
+PKGDES="Library to access Blu-Ray disks for video playback (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--enable-udf --disable-examples --disable-bdjava-jar"
+AUTOTOOLS_AFTER="--disable-examples \
+                 --disable-bdjava-jar"
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
