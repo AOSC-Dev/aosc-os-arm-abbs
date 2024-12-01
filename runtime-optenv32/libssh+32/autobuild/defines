@@ -1,9 +1,17 @@
 PKGNAME=libssh+32
 PKGSEC=libs
-PKGDEP="zlib+32 openssl+32 krb5+32"
-BUILDDEP="32subsystem"
-PKGDES="A client-side C library implementing the SSH protocol (optenv32)"
+PKGDEP="krb5+32 openssl+32 zlib+32"
+BUILDDEP="devel-base+32"
+PKGDES="A client-side C library implementing the SSH protocol (32-bit x86 runtime)"
 
-CMAKE_AFTER="-DWITH_GSSAPI=ON -DWITH_ZLIB=/opt/32/lib"
+CMAKE_AFTER="-DWITH_GSSAPI=ON \
+             -DWITH_ZLIB=/opt/32/lib \
+             -DGSSAPI_INCLUDE_DIR=/opt/32/include \
+             -DKRB5_LIBRARY=/opt/32/lib/libkrb5.so \
+             -DK5CRYPTO_LIBRARY=/opt/32/lib/libk5crypto.so \
+             -DGSSAPI_LIBRARY=/opt/32/lib/libgssapi_krb5.so \
+             -DCOM_ERR_LIBRARY=/opt/32/lib/libcom_err.so \
+             -DZLIB_LIBRARY=/opt/32/lib/libz.so"
 
-ABHOST=noarch
+NOLTO=1
+ABHOST=optenv32
