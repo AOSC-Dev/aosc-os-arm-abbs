@@ -1,10 +1,14 @@
 PKGNAME=x264+32
 PKGSEC=libs
-PKGDEP=glibc+32
-BUILDDEP="32subsystem yasm"
-PKGDES="H264 encoding library (optenv32)"
+PKGDEP="glibc+32"
+BUILDDEP="devel-base+32 nasm+32"
+PKGDES="H264 encoding library (32-bit x86 runtime)"
 
-ABSHADOW=no
+PKGEPOCH=1
+
+RECONF=0
+ABSHADOW=0
 AUTOTOOLS_AFTER="--enable-shared --enable-pic"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
