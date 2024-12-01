@@ -1,9 +1,20 @@
 PKGNAME=krb5+32
-PKGDES="The Kerberos network authentication system (optenv32)"
 PKGSEC=libs
 PKGDEP="openldap+32"
-BUILDDEP="32subsystem"
+BUILDDEP="devel-base+32"
+PKGDES="The Kerberos network authentication system (32-bit x86 runtime)"
 
+AUTOTOOLS_AFTER="--enable-shared \
+                 --without-system-et \
+                 --without-system-ss \
+                 --without-tcl \
+                 --enable-dns-for-realm \
+                 --with-ldap \
+                 --without-system-verto \
+                 --without-libedit \
+                 --disable-aesni"
+
+RECONF=0
 NOPARALLEL=1
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
