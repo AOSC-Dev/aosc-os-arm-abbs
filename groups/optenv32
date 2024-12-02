@@ -60,7 +60,6 @@ tcl+32
 sdl-ttf+32
 s2tc+32
 portaudio+32
-pkg-config+32
 p11-kit+32
 sqlite+32
 nss+32
