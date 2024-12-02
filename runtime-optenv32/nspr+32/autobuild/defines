@@ -1,11 +1,12 @@
 PKGNAME=nspr+32
-PKGDES="Netscape Portable Runtime (optenv32)"
 PKGSEC=libs
 PKGDEP="glibc+32"
-BUILDDEP="32subsystem"
+BUILDDEP="devel-base+32"
+PKGDES="Netscape Portable Runtime (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--disable-debug --enable-optimize \
+AUTOTOOLS_AFTER="--disable-debug \
+                 --enable-optimize \
                  --includedir=/opt/32/include/nspr"
 
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
