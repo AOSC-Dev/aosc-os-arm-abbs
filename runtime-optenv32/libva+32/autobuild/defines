@@ -1,9 +1,11 @@
 PKGNAME=libva+32
-PKGDES="Video Acceleration (VA) API for Linux (optenv32)"
-PKGDEP="mesa+32 libdrm+32"
-BUILDDEP="32subsystem"
 PKGSEC=libs
+PKGDEP="mesa+32 libdrm+32"
+BUILDDEP="devel-base+32"
+PKGDES="Video Acceleration (VA) API for Linux (32-bit x86 runtime)"
 
-ABSHADOW=no
+ABTYPE=meson
+MESON_AFTER="-Dwith_wayland=no"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
