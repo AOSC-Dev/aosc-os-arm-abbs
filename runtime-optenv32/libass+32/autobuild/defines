@@ -1,11 +1,11 @@
 PKGNAME=libass+32
-PKGDES="Library for SSA/ASS subtitles rendering"
+PKGDES="Library for SSA/ASS subtitles rendering (32-bit x86 runtime)"
 PKGSEC=libs
 PKGDEP="enca+32 fontconfig+32 fribidi+32"
-BUILDDEP="yasm 32subsystem"
+BUILDDEP="devel-base+32 yasm"
 
-AUTOTOOLS_AFTER="--enable-enca \
-                 --enable-fontconfig"
+AUTOTOOLS_AFTER="--enable-fontconfig"
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
+
 PKGBREAK="ffmpeg+32<=3.2.2-1"
