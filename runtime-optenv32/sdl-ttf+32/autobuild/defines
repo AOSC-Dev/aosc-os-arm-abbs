@@ -1,7 +1,10 @@
 PKGNAME=sdl-ttf+32
-PKGDES="A library that allows you to use TrueType fonts in your SDL applications"
-PKGDEP="sdl+32 freetype+32"
-BUILDDEP="32subsystem"
 PKGSEC=libs
+PKGDEP="sdl+32 freetype+32"
+BUILDDEP="devel-base+32"
+PKGDES="A library that allows you to use TrueType fonts in your SDL applications (32-bit x86 runtime)"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
+
+AUTOTOOLS_AFTER="--with-freetype-prefix=/opt/32"
