@@ -1,0 +1,7 @@
+abinfo "Installing private headers ..."
+make install-private-headers \
+    -C "$BLDDIR" \
+    DESTDIR="$PKGDIR"
+
+abinfo "Dropping unneeded demos ..."
+rm -rf "$PKGDIR"/opt/32/lib/tk${PKGVER:0:3}/demos/
