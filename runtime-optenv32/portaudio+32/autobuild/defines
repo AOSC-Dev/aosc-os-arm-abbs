@@ -1,10 +1,8 @@
 PKGNAME=portaudio+32
 PKGSEC=sound
 PKGDEP="alsa-lib+32"
-BUILDDEP="32subsystem"
-PKGDES="A free, cross platform, open source audio I/O library"
+BUILDDEP="devel-base+32"
+PKGDES="A free, cross platform, open source audio I/O library (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--enable-cxx --without-jack"
 NOLTO=1
-ABHOST=noarch
-NOPARALLEL=1
+ABHOST=optenv32
