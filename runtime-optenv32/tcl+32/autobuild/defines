@@ -1,9 +1,9 @@
 PKGNAME=tcl+32
-PKGDES="Tool Command Lanuage (optenv32)"
-PKGDEP="zlib+32"
-BUILDDEP="32subsystem"
 PKGSEC=devel
+PKGDEP="zlib+32"
+BUILDDEP="devel-base+32"
+PKGDES="Tool Command Lanuage (32-bit x86 runtime)"
 
-NOSTATIC=no
+NOSTATIC=0
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
