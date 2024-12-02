@@ -5,20 +5,8 @@
     export BUILD_OPT=1
     export NSS_USE_SYSTEM_SQLITE=1
     export NSS_ENABLE_ECC=1
-    export NSPR_INCLUDE_DIR=/opt/32/include/nspr
-    export NSPR_LIB_DIR=/opt/32/lib
-    export XCFLAGS="${CFLAGS}"
-
-    export PATH=/opt/32/bin:$PATH
-
-    export CC=i686-pc-linux-gnu-gcc
-    export CXX=i686-pc-linux-gnu-g++
-    export CCC="$CXX"
-    export AR=i686-pc-linux-gnu-ar
-
-    [[ ${CROSS:-$ARCH} == *64* ]] && export USE_64=1
-    [[ ${CROSS:-$ARCH} = loongson3 ]] && export USE_64=1
-    [[ ${CROSS:-$ARCH} == arm64 ]] && export NS_USE_GCC=1
+    export NSPR_INCLUDE_DIR="`nspr-config --includedir`"
+    export NSPR_LIB_DIR="`nspr-config --libdir`"
 
     abinfo "Building NSS ..."
     make all
@@ -34,7 +22,7 @@ NSS_VPATCH=$(grep '#define.*NSS_VPATCH' nss/lib/nss/nss.h | awk '{print $3}')
 
 sed "$SRCDIR"/autobuild/nss.pc.in \
     -e "s,%libdir%,/opt/32/lib,g" \
-    -e "s,%prefix%,/usr,g" \
+    -e "s,%prefix%,/opt/32,g" \
     -e "s,%exec_prefix%,/opt/32/bin,g" \
     -e "s,%includedir%,/opt/32/include/nss,g" \
     -e "s,%NSPR_VERSION%,4.10.7,g" \
@@ -72,3 +60,11 @@ abinfo "Dropping libnssckbi.so and replacing with p11-kit ..."
 rm -v "$PKGDIR"/opt/32/lib/libnssckbi.so
 ln -sv pkcs11/p11-kit-trust.so \
     "$PKGDIR"/opt/32/lib/libnssckbi.so
+
+abinfo "Installing certificates ..."
+install -Dvm644 "$SRCDIR"/nss/certs/*.crt \
+    -t "$PKGDIR"/opt/32/share/ca-certificates/mozilla/
+
+abinfo "Installing Mozilla CA configuration ..."
+install -Dvm644 "$SRCDIR"/nss/certs/mozilla.conf \
+    "$PKGDIR"/etc/ca-certificates/conf.d/mozilla.conf

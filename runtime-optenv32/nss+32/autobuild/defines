@@ -1,12 +1,12 @@
 PKGNAME=nss+32
 PKGSEC=libs
 PKGDEP="nspr+32 sqlite+32 zlib+32 p11-kit+32"
-BUILDDEP="32subsystem"
-PKGDES="Netscape security library (optenv32)"
+BUILDDEP="devel-base+32"
+PKGDES="Netscape security library (32-bit x86 runtime)"
 
 NOSTATIC=0
 NOPARALLEL=1
 ABSTRIP=0
 NOLTO=1
 
-ABHOST=noarch
+ABHOST=optenv32
