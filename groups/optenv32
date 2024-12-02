@@ -55,7 +55,6 @@ ffmpeg+32
 gst-libav-1-0+32
 libass+32
 gsm+32
-util-macros+32
 tk+32
 tcl+32
 sdl-ttf+32

@@ -1,7 +1,0 @@
-PKGNAME=util-macros+32
-PKGDES="Transitional package for util-macros"
-PKGSEC=x11
-PKGDEP="util-macros"
-BUILDDEP="32subsystem"
-NOLTO=1
-ABHOST=noarch
