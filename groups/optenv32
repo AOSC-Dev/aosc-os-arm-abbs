@@ -47,14 +47,14 @@ vulkan-loader+32
 vulkan+32
 soxr+32
 xvidcore+32
+krb5+32
 libssh+32
 libbluray+32
+x264+32
 ffmpeg+32
 gst-libav-1-0+32
 libass+32
 gsm+32
-wxgtk-3+32
-wxgtk+32
 util-macros+32
 tk+32
 tcl+32
@@ -75,7 +75,6 @@ libcroco+32
 libaio+32
 gtk-2+32
 opencore-amr+32
-x264+32
 libmad+32
 lame+32
 gst-plugins-ugly-1-0+32
@@ -134,7 +133,6 @@ nettle+32
 gnutls+32
 openssl+32
 openldap+32
-krb5+32
 cups+32
 libglvnd+32
 libvdpau+32
