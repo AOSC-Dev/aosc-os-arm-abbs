@@ -1,7 +1,4 @@
 abinfo "Building libXNVCtrl.so ..."
-export PATH=/opt/32/bin:$PATH
-export CC=i686-pc-linux-gnu-gcc
-
 make
 
 abinfo "Installing libXNVCtrl.so ..."
