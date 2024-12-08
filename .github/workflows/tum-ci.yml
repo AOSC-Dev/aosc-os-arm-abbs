@@ -1,0 +1,60 @@
+name: Generate Update Manifests
+
+on:
+  push:
+    paths:
+    - "topics/*.toml"
+    - ".github/workflows/tum-*"
+  pull_request:
+    paths:
+    - "topics/*.toml"
+    - ".github/workflows/tum-*"
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Install npm dependencies
+      run: npm install toml @cfworker/json-schema
+    - name: Generate manifests
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const {generateTopicUpdateData} = require('${{ github.workspace }}/.github/workflows/tum-process.js');
+          const topic = context.ref?.replace('refs/heads/', '');
+          generateTopicUpdateData(require, topic, '/tmp/dists/');
+    - name: Setup SSH private key
+      env:
+        KEY: ${{ secrets.KEY }}
+      run: |
+        mkdir -p ~/.ssh/
+        chmod 0700 ~/.ssh/
+        echo "$KEY" > ~/.ssh/id_ed25519
+        cp .github/workflows/known_hosts ~/.ssh/known_hosts
+        chmod 0600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts
+    - name: Upload topic manifests
+      shell: bash
+      run: |
+        rsync \
+            -vr \
+            -e "ssh \
+                -o IdentityFile=$HOME/.ssh/id_ed25519 \
+                -o UserKnownHostsFile=$HOME/.ssh/known_hosts" \
+            /tmp/dists/ \
+            ${USER}@repo.aosc.io:/var/cache/p-vector/extra-dists/
+        ssh \
+            -v \
+            -o IdentityFile=~/.ssh/id_ed25519 \
+            -o UserKnownHostsFile=~/.ssh/known_hosts \
+            ${USER}@repo.aosc.io \
+            touch /mirror/.updated
+      env:
+        USER: ${{ secrets.USER }}
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: manifests
+        path: /tmp/dists/
