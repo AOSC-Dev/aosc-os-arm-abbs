@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AOSC-Dev/aosc-os-abbs/blob/stable/topics/tum.schema.json",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "security": {
+      "type": "boolean",
+      "description": "This topic contains security updates"
+    },
+    "name": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "type": "string",
+          "description": "The name of the topic in English"
+        }
+      },
+      "patternProperties": {
+        "^[a-z]+_[A-Z]+": {
+          "type": "string",
+          "description": "The name of the topic in the language specified by the key"
+        }
+      },
+      "required": ["default"]
+    },
+    "caution": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "type": "string",
+          "description": "PSA message to alert users about potential issues in English"
+        }
+      },
+      "patternProperties": {
+        "^[a-z]+_[A-Z]+": {
+          "type": "string",
+          "description": "PSA message to alert users about potential issues in the language specified by the key"
+        }
+      },
+      "required": ["default"]
+    },
+    "packages": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z0-9][a-z0-9+-.]+": {
+          "type": ["string", "boolean"],
+          "description": "Package version to update to or false to note that the package will be removed"
+        }
+      },
+      "minProperties": 1
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "The name of the topic to be included in this cummulative update"
+      },
+      "minItems": 1
+    }
+  },
+  "oneOf": [
+    {"required": ["packages"]},
+    {"required": ["topics"]}
+  ],
+  "additionalProperties": false,
+  "required": ["security", "name"]
+}
