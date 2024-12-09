@@ -1,0 +1,19 @@
+PKGNAME=pcre2+32
+PKGSEC=libs
+PKGDEP="bzip2+32 readline+32 zlib+32"
+BUILDDEP="devel-base+32"
+PKGDES="Perl Compatible Regular Expression (2nd Edition, 32-bit x86 runtime)"
+
+AUTOTOOLS_AFTER="--enable-pcre2-16 \
+                 --enable-pcre2-32 \
+                 --enable-pcre2grep-libz \
+                 --enable-pcre2grep-libbz2 \
+                 --enable-pcre2test-libreadline \
+                 --enable-stack-for-recursion \
+                 --enable-static \
+                 --enable-unicode \
+                 --enable-jit \
+                 --enable-pcre2grep-jit"
+
+AB_FLAGS_O3=1
+ABHOST=optenv32
