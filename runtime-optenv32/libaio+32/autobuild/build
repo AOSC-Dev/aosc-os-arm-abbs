@@ -1,3 +1,8 @@
-export PATH=/opt/32/bin:$PATH
-make
-make prefix=$PKGDIR/opt/32 libdir=$PKGDIR/opt/32/lib install
+abinfo "building libaio ..."
+make \
+    prefix=/opt/32
+
+abinfo "installing libaio ..."
+make install \
+    DESTDIR="$PKGDIR" \
+    prefix=/opt/32
