@@ -1,8 +1,8 @@
 PKGNAME=libcroco+32
-PKGDES="A standalone CSS parsing and manipulation library (optenv32)"
-PKGDEP="glib+32 libxml2+32"
-BUILDDEP="32subsystem"
 PKGSEC=libs
+PKGDEP="glib+32 libxml2+32"
+BUILDDEP="devel-base+32 gtk-doc"
+PKGDES="A standalone CSS parsing and manipulation library (optenv32)"
 
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
