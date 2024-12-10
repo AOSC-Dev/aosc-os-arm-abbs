@@ -1,0 +1,3 @@
+abinfo "Moving pkgconfig to /opt/32/lib/pkgconfig ..."
+mkdir -pv "$PKGDIR"/opt/32/lib
+cp -av "$PKGDIR"/opt/32/{share,lib}/pkgconfig
