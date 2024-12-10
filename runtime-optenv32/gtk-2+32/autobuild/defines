@@ -1,10 +1,12 @@
 PKGNAME=gtk-2+32
 PKGSEC=x11
 PKGDEP="atk+32 cairo+32 gdk-pixbuf+32 pango+32 shared-mime-info"
-BUILDDEP="python-2 32subsystem"
-PKGDES="GIMP toolkit version 2 (optenv32)"
+BUILDDEP="devel-base+32 gtk-doc python-2"
+PKGDES="GIMP toolkit version 2 (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--with-xinput=yes --disable-cups"
-ABSHADOW=no
+AUTOTOOLS_AFTER="--with-xinput=yes \
+                 --disable-cups \
+                 --enable-introspection=no"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
