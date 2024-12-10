@@ -1,7 +1,14 @@
 PKGNAME=libxml2+32
-PKGDES="LibXML2 on 32subsystem"
 PKGSEC=libs
 PKGDEP="glibc+32 zlib+32 readline+32 ncurses+32 xz+32"
-BUILDDEP="32subsystem"
+BUILDDEP="devel-base+32"
+PKGDES="Utilities and libraries for parsing XMLs (32-bit x86 runtime)"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
+
+AUTOTOOLS_AFTER=(
+    '--without-python'
+    '--with-threads'
+    '--with-history'
+)
