@@ -1,5 +1,4 @@
-VER=2.38.2
-REL=1
-SRCS="tbl::https://download.gnome.org/sources/gdk-pixbuf/${VER:0:4}/gdk-pixbuf-$VER.tar.xz"
-CHKSUMS="sha256::73fa651ec0d89d73dd3070b129ce2203a66171dfc0bd2caa3570a9c93d2d0781"
+VER=2.42.12
+SRCS="https://download.gnome.org/sources/gdk-pixbuf/${VER:0:4}/gdk-pixbuf-$VER.tar.xz"
+CHKSUMS="sha256::b9505b3445b9a7e48ced34760c3bcb73e966df3ac94c95a148cb669ab748e3c7"
 CHKUPDATE="anitya::id=9533"
