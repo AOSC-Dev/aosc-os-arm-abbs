@@ -1,0 +1,10 @@
+PKGNAME=shared-mime-info+32
+PKGSEC=misc
+PKGDEP="glib+32 libxml2+32 shared-mime-info"
+BUILDDEP="devel-base+32"
+PKGDES="Freedesktop.org shared MIME info (32-bit x86 runtime)"
+
+AUTOTOOLS_AFTER="--disable-update-mimedb"
+NOPARALLEL=1
+
+ABHOST=optenv32
