@@ -1,8 +1,19 @@
 PKGNAME=dbus+32
 PKGSEC=libs
-PKGDEP="glibc+32"
-BUILDDEP="32subsystem"
-PKGDES="D-Bus (libraries only, optenv32)"
+PKGDEP="expat+32 glib+32 glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="D-Bus, a system message bus (32-bit x86 runtime)"
 
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
+
+AUTOTOOLS_AFTER=(
+    '--libexecdir=/opt/32/lib/dbus-1.0'
+    '--with-dbus-user=dbus'
+    '--with-system-pid-file=/run/dbus/pid'
+    '--with-system-socket=/run/dbus/system_bus_socket'
+    '--with-console-auth-dir=/run/console'
+    '--enable-inotify'
+    '--disable-systemd'
+    '--without-x'
+)
