@@ -1,9 +1,12 @@
 PKGNAME=glib+32
 PKGSEC=libs
-PKGDEP="glibc+32 pcre+32 libffi+32 elfutils+32"
-PKGSUG="python-2"
-BUILDDEP="python-2 32subsystem"
-PKGDES="Common C routines used by GTK+ and other libs (optenv32)"
+PKGDEP="dbus+32 elfutils+32 glibc+32 libffi+32 pcre2+32 util-linux+32"
+BUILDDEP="devel-base+32 python-2"
+PKGDES="Common C routines used by GTK+ and other libs (32-bit x86 runtime)"
 
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
+
+MESON_AFTER=(
+    '-Dintrospection=disabled'
+)
