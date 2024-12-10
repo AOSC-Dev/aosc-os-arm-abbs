@@ -1,8 +1,14 @@
 PKGNAME=gdk-pixbuf+32
-PKGDES="A toolkit for image loading and pixel buffer manipulation (optenv32)"
-PKGDEP="glib+32 libpng-1.6+32 libtiff+32 libjpeg-turbo+32"
-BUILDDEP="32subsystem shared-mime-info"
 PKGSEC=libs
+PKGDEP="glib+32 libpng-1.6+32 libtiff+32 libjpeg-turbo+32"
+BUILDDEP="devel-base+32 shared-mime-info+32"
+PKGDES="Toolkit for image loading and pixel buffer manipulation (32-bit x86 runtime)"
 
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
+
+MESON_AFTER=(
+    '-Ddocs=false'
+    '-Dman=false'
+    '-Dintrospection=disabled'
+)
