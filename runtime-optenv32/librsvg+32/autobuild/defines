@@ -1,11 +1,11 @@
 PKGNAME=librsvg+32
 PKGDES="SVG rendering and manipulation library (optenv32)"
 PKGSEC=libs
-PKGDEP="gtk-3+32"
-BUILDDEP="32subsystem"
+PKGDEP="libxml2+32 pango+32 cairo+32 glib+32 freetype+32"
+BUILDDEP="32subsystem rustc cargo-c"
 
-AUTOTOOLS_AFTER="--disable-vala --disable-tools \
-                 --disable-introspection"
+MESON_AFTER="-Dvala=disabled \
+             -Dintrospection=disabled \
+             -Davif=disabled"
 ABSHADOW=no
-NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
