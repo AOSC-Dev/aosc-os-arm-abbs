@@ -1,5 +1,5 @@
-VER=2.2
-REL=2
-SRCS="tbl::https://bitbucket.org/multicoreware/x265/downloads/x265_$VER.tar.gz"
-CHKSUMS="sha256::b872552535e41fbffa03ba7cbcd3479c42c4053868309292e78e147b7773ac4b"
+VER=3.6
+SRCS="git::commit=tags/$VER::https://bitbucket.org/multicoreware/x265_git"
+CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=7275"
+SUBDIR="x265+32/source"
