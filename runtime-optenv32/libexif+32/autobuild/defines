@@ -1,8 +1,8 @@
 PKGNAME=libexif+32
-PKGDES="A library for parsing, editing, and saving EXIF data (optenv32)"
-PKGDEP="glibc+32"
-BUILDDEP="32subsystem"
 PKGSEC=libs
+PKGDEP="glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="A library for parsing, editing, and saving EXIF data (32-bit x86 runtime)"
 
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
