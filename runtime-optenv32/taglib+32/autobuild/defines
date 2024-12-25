@@ -1,11 +1,17 @@
 PKGNAME=taglib+32
-PKGDES="Library for reading and editing the meta-data of several popular audio formats (optenv32)"
 PKGSEC=libs
 PKGDEP="zlib+32"
-BUILDDEP="32subsystem"
+BUILDDEP="devel-base+32"
+PKGDES="Library for reading and editing the meta-data of several popular audio formats (32-bit x86 runtime)"
 
-CMAKE_AFTER="-DWITH_MP4=ON -DWITH_ASF=ON \
-             -DBUILD_SHARED_LIBS=ON \
-             -DHAVE_BOOST_BYTESWAP=NO -DHAVE_BOOST_ATOMIC=NO -DHAVE_BOOST_ZLIB=NO"
+CMAKE_AFTER=(
+    '-DWITH_MP4=ON'
+    '-DWITH_ASF=ON'
+    '-DBUILD_SHARED_LIBS=ON'
+    '-DHAVE_BOOST_BYTESWAP=NO'
+    '-DHAVE_BOOST_ATOMIC=NO'
+    '-DHAVE_BOOST_ZLIB=NO'
+)
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
