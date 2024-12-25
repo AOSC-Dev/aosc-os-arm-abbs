@@ -1,6 +1,13 @@
-export PATH=/opt/32/bin:$PATH
-make OPT="$CFLAGS" XLDFLAGS="$LDFLAGS" \
-     CC=i686-pc-linux-gnu-gcc CXX=i686-pc-linux-gnu-g++
-make prefix=/opt/32 DESTDIR="$PKGDIR" mandir=/opt/32/share/man install
+abinfo "Building rtmpdump ..."
+make \
+    OPT="$CFLAGS" \
+    XLDFLAGS="$LDFLAGS" \
+    CC=i686-aosc-linux-gnu-gcc \
+    CXX=i686-aosc-linux-gnu-g++
 
-rm -rf "$PKGDIR"/opt/32/{bin,sbin,share}
+abinfo "Installing rtmpdump ..."
+make install \
+    DESTDIR="$PKGDIR" \
+    SBINDIR=/opt/32/bin \
+    prefix=/opt/32 \
+    mandir=/opt/32/share/man
