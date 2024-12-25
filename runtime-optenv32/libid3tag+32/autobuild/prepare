@@ -1,1 +1,4 @@
-rm compat.c frametype.c
+abinfo "Removing unused sources ..."
+rm -v \
+    "$SRCDIR"/compat.c \
+    "$SRCDIR"/frametype.c
