@@ -1,7 +1,11 @@
 PKGNAME=twolame+32
 PKGSEC=libs
 PKGDEP="libsndfile+32"
-BUILDDEP="32subsystem"
-PKGDES="An optimized MPEG Audio Layer 2 encoder (optenv32)"
+BUILDDEP="devel-base+32"
+PKGDES="An optimized MPEG Audio Layer 2 encoder (32-bit x86 runtime)"
+
 NOLTO=1
 ABHOST=noarch
+
+# FIXME: Fails with "source directory already configured."
+ABSHADOW=0
