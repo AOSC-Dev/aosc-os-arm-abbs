@@ -1,7 +1,11 @@
 PKGNAME=libmad+32
-PKGDES="LibMAD, a MPEG audio decoder (optenv32)"
 PKGSEC=libs
 PKGDEP="glibc+32"
-BUILDDEP="32subsystem"
+BUILDDEP="devel-base+32"
+PKGDES="LibMAD, an MPEG audio decoder (32-bit x86 runtime)"
+
+# FIXME: Missing required files, handling manually in prepare.
+RECONF=0
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32

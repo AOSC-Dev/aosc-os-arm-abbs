@@ -1,2 +1,5 @@
-export CFLAGS+=" -ftree-vectorize -ftree-vectorizer-verbose=1 "
-autoconf
+abinfo "Touching required files ..."
+touch "$SRCDIR"/{AUTHORS,ChangeLog,NEWS}
+
+abinfo "Re-generating Autotools scripts ..."
+autoreconf -fvi
