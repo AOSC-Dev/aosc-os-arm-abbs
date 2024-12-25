@@ -7,8 +7,8 @@ at-spi2-core+32 attr+32 binutils+32 bzip2+32 cairo+32 cdparanoia+32 celt+32 cg+3
 curl+32 db+32 dbus+32 dbus-glib+32 elfutils+32 eudev+32 expat+32 faac+32 faad2+32 fftw+32  \
 flac+32 fontconfig+32 freealut+32 freeglut+32 freetype+32 game-music-emu+32 gcc+32 gconf+32  \
 gdbm+32 gdk-pixbuf+32 ghostscript+32 giflib+32 glew+32 glib+32 glibc+32 glu+32 gmp+32 gnutls+32  \
-gst-plugins-bad-1-0+32 gst-plugins-base-0-10+32 gst-plugins-base-1-0+32 gst-plugins-good-1-0+32  \
-gst-plugins-ugly-1-0+32 gstreamer-0-10+32 gstreamer-1-0+32 gtk-2+32 gtk-3+32 harfbuzz+32 icu+32  \
+gst-plugins-bad-1-0+32 gst-plugins-base-1-0+32 gst-plugins-good-1-0+32  \
+gst-plugins-ugly-1-0+32 gstreamer-1-0+32 gtk-2+32 gtk-3+32 harfbuzz+32 icu+32  \
 imlib2+32 json-c+32 krb5+32 lame+32 lcms2+32 libaio+32 libasyncns+32 libavc1394+32 libcaca+32  \
 libcap+32 libcddb+32 libcdio+32 libcroco+32 libdca+32 libdrm+32 libdv+32 libdvdcss+32  \
 libdvdnav+32 libdvdread+32 libepoxy+32 libexif+32 libffi+32 libgcrypt+32 libgpg-error+32  \
