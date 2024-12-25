@@ -1,13 +1,21 @@
 PKGNAME=libcaca+32
 PKGSEC=libs
-PKGDES="Color ASCii Art libraries (optenv32)"
-PKGDEP="imlib2+32 ncurses+32"
-BUILDDEP="32subsystem"
+PKGDEP="imlib2+32 ncurses+32 pango+32"
+BUILDDEP="devel-base+32"
+PKGDES="Color ASCII art libraries (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--disable-cxx --disable-gl --disable-csharp \
-                 --disable-python --disable-java --disable-ruby --disable-slang \
-                 --disable-doc"
+AUTOTOOLS_AFTER=(
+    '--disable-cxx'
+    '--disable-gl'
+    '--disable-csharp'
+    '--disable-python'
+    '--disable-java'
+    '--disable-ruby'
+    '--disable-slang'
+    '--disable-doc'
+)
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
 
 PKGEPOCH=1
