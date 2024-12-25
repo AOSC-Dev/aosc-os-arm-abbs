@@ -1,6 +1,11 @@
 PKGNAME=schroedinger+32
 PKGSEC=libs
 PKGDEP="orc+32"
-PKGDES="An implementation of the Dirac video codec in ANSI C code (optenv32)"
+BUILDDEP="devel-base+32 gtk-doc"
+PKGDES="An implementation of the Dirac video codec in ANSI C code (32-bit x86 runtime)"
+
+# FIXME: error: source directory already configured.
+ABSHADOW=0
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
