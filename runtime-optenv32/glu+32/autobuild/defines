@@ -1,8 +1,8 @@
 PKGNAME=glu+32
-PKGDES="GLU GL API libs"
-PKGDEP="mesa+32"
-BUILDDEP="32subsystem"
 PKGSEC=libs
+PKGDEP="mesa+32"
+BUILDDEP="devel-base+32"
+PKGDES="GLU GL API libs (32-bit x86 runtime)"
 
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
