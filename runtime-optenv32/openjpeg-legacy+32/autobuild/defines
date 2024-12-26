@@ -1,8 +1,8 @@
 PKGNAME=openjpeg-legacy+32
 PKGSEC=libs
 PKGDEP="zlib+32 lcms2+32 libpng+32"
-PKGDES="An open source JPEG 2000 codec (optenv32)"
+BUILDDEP="devel-base+32"
+PKGDES="An open source JPEG 2000 codec (legacy 1.x, 32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--enable-shared"
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
