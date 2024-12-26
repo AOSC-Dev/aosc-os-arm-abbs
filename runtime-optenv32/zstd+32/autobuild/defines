@@ -1,0 +1,12 @@
+PKGNAME=zstd+32
+PKGSEC=utils
+PKGDEP="glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="Zstandard - Fast real-time compression algorithm (32-bit x86 runtime)"
+
+AB_FLAGS_O3=1
+AB_FLAGS_SPECS=0
+AB_FLAGS_PIC=1
+
+NOLTO=1
+ABHOST=optenv32
