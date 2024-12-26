@@ -1,8 +1,8 @@
-ABSHADOW=no
 PKGNAME=libvisual+32
 PKGSEC=libs
 PKGDEP="glibc+32"
-BUILDDEP="32subsystem"
-PKGDES="Abstraction library that come between applications and audio visualization plugins"
+BUILDDEP="devel-base+32"
+PKGDES="Abstraction library that come between applications and audio visualization plugins (32-bit x86 runtime)"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
