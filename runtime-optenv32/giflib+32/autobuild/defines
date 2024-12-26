@@ -1,8 +1,8 @@
 PKGNAME=giflib+32
-PKGDES="A library for reading and writing GIF images (optenv32)"
-PKGDEP="glibc+32"
-BUILDDEP="32subsystem xmlto docbook-xsl"
 PKGSEC=libs
+PKGDEP="glibc+32"
+BUILDDEP="devel-base+32 xmlto docbook-xsl"
+PKGDES="A library for reading and writing GIF images (32-bit x86 runtime)"
 
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
