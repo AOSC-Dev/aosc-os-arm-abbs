@@ -1,9 +1,13 @@
 PKGNAME=sdl+32
-PKGDES="Simple Directmedia Layer"
 PKGSEC=libs
 PKGDEP="x11-lib+32 alsa-lib+32"
-BUILDDEP="32subsystem"
+BUILDDEP="devel-base+32 nasm"
+PKGDES="Simple Directmedia Layer (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--disable-nasm --enable-alsa --with-x"
+AUTOTOOLS_AFTER=(
+    '--enable-alsa'
+    '--with-x'
+)
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
