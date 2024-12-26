@@ -1,0 +1,8 @@
+abinfo "Correcting pkg-config directory ..."
+mv -v "$PKGDIR"/opt/32/share/pkgconfig/udev.pc \
+    "$PKGDIR"/opt/32/lib/pkgconfig/udev.pc
+rm -rv "$PKGDIR"/opt/32/share/pkgconfig
+
+abinfo "Creating a compatible versioned symlink to libudev.so.0 ..."
+ln -sv libudev.so.1 \
+    "$PKGDIR"/opt/32/lib/libudev.so.0
