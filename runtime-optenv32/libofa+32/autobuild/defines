@@ -1,7 +1,11 @@
 PKGNAME=libofa+32
 PKGSEC=libs
-PKGDES="Libraries that implements MusicIP (optenv32)"
 PKGDEP="fftw+32 curl+32 expat+32"
+BUILDDEP="devel-base+32"
+PKGDES="Libraries that implements MusicIP (32-bit x86 runtime)"
 
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
+
+# FIXME: Multi-level source.
+AUTOTOOLS_STRICT=0
