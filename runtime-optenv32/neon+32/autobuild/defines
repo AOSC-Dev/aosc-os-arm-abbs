@@ -1,9 +1,18 @@
 PKGNAME=neon+32
-PKGDES="An HTTP and WebDAV client library, with a C interface (optenv32)"
-PKGDEP="expat+32 krb5+32 ca-certs"
 PKGSEC=libs
+PKGDEP="expat+32 krb5+32 ca-certs"
+BUILDDEP="devel-base+32"
+PKGDES="An HTTP and WebDAV client library, with a C interface (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--enable-shared --enable-static \
-                 --with-ssl=openssl --with-ca-bundle=/etc/ssl/ca-bundle.crt"
+# FIXME: Shared libraries were not installed by default.
+AUTOTOOLS_AFTER=(
+    '--enable-shared'
+    '--with-ssl=openssl'
+    '--with-ca-bundle=/etc/ssl/ca-bundle.crt'
+)
+
+# FIXME: Fails to install documentation if shadow build is enabled.
+ABSHADOW=0
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
