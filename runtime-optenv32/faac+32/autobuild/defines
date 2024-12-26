@@ -1,6 +1,8 @@
 PKGNAME=faac+32
-PKGDES="An encoder for Advanced Audio Coding (AAC) (optenv32)"
 PKGSEC=libs
 PKGDEP="mp4v2+32"
+BUILDDEP="devel-base+32"
+PKGDES="An encoder for Advanced Audio Coding (AAC) (32-bit x86 runtime)"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
