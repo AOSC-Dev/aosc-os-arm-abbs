@@ -1,5 +1,4 @@
-VER=3.0.0
-SRCS="tbl::https://prdownloads.sourceforge.net/freeglut/freeglut-3.0.0.tar.gz"
-CHKSUMS="sha256::2a43be8515b01ea82bcfa17d29ae0d40bd128342f0930cd1f375f1ff999f76a2"
-REL=2
+VER=3.4.0
+SRCS="tbl::https://prdownloads.sourceforge.net/freeglut/freeglut-$VER.tar.gz"
+CHKSUMS="sha256::3c0bcb915d9b180a97edaebd011b7a1de54583a838644dcd42bb0ea0c6f3eaec"
 CHKUPDATE="anitya::id=846"
