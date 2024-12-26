@@ -1,7 +1,8 @@
 PKGNAME=freeglut+32
-PKGDES="Free GL User Toolkit (optenv32)"
 PKGSEC=devel
-PKGDEP="x11-lib+32 mesa+32"
+PKGDEP="glu+32 mesa+32 x11-lib+32"
+BUILDDEP="devel-base+32"
+PKGDES="Free GL User Toolkit (32-bit x86 runtime)"
 
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
