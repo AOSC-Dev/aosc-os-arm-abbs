@@ -1,9 +1,8 @@
 PKGNAME=libusb+32
-PKGDES="A library used by some applications for USB device access"
-PKGDEP="glibc+32"
-BUILDDEP="32subsystem"
 PKGSEC=libs
+PKGDEP="eudev+32 glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="A library providing USB device access and manipulation support (32-bit x86 runtime)"
 
-NOPARALLEL=1
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
