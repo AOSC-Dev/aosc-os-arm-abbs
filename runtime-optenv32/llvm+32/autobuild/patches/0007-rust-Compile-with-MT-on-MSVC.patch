@@ -1,18 +1,18 @@
-From 910c84731f46fa95570701ad8aa1adb122fdf826 Mon Sep 17 00:00:00 2001
+From b1d68378d641862de95f5628721eb7811846d764 Mon Sep 17 00:00:00 2001
 From: Alex Crichton <alex@alexcrichton.com>
 Date: Sat, 10 Feb 2018 17:21:38 -0800
-Subject: [PATCH 1002/1013] [rust] Compile with /MT on MSVC
+Subject: [PATCH 07/12] [rust] Compile with /MT on MSVC
 
 Can't seem to figure out how to do this without this patch...
 ---
  lld/CMakeLists.txt | 13 +++++++++++++
  1 file changed, 13 insertions(+)
 
-diff --git a/tools/lld/CMakeLists.txt b/tools/lld/CMakeLists.txt
-index 9bcc135665d0..985a01b9e3fe 100644
---- a/tools/lld/CMakeLists.txt
-+++ b/tools/lld/CMakeLists.txt
-@@ -238,6 +238,19 @@ if (NOT LLVM_INSTALL_TOOLCHAIN_ONLY)
+diff --git a/lld/CMakeLists.txt b/lld/CMakeLists.txt
+index 595c286abd91..d17d3c55395a 100644
+--- a/lld/CMakeLists.txt
++++ b/lld/CMakeLists.txt
+@@ -187,6 +187,19 @@ if (NOT LLVM_INSTALL_TOOLCHAIN_ONLY)
      )
  endif()
  
@@ -33,5 +33,5 @@ index 9bcc135665d0..985a01b9e3fe 100644
  add_subdirectory(tools/lld)
  
 -- 
-2.35.1
+2.47.1
 

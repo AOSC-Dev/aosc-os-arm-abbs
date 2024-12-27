@@ -1,0 +1,4 @@
+set(CMAKE_C_COMPILER_TARGET "i686-aosc-linux-gnu")
+set(CMAKE_CXX_COMPILER_TARGET "i686-aosc-linux-gnu")
+set(LLVM_DEFAULT_TARGET_TRIPLE "i686-aosc-linux-gnu")
+execute_process(COMMAND clang --print-resource-dir OUTPUT_VARIABLE CLANG_RESOURCE_DIR OUTPUT_STRIP_TRAILING_WHITESPACE)

@@ -1,0 +1,11 @@
+abinfo "Creating symlinks for clang/clang++ ..."
+for i in clang clang++; do
+    cat > "$PKGDIR"/opt/32/bin/${i} << EOF
+#!/bin/bash
+exec -a /opt/32/bin/i686-aosc-linux-gnu-$i /usr/bin/$i -Xlinker --sysroot='' --sysroot=/opt/32 "\$@"
+EOF
+
+    ln -sv ${i} "$PKGDIR"/opt/32/bin/i686-aosc-linux-gnu-${i}
+
+    chmod -v a+x "$PKGDIR"/opt/32/bin/${i}
+done
