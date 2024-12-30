@@ -1,0 +1,4 @@
+VER=1.83.0
+SRCS="tbl::https://static.rust-lang.org/dist/rustc-${VER}-src.tar.xz"
+CHKSUMS="sha256::7b11d4242dab0921a7d54758ad3fe805153c979c144625fecde11735760f97df"
+CHKUPDATE="anitya::id=7635"
