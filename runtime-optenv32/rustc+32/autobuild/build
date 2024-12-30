@@ -1,0 +1,46 @@
+abinfo "Enabling Rust backtrace ..."
+export RUST_BACKTRACE=1
+
+abinfo "Setting up cross compiler prefix ..."
+export CROSS_COMPILE="/opt/32/bin/i686-aosc-linux-gnu-"
+
+# Note:
+#
+# We need to reset the optenv32 PATH, because Rust needs to link both
+# 64-bit and 32-bit code during build-time (our GCC/binutils can't handle
+# this at the moment).
+#
+# Overriding the defaults to clang/LLD in the config.toml file.
+export PATH="/usr/bin:$PATH"
+
+abinfo "Building 32-bit Rust libraries ..."
+# Note: We also need to unset a lot of flags from RUSTFLAGS to avoid
+# linker errors.
+#
+# Note: Only installing runtime libraries, 32-bit toolchain will be
+# provided as wrappers.
+RUSTFLAGS='-Ctarget-cpu=x86-64' \
+python3 \
+    "$SRCDIR"/x.py build \
+    --stage=0 library
+
+abinfo "Installing 32-bit Rust libraries ..."
+mkdir -pv "$PKGDIR"/usr/lib/rustlib/
+cp -arv build/host/stage0-sysroot/lib*/rustlib/i686-unknown-linux-gnu \
+    "$PKGDIR"/usr/lib/rustlib/
+
+abinfo "Installing 32-bit Rust toolchain wrappers ..."
+mkdir -pv "$PKGDIR"/opt/32/bin
+cat << 'EOF' > "$PKGDIR"/opt/32/bin/cargo
+#!/bin/bash -e
+if [[ "$1" = "build" ]]; then
+    shift;
+    exec -a /usr/bin/cargo /usr/bin/cargo build --target=i686-unknown-linux-gnu "$@"
+elif [[ "$1" = "install" ]]; then
+    shift;
+    exec -a /usr/bin/cargo /usr/bin/cargo install --target=i686-unknown-linux-gnu "$@"
+else
+    exec -a /usr/bin/cargo /usr/bin/cargo "$@"
+fi
+EOF
+chmod -v a+x "$PKGDIR"/opt/32/bin/cargo

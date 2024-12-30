@@ -1,0 +1,11 @@
+PKGNAME=rustc+32
+PKGSEC=devel
+PKGDEP="gcc+32 llvm+32 rustc"
+BUILDDEP="devel-base+32"
+PKGDES="General purpose, multi-paradigm programming language (compiler and runtime, 32-bit x86 runtime)"
+
+NOLTO=1
+PKGPROV="rust+32"
+ABSPLITDBG=0
+
+ABHOST=optenv32
