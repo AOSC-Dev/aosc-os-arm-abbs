@@ -10,3 +10,6 @@ ABHOST=optenv32
 MESON_AFTER=(
     '-Dintrospection=disabled'
 )
+
+PKGBREAK="atk+32<=2.26.1-1 at-spi2-atk+32<=2.26.3"
+PKGREP="atk+32<=2.26.1-1 at-spi2-atk+32<=2.26.3"
