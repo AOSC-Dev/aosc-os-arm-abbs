@@ -1,0 +1,11 @@
+PKGNAME=libdatrie+32
+PKGSEC=libs
+PKGDEP="glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="Implementation of double-array structure for representing trie (32-bit x86 runtime)"
+
+# FIXME: Parallelism causes installation failure.
+NOPARALLEL=1
+
+NOLTO=1
+ABHOST=optenv32
