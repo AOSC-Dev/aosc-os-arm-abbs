@@ -33,6 +33,7 @@ abinfo "Installing 32-bit Rust toolchain wrappers ..."
 mkdir -pv "$PKGDIR"/opt/32/bin
 cat << 'EOF' > "$PKGDIR"/opt/32/bin/cargo
 #!/bin/bash -e
+export RUSTC=/usr/bin/rustc
 if [[ "$1" = "build" ]]; then
     shift;
     exec -a /usr/bin/cargo /usr/bin/cargo build --target=i686-unknown-linux-gnu "$@"
@@ -44,3 +45,10 @@ else
 fi
 EOF
 chmod -v a+x "$PKGDIR"/opt/32/bin/cargo
+
+cat << 'EOF' > "$PKGDIR"/opt/32/bin/rustc
+#!/bin/bash -e
+exec -a /usr/bin/rustc /usr/bin/rustc --target=i686-unknown-linux-gnu "$@"
+EOF
+
+chmod -v a+x "$PKGDIR"/opt/32/bin/rustc
