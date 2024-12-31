@@ -1,10 +1,19 @@
 PKGNAME=cdparanoia+32
 PKGSEC=utils
-PKGDES="A CD audio extraction tool"
 PKGDEP="glibc+32"
-BUILDDEP="32subsystem"
+BUILDDEP="devel-base+32"
+PKGDES="A CD audio extraction tool (32-bit x86 runtime)"
 
+# FIXME: Breaks linkage during installation.
 NOPARALLEL=1
-MAKE_AFTER="prefix=$PKGDIR/opt/32 MANDIR=$PKGDIR/opt/32/share/man"
+# FIXME: Hard-coded source paths.
+ABSHADOW=0
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
+
+MAKE_AFTER=(
+    "prefix=$PKGDIR/opt/32"
+    "LIBDIR=$PKGDIR/opt/32/lib"
+    "MANDIR=$PKGDIR/opt/32/share/man"
+)
