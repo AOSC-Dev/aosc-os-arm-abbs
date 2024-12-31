@@ -1,0 +1,14 @@
+PKGNAME=spirv-llvm-translator+32
+PKGSEC=devel
+PKGDEP="llvm+32"
+BUILDDEP="spirv-tools+32 spirv-headers"
+PKGDES="A tool and a library for bi-directional translation between SPIR-V and LLVM IR (32-bit x86 runtime)"
+
+CMAKE_AFTER=(
+    '-DBUILD_SHARED_LIBS=ON'
+    '-DLLVM_BUILD_TOOLS=ON'
+    '-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/opt/32/include/spirv/unified1'
+)
+
+NOLTO=1
+ABHOST=optenv32
