@@ -27,8 +27,8 @@ CMAKE_AFTER=(
     '-DDL_LIBRARY_PATH=/opt/32/lib/libdl.so'
     '-DLLVM_BINUTILS_INCDIR=/opt/32/include'
     '-Dzstd_LIBRARY=/opt/32/lib/libzstd.so'
-    '-DLLVM_ENABLE_PROJECTS=llvm'
-    '-DLLVM_ENABLE_RUNTIMES=compiler-rt;libunwind'
+    '-DLLVM_ENABLE_PROJECTS=llvm;clang'
+    '-DLLVM_ENABLE_RUNTIMES=compiler-rt'
     '-DCOMPILER_RT_DEFAULT_TARGET_ONLY=ON'
     '-DCOMPILER_RT_SANITIZERS_TO_BUILD="asan;ubsan_minimal;asan_abi;safestack;cfi"'
     '-DCOMPILER_RT_BUILD_MEMPROF=OFF'
@@ -36,4 +36,6 @@ CMAKE_AFTER=(
     '-DCOMPILER_RT_BUILD_XRAY=OFF'
     '-DCMAKE_TOOLCHAIN_FILE=../autobuild/fake-toolchain.cmake'
     '-DCMAKE_BUILD_TYPE=Release'
+    '-DDEFAULT_SYSROOT=/opt/32'
+    '-DLLVM_DEFAULT_TARGET_TRIPLE=i686-aosc-linux-gnu'
 )

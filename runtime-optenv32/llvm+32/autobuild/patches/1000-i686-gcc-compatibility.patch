@@ -5,7 +5,7 @@
  #endif // defined(CRT_HAS_IEEE_TF)
  #else
 -typedef long double fp_t;
-+typedef _Float128 fp_t;
++typedef __float128 fp_t;
  #endif // defined(CRT_HAS_F128) && defined(CRT_HAS_128BIT)
  #else
  #error SINGLE_PRECISION, DOUBLE_PRECISION or QUAD_PRECISION must be defined.

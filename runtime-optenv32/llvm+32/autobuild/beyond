@@ -1,8 +1,15 @@
+abinfo "Removing unnecessary LLVM tools ..."
+rm -v "$PKGDIR"/opt/32/bin/clang*
+
 abinfo "Creating symlinks for clang/clang++ ..."
 for i in clang clang++; do
     cat > "$PKGDIR"/opt/32/bin/${i} << EOF
 #!/bin/bash
-exec -a /opt/32/bin/i686-aosc-linux-gnu-$i /usr/bin/$i -Xlinker --sysroot='' --sysroot=/opt/32 "\$@"
+LINKER_FLAGS='-Wl,--sysroot='
+if [[ " \$* " =~ ' -c ' ]] || [ \$# -lt 1 ]; then
+  LINKER_FLAGS=
+fi
+exec -a /opt/32/bin/i686-aosc-linux-gnu-$i /usr/bin/$i "\${LINKER_FLAGS}" --sysroot=/opt/32 "\$@"
 EOF
 
     ln -sv ${i} "$PKGDIR"/opt/32/bin/i686-aosc-linux-gnu-${i}
