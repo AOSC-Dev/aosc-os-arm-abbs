@@ -1,9 +1,0 @@
-PKGNAME=atk+32
-PKGDEP="glib+32"
-BUILDDEP="32subsystem"
-PKGDES="A library providing a set of interfaces for accessibility (optenv32)"
-PKGSEC=libs
-
-AUTOTOOLS_AFTER="--disable-introspection"
-NOLTO=1
-ABHOST=noarch
