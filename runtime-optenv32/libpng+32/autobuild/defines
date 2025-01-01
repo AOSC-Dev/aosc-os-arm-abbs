@@ -1,10 +1,19 @@
 PKGNAME=libpng+32
-PKGEPOCH=2
-PKGDES="Libraries used by other programs for reading and writing PNG files"
-PKGDEP="zlib+32"
-BUILDDEP="32subsystem"
 PKGSEC=libs
+PKGDEP="zlib+32"
+BUILDDEP="devel-base+32"
+PKGDES="Libraries used by other programs for reading and writing PNG files (32-bit x86 runtime)"
 
-PKGBREAK="libpng-1.6+32<=1.6.18-1"
+PKGEPOCH=2
+
+# FIXME: autogen.sh is intended only to generate 'configure' on systems
+# that do not have it.  You have a complete 'configure', if you need to
+# change Makefile.am or configure.ac you also need to run configure with
+# the --enable-maintainer-mode option.
+RECONF=0
+
+PKGBREAK="libpng-1.6+32"
+PKGREP="libpng-1.6+32"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
