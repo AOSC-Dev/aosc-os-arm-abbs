@@ -1,7 +1,7 @@
 PKGNAME=cairo+32
 PKGSEC=libs
-PKGDEP="fontconfig+32 glib+32 libdrm+32 libpng-1.6+32 libspectre+32 \
-        lzo+32 pixman+32 x11-lib+32"
+PKGDEP="fontconfig+32 glib+32 libdrm+32 libpng+32 lzo+32 \
+        pixman+32 x11-lib+32"
 BUILDDEP="devel-base+32"
 PKGDES="A 2D graphics library with support for multiple output devices (32-bit x86 runtime)"
 
