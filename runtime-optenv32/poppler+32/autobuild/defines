@@ -1,9 +1,0 @@
-PKGNAME=poppler+32
-PKGSEC=libs
-PKGDES="A PDF rendering library and command line tools used to manipulate PDF files (optenv32)"
-PKGDEP="freetype+32 fontconfig+32 glib+32 cairo+32"
-BUILDDEP="32subsystem"
-
-CMAKE_AFTER="-DENABLE_XPDF_HEADERS=ON -DENABLE_LIBOPENJPEG=none"
-NOLTO=1
-ABHOST=noarch
