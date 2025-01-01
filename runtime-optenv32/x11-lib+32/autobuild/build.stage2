@@ -1,4 +1,4 @@
-for package in `cat "$SRCDIR"/autobuild/build-order`; do
+for package in `cat "$SRCDIR"/autobuild/build-order.stage2`; do
     abinfo "Starting to build $package ..."
     pushd "$package"-*
 
@@ -20,7 +20,7 @@ for package in `cat "$SRCDIR"/autobuild/build-order`; do
                 --disable-xf86bigfont
             ;;
         libpciaccess )
-            meson setup "$BLDDIR" ${MESON_DEF[@]}
+            meson setup $BLDDIR ${MESON_DEF[@]}
             ;;
         * )
             ./configure ${AUTOTOOLS_DEF[@]}
@@ -40,7 +40,7 @@ for package in `cat "$SRCDIR"/autobuild/build-order`; do
     abinfo "Installing ${package} ..."
     case $package in
         libpciaccess )
-            ninja -C "$BLDDIR"
+            ninja -C "$BLDDIR" install
             DESTDIR="$PKGDIR" ninja -C "$BLDDIR" install
             ;;
         * )
