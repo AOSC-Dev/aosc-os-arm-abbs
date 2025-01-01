@@ -1,9 +1,40 @@
-export PATH=/opt/32/bin:$PATH
-export PKG_CONFIG_PATH=/opt/32/lib/pkg-config
+for _JPEG_ABI in 6 7 8; do
+    case ${_JPEG_ABI} in
+        6)
+            CMAKE_AFTER__JPEG_ABI=" \
+                -DWITH_JPEG7=OFF \
+                -DWITH_JPEG8=OFF"
+            ;;
+        7)
+            CMAKE_AFTER__JPEG_ABI=" \
+                -DWITH_JPEG7=ON \
+                -DWITH_JPEG8=OFF"
+            ;;
+        8)
+            CMAKE_AFTER__JPEG_ABI=" \
+                -DWITH_JPEG7=OFF \
+                -DWITH_JPEG8=ON"
+            ;;
+    esac
 
-cmake . -DCMAKE_INSTALL_PREFIX=/opt/32 -DCMAKE_BUILD_TYPE=Release \
-        -DCMAKE_C_COMPILER=/opt/32/bin/i686-pc-linux-gnu-gcc
-make
-make install DESTDIR="$PKGDIR"
+    abinfo "Preparing build environment (ABI: ${_JPEG_ABI}) ..."
+    mkdir -v "$SRCDIR"/build${_JPEG_ABI}
+    cd "$SRCDIR"/build${_JPEG_ABI}
 
-rm -rf "$PKGDIR"/opt/32/{bin,share}
+    abinfo "Configuring libjpeg-turbo (ABI: ${_JPEG_ABI}) ..."
+    cmake "$SRCDIR" \
+        -GNinja \
+        ${CMAKE_DEF[@]} ${CMAKE_AFTER[@]} \
+        ${CMAKE_AFTER__JPEG_ABI}
+
+    abinfo "Building libjpeg-turbo (ABI: ${_JPEG_ABI}) ..."
+    ninja
+
+    abinfo "Installing libjpeg-turbo (ABI: ${_JPEG_ABI}) ..."
+    DESTDIR="$PKGDIR" \
+        ninja install
+done
+
+abinfo "Installing jpegint.h ..."
+install -vm644 "$SRCDIR"/jpegint.h \
+    "$PKGDIR"/opt/32/include
