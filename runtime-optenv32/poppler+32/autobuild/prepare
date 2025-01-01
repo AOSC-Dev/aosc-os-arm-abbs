@@ -1,2 +1,0 @@
-export LDFLAGS="${LDFLAGS}"
-export PKG_CONFIG_PATH=/opt/32/lib/pkgconfig:/opt/32/share/pkgconfig
