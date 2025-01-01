@@ -1,3 +1,0 @@
-autoreconf -fi 
-
-rm -rf freetype jpeg libpng tiff zlib expat
