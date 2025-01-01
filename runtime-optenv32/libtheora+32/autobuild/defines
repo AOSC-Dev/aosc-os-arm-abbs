@@ -1,6 +1,6 @@
 PKGNAME=libtheora+32
 PKGSEC=libs
-PKGDEP="libogg+32 libpng-1.6+32 libvorbis+32"
+PKGDEP="libogg+32 libpng+32 libvorbis+32"
 BUILDDEP="devel-base+32"
 PKGDES="An open video codec developed by the Xiph.org (32-bit x86 runtime)"
 
