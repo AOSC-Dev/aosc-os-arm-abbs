@@ -1,11 +1,16 @@
 PKGNAME=librsvg+32
-PKGDES="SVG rendering and manipulation library (optenv32)"
 PKGSEC=libs
-PKGDEP="libxml2+32 pango+32 cairo+32 glib+32 freetype+32"
-BUILDDEP="32subsystem rustc cargo-c"
+PKGDEP="cairo+32 freetype+32 glib+32 libxml2+32 pango+32"
+BUILDDEP="devel-base+32 rustc+32 cargo-c"
+PKGDES="SVG rendering and manipulation library (32-bit x86 runtime)"
 
-MESON_AFTER="-Dvala=disabled \
-             -Dintrospection=disabled \
-             -Davif=disabled"
-ABSHADOW=no
+MESON_AFTER=(
+    '-Dvala=disabled'
+    '-Dintrospection=disabled'
+    '-Davif=disabled'
+    '-Dtriplet=i686-unknown-linux-gnu'
+)
+
 ABHOST=optenv32
+
+USECLANG=1
