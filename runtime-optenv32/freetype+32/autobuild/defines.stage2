@@ -7,6 +7,7 @@ PKGDES="Font rendering engine (32-bit x86 runtime)"
 NOLTO=1
 ABHOST=optenv32
 
+ABTYPE=meson
 MESON_AFTER=(
     '-Dbrotli=enabled'
     '-Dbzip2=enabled'
