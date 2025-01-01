@@ -1,5 +1,4 @@
-VER=3.22.30
-REL=2
-SRCS="tbl::https://download.gnome.org/sources/gtk+/${VER:0:4}/gtk+-$VER.tar.xz"
-CHKSUMS="sha256::a1a4a5c12703d4e1ccda28333b87ff462741dc365131fbc94c218ae81d9a6567"
+VER=3.24.38
+SRCS="https://download.gnome.org/sources/gtk+/${VER:0:4}/gtk+-$VER.tar.xz"
+CHKSUMS="sha256::ce11decf018b25bdd8505544a4f87242854ec88be054d9ade5f3a20444dd8ee7"
 CHKUPDATE="anitya::id=10018"
