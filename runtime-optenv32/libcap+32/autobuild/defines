@@ -1,9 +1,8 @@
 PKGNAME=libcap+32
 PKGSEC=libs
-PKGDES="POSIX 1003.1e capabilities (optenv32)"
 PKGDEP="attr+32 glibc+32"
-BUILDDEP="32subsystem"
+BUILDDEP="devel-base+32"
+PKGDES="POSIX 1003.1e capabilities (32-bit x86 runtime)"
 
 NOLTO=1
-NOPARALLEL=1
-ABHOST=noarch
+ABHOST=optenv32
