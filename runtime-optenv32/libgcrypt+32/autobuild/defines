@@ -1,8 +1,8 @@
 PKGNAME=libgcrypt+32
-PKGDES="General purpose cryptographic library based on the code from GnuPG (optenv32)"
-PKGDEP="libgpg-error+32"
-BUILDDEP="32subsystem"
 PKGSEC=libs
+PKGDEP="libgpg-error+32"
+BUILDDEP="devel-base+32"
+PKGDES="General purpose cryptographic library based on the code from GnuPG (32-bit x86 runtime)"
 
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
