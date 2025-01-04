@@ -1,7 +1,12 @@
 PKGNAME=libxslt+32
-PKGDES="Extensible Stylesheet Language Transformations(XSLT) C library developed for the GNOME project on 32subsystem"
 PKGSEC=libs
 PKGDEP="glibc+32 libxml2+32 libgcrypt+32 python-2+32"
-BUILDDEP="32subsystem"
+BUILDDEP="devel-base+32"
+PKGDES="C library for eXtensible Stylesheet Language Transformations (XSLT) (32-bit x86 runtime)"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
+
+AUTOTOOLS_AFTER=(
+    '--without-python'
+)
