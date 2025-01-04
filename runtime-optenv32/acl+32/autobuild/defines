@@ -1,6 +1,8 @@
 PKGNAME=acl+32
-PKGDES="Access Control List for 32Subsystem"
 PKGSEC=utils
 PKGDEP="attr+32"
+BUILDDEP="devel-base+32"
+PKGDES="Access Control List (32-bit x86 runtime)"
+
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
