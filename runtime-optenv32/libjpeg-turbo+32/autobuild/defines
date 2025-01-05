@@ -6,3 +6,6 @@ PKGDES="JPEG image codec with accelerated baseline compression and decompression
 
 NOLTO=1
 ABHOST=optenv32
+
+PKGBREAK="libjpeg+legacy+32<=6b-1"
+PKGREP="libjpeg+legacy+32<=6b-1"
