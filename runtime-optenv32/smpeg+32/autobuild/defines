@@ -1,9 +1,8 @@
 PKGNAME=smpeg+32
 PKGSEC=x11
 PKGDEP="sdl+32"
-BUILDDEP="32subsystem"
-PKGDES="SDL MPEG Player Library (optenv32)"
+BUILDDEP="devel-base+32"
+PKGDES="SDL MPEG Player Library (32-bit x86 runtime)"
 
-MAKE_AFTER='LIBS=-lX11'
 NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
