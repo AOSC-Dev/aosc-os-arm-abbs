@@ -1,11 +1,10 @@
-export PATH="/opt/32:$PATH"
+abinfo "Building proxychains-ng+32 ..."
+"$SRCDIR"/configure \
+    --prefix=/opt/32
 
-export CC=i686-pc-linux-gnu-gcc
-export CXX=i686-pc-linux-gnu-g++
-
-./configure --prefix=/opt/32
+abinfo "Building proxychains-ng+32 ..."
 make
-make DESTDIR="$PKGDIR" install
-mv "$PKGDIR"/opt/32/bin/proxychains{4,32}
 
-rm -rf "$PKGDIR"/opt/32/{etc,include}
+abinfo "Installing proxychains-ng+32 ..."
+make install \
+    DESTDIR="$PKGDIR"
