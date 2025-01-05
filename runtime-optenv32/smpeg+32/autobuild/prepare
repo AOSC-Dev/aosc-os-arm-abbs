@@ -1,2 +1,2 @@
+abinfo "Appending -Wno-narrowing to workaround build failure ..."
 export CFLAGS="${CFLAGS} -Wno-narrowing"
-export LDFLAGS="${LDFLAGS} -lSDL"
