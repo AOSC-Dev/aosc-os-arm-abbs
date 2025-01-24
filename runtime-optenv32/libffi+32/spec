@@ -1,4 +1,4 @@
-VER=3.4.4
-SRCS="git::commit=tags/v$VER::https://github.com/libffi/libffi"
-CHKSUMS="SKIP"
+VER=3.4.6
+SRCS="tbl::https://github.com/libffi/libffi/releases/download/v${VER}/libffi-${VER}.tar.gz"
+CHKSUMS="sha256::b0dea9df23c863a7a50e825440f3ebffabd65df1497108e5d437747843895a4e"
 CHKUPDATE="anitya::id=1611"
