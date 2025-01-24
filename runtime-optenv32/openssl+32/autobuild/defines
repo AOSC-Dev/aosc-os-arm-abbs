@@ -5,7 +5,6 @@ BUILDDEP="devel-base+32"
 PKGDES="Open Source toolkit for Secure Sockets Layer and Transport Layer Security (32-bit x86 runtime)"
 
 NOPARALLEL=1
-NOLTO=1
 ABHOST=optenv32
 
 PKGBREAK="""
