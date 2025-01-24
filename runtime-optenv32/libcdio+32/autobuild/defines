@@ -6,5 +6,4 @@ PKGDES="GNU compact disk input and control library (32-bit x86 runtime)"
 
 AUTOTOOLS_AFTER="--enable-cpp-progs"
 
-NOLTO=1
 ABHOST=optenv32
