@@ -6,5 +6,4 @@ PKGDES="Open source MPEG-4 video codec (32-bit x86 runtime)"
 
 ABSHADOW=0
 
-NOLTO=1
 ABHOST=optenv32
