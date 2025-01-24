@@ -10,5 +10,4 @@ MESON_AFTER=(
     '-Dgtk_doc=false'
 )
 
-NOLTO=1
 ABHOST=optenv32
