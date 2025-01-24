@@ -4,7 +4,6 @@ PKGDEP="acl+32 dbus+32 hwdata glib+32 util-linux+32"
 BUILDDEP="devel-base+32 docbook-dtd docbook-xsl gperf libxslt"
 PKGDES="A stripped-down version of UDev by Gentoo (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
 
 AUTOTOOLS_AFTER=(
