@@ -4,5 +4,4 @@ PKGDEP="glibc+32 x11-proto+32"
 BUILDDEP="devel-base+32"
 PKGDES="The X Display Manager Control Protocol Library (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
