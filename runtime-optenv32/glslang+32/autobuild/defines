@@ -4,7 +4,6 @@ PKGDEP="glibc+32 spirv-tools+32"
 BUILDDEP="devel-base+32"
 PKGDES="An OpenGL and OpenGL ES shader front end and validator (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
 
 CMAKE_AFTER=(
