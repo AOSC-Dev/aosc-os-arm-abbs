@@ -4,5 +4,4 @@ PKGDEP="gmp+32"
 BUILDDEP="devel-base+32"
 PKGDES="Low-level cryptographic library (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
