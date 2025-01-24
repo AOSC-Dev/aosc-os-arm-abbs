@@ -4,5 +4,4 @@ PKGDEP="zlib+32 lcms2+32 libpng+32"
 BUILDDEP="devel-base+32"
 PKGDES="An open source JPEG 2000 codec (legacy 1.x, 32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
