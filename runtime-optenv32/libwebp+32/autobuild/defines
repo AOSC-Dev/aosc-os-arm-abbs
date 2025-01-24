@@ -10,5 +10,4 @@ AUTOTOOLS_AFTER=(
     '--enable-libwebpdecoder'
 )
 
-NOLTO=1
 ABHOST=optenv32
