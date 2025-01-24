@@ -5,7 +5,6 @@ PKGDEP="fontconfig+32 glib+32 libdrm+32 libpng+32 lzo+32 \
 BUILDDEP="devel-base+32"
 PKGDES="A 2D graphics library with support for multiple output devices (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
 
 # FIXME: Tests sources were unable to find cairo.h...
