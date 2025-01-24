@@ -7,6 +7,5 @@ PKGDES="The Quarsar DV codec (32-bit x86 runtime)"
 AUTOTOOLS_AFTER="--disable-gtk"
 RECONF=0
 ABSHADOW=0
-NOLTO=1
 
 ABHOST=optenv32
