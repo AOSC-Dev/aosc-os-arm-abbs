@@ -7,7 +7,6 @@ PKGDES="The GL Vendor-Neutral Dispatch library (32-bit x86 runtime)"
 PKGBREAK="mesa+32<=19.3.1 nvidia+32<=390.25 nvidia-libgl+32<=390.25"
 PKGREP="$PKGBREAK"
 
-NOLTO=1
 ABHOST=optenv32
 
 AUTOTOOLS_AFTER=(
