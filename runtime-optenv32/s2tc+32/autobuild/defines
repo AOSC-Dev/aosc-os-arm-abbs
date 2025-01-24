@@ -6,5 +6,4 @@ PKGDES="S2TC texture compress library (32-bit x86 runtime)"
 
 PKGEPOCH=1
 
-NOLTO=1
 ABHOST=optenv32
