@@ -13,5 +13,4 @@ CMAKE_AFTER="-DWITH_GSSAPI=ON \
              -DCOM_ERR_LIBRARY=/opt/32/lib/libcom_err.so \
              -DZLIB_LIBRARY=/opt/32/lib/libz.so"
 
-NOLTO=1
 ABHOST=optenv32
