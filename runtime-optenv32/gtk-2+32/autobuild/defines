@@ -8,5 +8,4 @@ AUTOTOOLS_AFTER="--with-xinput=yes \
                  --disable-cups \
                  --enable-introspection=no"
 
-NOLTO=1
 ABHOST=optenv32
