@@ -4,7 +4,6 @@ PKGDEP="ca-certs libffi+32 libtasn1+32"
 BUILDDEP="devel-base+32"
 PKGDES="A way to load and enumerate PKCS #11 (a Cryptographic Token Interface Standard) modules (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
 
 AUTOTOOLS_AFTER="--without-systemd \
