@@ -7,5 +7,4 @@ PKGDES="Open Source toolkit for Secure Sockets Layer and Transport Layer Securit
 # FIXME: Installation may fail with parallelism.
 NOPARALLEL=1
 
-NOLTO=1
 ABHOST=optenv32
