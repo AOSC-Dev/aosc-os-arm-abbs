@@ -6,5 +6,4 @@ PKGDES="Brotli compression library and utility (32-bit x86 runtime)"
 
 ABTYPE=cmakeninja
 
-NOLTO=1
 ABHOST=optenv32
