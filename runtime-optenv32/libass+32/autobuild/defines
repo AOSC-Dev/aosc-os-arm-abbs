@@ -5,7 +5,6 @@ PKGDEP="enca+32 fontconfig+32 fribidi+32"
 BUILDDEP="devel-base+32 yasm"
 
 AUTOTOOLS_AFTER="--enable-fontconfig"
-NOLTO=1
 ABHOST=optenv32
 
 PKGBREAK="ffmpeg+32<=3.2.2-1"
