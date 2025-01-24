@@ -5,7 +5,6 @@ BUILDDEP="devel-base+32"
 PKGDES="Low Level Virtual Machine Infrastructure (32-bit x86 runtime)"
 
 NOSTATIC=0
-NOLTO=1
 
 PKGPROV="clang+32"
 ABHOST=optenv32
