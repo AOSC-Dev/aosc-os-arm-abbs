@@ -9,7 +9,6 @@ NOPARALLEL=1
 # FIXME: Hard-coded source paths.
 ABSHADOW=0
 
-NOLTO=1
 ABHOST=optenv32
 
 MAKE_AFTER=(
