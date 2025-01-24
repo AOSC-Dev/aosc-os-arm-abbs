@@ -10,5 +10,4 @@ RECONF=0
 ABSHADOW=0
 AUTOTOOLS_AFTER="--enable-shared --enable-pic"
 
-NOLTO=1
 ABHOST=optenv32
