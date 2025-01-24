@@ -191,7 +191,6 @@ runtime-optenv32/sbc+32
 runtime-optenv32/sdl-ttf+32
 runtime-optenv32/smpeg+32
 runtime-optenv32/soundtouch+32
-runtime-optenv32/srtp+32
 runtime-optenv32/taglib+32
 runtime-optenv32/twolame+32
 runtime-optenv32/vulkan-loader+32
