@@ -9,7 +9,6 @@ MESON_AFTER=(
     '-Dlegacy=true'
 )
 
-NOLTO=1
 ABHOST=optenv32
 
 # Note: Header only.
