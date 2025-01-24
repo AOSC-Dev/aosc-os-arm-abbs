@@ -12,7 +12,7 @@ PKGEPOCH=2
 # the --enable-maintainer-mode option.
 RECONF=0
 
-PKGBREAK="libpng-1.6+32"
-PKGREP="libpng-1.6+32"
+PKGBREAK="libpng-1.6+32<=1:1.6.37"
+PKGREP="libpng-1.6+32<=1:1.6.37"
 
 ABHOST=optenv32
