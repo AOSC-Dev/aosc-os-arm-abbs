@@ -4,7 +4,6 @@ PKGDEP="cairo+32 fribidi+32 harfbuzz+32 libthai+32 x11-lib+32"
 BUILDDEP="devel-base+32"
 PKGDES="System for layout and rendering of internationalized text (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
 
 MESON_AFTER=(
