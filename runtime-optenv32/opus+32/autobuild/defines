@@ -8,5 +8,4 @@ AUTOTOOLS_AFTER=(
     '--enable-custom-modes'
 )
 
-NOLTO=1
 ABHOST=optenv32
