@@ -6,5 +6,4 @@ PKGDES="An audio compression format designed especially for speech (32-bit x86 r
 
 PKGEPOCH=1
 
-NOLTO=1
 ABHOST=optenv32
