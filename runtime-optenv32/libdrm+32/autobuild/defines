@@ -4,7 +4,6 @@ PKGDEP="cairo+32 x11-lib+32"
 BUILDDEP="devel-base+32"
 PKGDES="Direct Rendering Manager runtime library (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
 ABTYPE=meson
 MESON_AFTER=(
