@@ -7,5 +7,4 @@ PKGDES="Video Acceleration (VA) API for Linux (32-bit x86 runtime)"
 ABTYPE=meson
 MESON_AFTER="-Dwith_wayland=no"
 
-NOLTO=1
 ABHOST=optenv32
