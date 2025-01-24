@@ -12,7 +12,6 @@ PKGBREAK="wine<=1.7.54"
 AB_FLAGS_O3=1
 
 # FIXME: LTO causes graphical artifacts on AMD GPUs.
-NOLTO=1
 ABHOST=optenv32
 
 USECLANG=1
