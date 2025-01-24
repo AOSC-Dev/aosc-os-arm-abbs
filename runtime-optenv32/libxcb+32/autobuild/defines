@@ -1,7 +1,7 @@
 PKGNAME=libxcb+32
 PKGSEC=libs
-PKGDEP="glibc+32 xcb-proto+32 libxau+32 libxdmcp+32 libxslt+32"
-BUILDDEP="devel-base+32 xcb-proto"
+PKGDEP="glibc+32 xcb-proto libxau+32 libxdmcp+32 libxslt+32"
+BUILDDEP="devel-base+32"
 PKGDES="XCB library (32-bit x86 runtime)"
 
 ABHOST=optenv32
