@@ -6,7 +6,6 @@ BUILDDEP="devel-base+32"
 
 # Flags from the main tree.
 NOSTATIC=0
-NOLTO=1
 AB_FLAGS_O3=1
 RECONF=0
 
