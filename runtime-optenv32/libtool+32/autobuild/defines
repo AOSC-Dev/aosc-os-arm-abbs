@@ -10,5 +10,4 @@ PKGDES="GNU generic library support script (32-bit x86 runtime)"
 # risky. If you wish to bootstrap anyway, use the '--force' option.
 RECONF=0
 
-NOLTO=1
 ABHOST=optenv32
