@@ -15,7 +15,6 @@ AUTOTOOLS_AFTER=(
     '--disable-doc'
 )
 
-NOLTO=1
 ABHOST=optenv32
 
 PKGEPOCH=1
