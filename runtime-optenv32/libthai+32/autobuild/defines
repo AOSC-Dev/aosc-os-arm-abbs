@@ -7,5 +7,4 @@ PKGDES="Thai language support routines (32-bit x86 runtime)"
 # FIXME: configure.ac:25: error: AC_CONFIG_MACRO_DIR can only be used once
 RECONF=0
 
-NOLTO=1
 ABHOST=optenv32
