@@ -6,5 +6,4 @@ PKGDES="A command line option parser (32-bit x86 runtime)"
 
 AUTOTOLS_AFTER="--enable-static"
 
-NOLTO=1
 ABHOST=optenv32
