@@ -6,5 +6,4 @@ PKGDES="Converts file between various character sets and usages (32-bit x86 runt
 
 AUTOTOOLS_AFTER="PYTHON=/usr/bin/python3"
 
-NOLTO=1
 ABHOST=optenv32
