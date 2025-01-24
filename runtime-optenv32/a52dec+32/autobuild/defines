@@ -5,5 +5,4 @@ BUILDDEP="devel-base+32"
 PKGDES="A free library for decoding ATSC A/52 streams (32-bit x86 runtime)"
 
 AUTOTOOLS_AFTER="--enable-shared"
-NOLTO=1
 ABHOST=optenv32
