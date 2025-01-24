@@ -1,4 +1,4 @@
-VER=1.16.1
+VER=1.17.0
 SRCS="tbl::https://xorg.freedesktop.org/releases/individual/lib/libxcb-$VER.tar.gz"
-CHKSUMS="sha256::830c58758d814213e338fd1bb454be3787a7ef2aff9b9e4b721d9adef2662536"
+CHKSUMS="sha256::2c69287424c9e2128cb47ffe92171e10417041ec2963bceafb65cb3fcf8f0b85"
 CHKUPDATE="anitya::id=1767"
