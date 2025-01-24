@@ -7,5 +7,4 @@ PKGDES="A tool to download RTMP streams (32-bit x86 runtime)"
 # FIXME: Installation fails with parallelism.
 NOPARALLEL=1
 
-NOLTO=1
 ABHOST=optenv32
