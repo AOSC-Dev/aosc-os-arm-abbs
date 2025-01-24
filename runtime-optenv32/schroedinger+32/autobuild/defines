@@ -7,5 +7,4 @@ PKGDES="An implementation of the Dirac video codec in ANSI C code (32-bit x86 ru
 # FIXME: error: source directory already configured.
 ABSHADOW=0
 
-NOLTO=1
 ABHOST=optenv32
