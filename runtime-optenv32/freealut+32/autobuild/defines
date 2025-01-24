@@ -4,5 +4,4 @@ PKGDEP="openal-soft+32"
 BUILDDEP="devel-base+32"
 PKGDES="OpenAL Utility Toolkit (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
