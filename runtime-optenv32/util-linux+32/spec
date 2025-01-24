@@ -1,4 +1,4 @@
-VER=2.40.1
+VER=2.40.2
 SRCS="tbl::https://www.kernel.org/pub/linux/utils/util-linux/v${VER:0:4}/util-linux-$VER.tar.xz"
-CHKSUMS="sha256::59e676aa53ccb44b6c39f0ffe01a8fa274891c91bef1474752fad92461def24f"
+CHKSUMS="sha256::d78b37a66f5922d70edf3bdfb01a6b33d34ed3c3cafd6628203b2a2b67c8e8b3"
 CHKUPDATE="anitya::id=8179"
