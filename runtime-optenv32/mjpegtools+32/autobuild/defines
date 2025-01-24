@@ -9,5 +9,4 @@ AUTOTOOLS_AFTER=(
     '--without-gtk'
 )
 
-NOLTO=1
 ABHOST=optenv32
