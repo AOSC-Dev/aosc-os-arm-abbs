@@ -7,7 +7,6 @@ PKGDES="A display server to replace X.Org (32-bit x86 runtime)"
 ABHOST=optenv32
 ABTYPE=meson
 
-NOLTO=1
 MESON_AFTER=(
     '-Ddocumentation=false'
     '-Dtests=false'
