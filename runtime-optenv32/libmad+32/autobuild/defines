@@ -7,5 +7,4 @@ PKGDES="LibMAD, an MPEG audio decoder (32-bit x86 runtime)"
 # FIXME: Missing required files, handling manually in prepare.
 RECONF=0
 
-NOLTO=1
 ABHOST=optenv32
