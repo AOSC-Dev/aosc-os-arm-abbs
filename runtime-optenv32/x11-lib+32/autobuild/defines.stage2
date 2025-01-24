@@ -7,5 +7,4 @@ PKGDES="X11 runtime libraries (32-bit x86 runtime)"
 PKGREP="libxp"
 PKGPROV="libxp"
 
-NOLTO=1
 ABHOST=optenv32
