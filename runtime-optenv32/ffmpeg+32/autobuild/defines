@@ -9,5 +9,4 @@ BUILDDEP="devel-base+32 yasm"
 PKGDES="Complete and free Internet live audio and video broadcasting solution (32-bit x86 runtime)"
 
 AB_FLAGS_O3=1
-NOLTO=1
 ABHOST=optenv32
