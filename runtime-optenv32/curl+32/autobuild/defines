@@ -4,7 +4,6 @@ PKGDEP="ca-certs gnutls+32 krb5+32 libssh2+32 openssl+32 rtmpdump+32 zlib+32"
 BUILDDEP="devel-base+32 patchelf"
 PKGDES="A URL retrieval utility and library (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
 
 # FIXME: Missing 32-bit packages for some dependencies.
