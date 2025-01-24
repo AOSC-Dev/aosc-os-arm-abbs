@@ -5,7 +5,6 @@ PKGDEP="alsa-lib+32 dbus+32 eudev+32 gdbm+32 json-c+32 libasyncns+32 \
 BUILDDEP="devel-base+32"
 PKGDES="A featureful, general-purpose sound server (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
 
 # Note: Using gdbm as tdb's waf build system would require nothing less
