@@ -7,5 +7,4 @@ PKGDES="Charset analyzer and converter (32-bit x86 runtime)"
 AUTOTOOLS_AFTER="--with-librecode=/usr --enable-external"
 ABSHADOW=0
 
-NOLTO=1
 ABHOST=optenv32
