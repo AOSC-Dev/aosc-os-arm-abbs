@@ -8,5 +8,4 @@ PKGDES="Library for decoding MPEG-1 and MPEG-2 video streams (32-bit x86 runtime
 # patch Autotools scripts).
 RECONF=0
 
-NOLTO=1
 ABHOST=optenv32
