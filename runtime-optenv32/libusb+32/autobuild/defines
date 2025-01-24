@@ -4,5 +4,4 @@ PKGDEP="eudev+32 glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="A library providing USB device access and manipulation support (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
