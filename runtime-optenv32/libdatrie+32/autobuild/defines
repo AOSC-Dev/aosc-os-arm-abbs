@@ -7,5 +7,4 @@ PKGDES="Implementation of double-array structure for representing trie (32-bit x
 # FIXME: Parallelism causes installation failure.
 NOPARALLEL=1
 
-NOLTO=1
 ABHOST=optenv32
