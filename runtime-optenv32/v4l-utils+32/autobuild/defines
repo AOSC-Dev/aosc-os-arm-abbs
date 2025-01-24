@@ -8,5 +8,4 @@ AUTOTOOLS_AFTER=(
     '--disable-bpf'
 )
 
-NOLTO=1
 ABHOST=optenv32
