@@ -4,7 +4,6 @@ PKGDEP="libogg+32 libpng+32 libvorbis+32"
 BUILDDEP="devel-base+32"
 PKGDES="An open video codec developed by the Xiph.org (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
 
 # FIXME: error: source directory already configured.
