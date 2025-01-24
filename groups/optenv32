@@ -36,6 +36,7 @@ runtime-optenv32/glib+32
 runtime-optenv32/dbus+32
 runtime-optenv32/icu+32
 runtime-optenv32/x11-lib+32
+runtime-optenv32/libpng-1.6+32
 runtime-optenv32/harfbuzz+32
 runtime-optenv32/freetype+32
 runtime-optenv32/fontconfig+32
