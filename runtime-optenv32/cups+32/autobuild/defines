@@ -4,7 +4,6 @@ PKGDEP="krb5+32 libtiff+32 libpng+32 gnutls+32 openldap+32 libusb+32 dbus+32"
 BUILDDEP="devel-base+32"
 PKGDES="The CUPS Printing System (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
 
 # FIXME: --with-ondemand=upstart is the only way to remove systemd dependency.
