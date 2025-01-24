@@ -8,5 +8,4 @@ CMAKE_AFTER=(
     '-DALSA_LIBRARY=/opt/32/lib/libasound.so.2'
 )
 
-NOLTO=1
 ABHOST=optenv32
