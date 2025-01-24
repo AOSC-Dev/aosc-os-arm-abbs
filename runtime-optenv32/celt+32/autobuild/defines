@@ -8,7 +8,6 @@ AUTOTOOLS_AFTER=(
     '--enable-custom-modes'
 )
 
-NOLTO=1
 ABHOST=optenv32
 
 # FIXME: /var/cache/acbs/build/acbs.9ujm7voh/celt-0.11.3/configure: line
