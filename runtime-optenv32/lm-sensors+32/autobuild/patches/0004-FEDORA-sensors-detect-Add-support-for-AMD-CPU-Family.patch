@@ -1,0 +1,28 @@
+From dfd18d5f26ec39d55686af7f958d22896eab0619 Mon Sep 17 00:00:00 2001
+From: Mingcong Bai <jeffbai@aosc.io>
+Date: Fri, 27 Dec 2024 14:24:08 +0800
+Subject: [PATCH 4/4] FEDORA: sensors-detect: Add support for AMD CPU Family
+ 19h
+
+---
+ prog/detect/sensors-detect | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/prog/detect/sensors-detect b/prog/detect/sensors-detect
+index ce06a1d6..7bd66ddd 100755
+--- a/prog/detect/sensors-detect
++++ b/prog/detect/sensors-detect
+@@ -2792,6 +2792,10 @@ use vars qw(@cpu_ids);
+ 		name => "AMD Family 17h thermal sensors",
+ 		driver => "k10temp",
+ 		detect => sub { amd_pci_detect('1463', '15d0', '1493', '1443') },
++	}, {
++		name => "AMD Family 19h thermal sensors",
++		driver => "k10temp",
++		detect => sub { amd_pci_detect('1653') },
+ 	}, {
+ 		name => "AMD Family 15h power sensors",
+ 		driver => "fam15h_power",
+-- 
+2.47.1
+
