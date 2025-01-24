@@ -14,5 +14,4 @@ AUTOTOOLS_AFTER=(
 # FIXME: Fails to install documentation if shadow build is enabled.
 ABSHADOW=0
 
-NOLTO=1
 ABHOST=optenv32
