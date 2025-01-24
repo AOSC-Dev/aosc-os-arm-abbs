@@ -4,7 +4,6 @@ PKGDEP="brotli+32 bzip2+32 libpng+32 x11-lib+32 zlib+32"
 BUILDDEP="devel-base+32"
 PKGDES="Font rendering engine (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
 
 ABTYPE=meson
