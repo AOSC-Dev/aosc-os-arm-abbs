@@ -16,5 +16,4 @@ AUTOTOOLS_AFTER="--enable-shared \
 
 RECONF=0
 NOPARALLEL=1
-NOLTO=1
 ABHOST=optenv32
