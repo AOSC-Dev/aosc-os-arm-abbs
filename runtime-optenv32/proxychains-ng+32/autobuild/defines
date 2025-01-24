@@ -4,7 +4,6 @@ PKGDEP="glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="A hook preloader that allows redirecting TCP traffics of existing dynamically linked programs through one or more SOCKS or HTTP proxies (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
 
 PKGEPOCH=1
