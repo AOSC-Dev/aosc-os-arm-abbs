@@ -6,7 +6,6 @@ PKGDES="LZO compression library (32-bit x86 runtime)"
 
 AB_FLAGS_O3=1
 
-NOLTO=1
 ABHOST=optenv32
 
 AUTOTOOLS_AFTER=(
