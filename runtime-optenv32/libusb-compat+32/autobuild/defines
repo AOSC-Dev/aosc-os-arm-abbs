@@ -4,5 +4,4 @@ PKGDEP="libusb+32"
 BUILDDEP="devel-base+32"
 PKGDES="A compatibility layer needed by packages that have not been upgraded to the libusb-1.0 API (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
