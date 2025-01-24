@@ -9,5 +9,4 @@ AUTOTOOLS_AFTER=(
     '--with-x'
 )
 
-NOLTO=1
 ABHOST=optenv32
