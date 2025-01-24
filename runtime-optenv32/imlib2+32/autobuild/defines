@@ -5,5 +5,4 @@ PKGDEP="libtiff+32 giflib+32 bzip2+32 freetype+32 x11-lib+32 libpng+32 \
 BUILDDEP="devel-base+32"
 PKGDES="Image loading, saving, rendering, and manipulation library (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
