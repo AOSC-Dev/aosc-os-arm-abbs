@@ -4,7 +4,6 @@ PKGDEP="dbus+32 glib+32 x11-lib+32"
 BUILDDEP="devel-base+32"
 PKGDES="Protocol definitions and daemon for D-Bus at-spi (32-bit x86 runtime)"
 
-NOLTO=1
 ABHOST=optenv32
 
 MESON_AFTER=(
