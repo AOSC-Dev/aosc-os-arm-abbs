@@ -10,5 +10,4 @@ AUTOTOOLS_AFTER=(
     '--disable-gtk'
 )
 
-NOLTO=1
 ABHOST=optenv32
