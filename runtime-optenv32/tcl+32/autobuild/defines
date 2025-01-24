@@ -5,5 +5,4 @@ BUILDDEP="devel-base+32"
 PKGDES="Tool Command Lanuage (32-bit x86 runtime)"
 
 NOSTATIC=0
-NOLTO=1
 ABHOST=optenv32
