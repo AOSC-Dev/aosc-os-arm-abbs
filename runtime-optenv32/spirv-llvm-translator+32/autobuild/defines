@@ -10,5 +10,4 @@ CMAKE_AFTER=(
     '-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/opt/32/include/spirv/unified1'
 )
 
-NOLTO=1
 ABHOST=optenv32
