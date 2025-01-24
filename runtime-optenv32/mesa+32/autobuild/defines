@@ -2,7 +2,7 @@ PKGNAME=mesa+32
 PKGSEC=x11
 PKGDEP="llvm+32 x11-lib+32 libdrm+32 expat+32 eudev+32 elfutils+32 \
         libvdpau+32 libglvnd+32 libva+32 spirv-llvm-translator+32 \
-        libunwind+32 wayland+32"
+        libunwind+32 lm-sensors+32 wayland+32"
 BUILDDEP="devel-base+32 glslang mako pyyaml rust-bindgen rustc+32 \
           spirv-tools+32 cbindgen"
 PKGDES="Runtime library for OpenGL, Vulkan, OpenCL, and more (32-bit x86 runtime)"
@@ -17,11 +17,12 @@ ABHOST=optenv32
 
 USECLANG=1
 
+# Note: Intel Ray Tracing is only supported for x86_64.
 MESON_AFTER=(
     '-Ddri-drivers-path=/opt/32/lib/xorg/modules/dri'
     '-Db_ndebug=true'
     '-Dplatforms=x11,wayland'
-    '-Dvulkan-layers=device-select,overlay'
+    '-Dvulkan-layers=device-select,intel-nullhw,overlay'
     '-Degl=enabled'
     '-Dgallium-extra-hud=true'
     '-Dgallium-nine=true'
@@ -39,6 +40,9 @@ MESON_AFTER=(
     '-Dshared-glapi=enabled'
     '-Dvalgrind=disabled'
     '-Db_lto=false'
-    '-Dgallium-drivers=r300,r600,radeonsi,nouveau,virgl,swrast,svga,iris,d3d12,i915,crocus'
-    '-Dvulkan-drivers=amd,intel'
+    '-Dgallium-drivers=r300,r600,radeonsi,nouveau,virgl,swrast,svga,iris,i915,crocus,zink'
+    '-Dvulkan-drivers=amd,intel,intel_hasvk,swrast'
+    '-Dsse2=true'
+    '-Dvulkan-icd-dir=/usr/share/vulkan/icd.d'
+    '-Dlmsensors=enabled'
 )
