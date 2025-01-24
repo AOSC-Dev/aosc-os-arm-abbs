@@ -15,5 +15,4 @@ RECONF=0
 PKGBREAK="libpng-1.6+32"
 PKGREP="libpng-1.6+32"
 
-NOLTO=1
 ABHOST=optenv32
