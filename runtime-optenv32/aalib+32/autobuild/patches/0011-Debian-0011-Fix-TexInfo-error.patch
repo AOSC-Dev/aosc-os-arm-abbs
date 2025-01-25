@@ -40,6 +40,3 @@ index 42e1612..2a4b514 100644
  Display driver is the most significant driver (of course) so it is recomended
  to implement it first. Its structure is as follows:
  
--- 
-2.0.1
-

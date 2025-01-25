@@ -37,6 +37,3 @@ index 696d87b..e2dabe4 100644
      case KEY_MOUSE:
  	return AA_MOUSE
  #endif
--- 
-2.0.1
-

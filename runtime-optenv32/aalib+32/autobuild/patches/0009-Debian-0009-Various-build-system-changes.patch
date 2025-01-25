@@ -119,6 +119,3 @@ index 4de06a8..5901f80 100644
  
  if test $ARCH = solaris; then
    AALIB_RLD_FLAGS="-R\${exec_prefix}/lib"
--- 
-2.0.1
-
