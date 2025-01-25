@@ -1,0 +1,13 @@
+abinfo "Configuring x264 ..."
+"$SRCDIR"/configure \
+    ${AUTOTOOLS_DEF[@]} \
+    --host=i686-aosc-linux-gnu \
+    --enable-shared \
+    --enable-pic
+
+abinfo "Building x264 ..."
+make
+
+abinfo "Installing x264 ..."
+make install \
+    DESTDIR="$PKGDIR"
