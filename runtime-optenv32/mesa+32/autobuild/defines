@@ -15,8 +15,6 @@ AB_FLAGS_O3=1
 NOLTO=1
 ABHOST=optenv32
 
-USECLANG=1
-
 # Note: Intel Ray Tracing is only supported for x86_64.
 MESON_AFTER=(
     '-Ddri-drivers-path=/opt/32/lib/xorg/modules/dri'
