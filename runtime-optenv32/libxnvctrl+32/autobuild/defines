@@ -5,3 +5,6 @@ BUILDDEP="devel-base+32"
 PKGDES="X extension for the NVIDIA NV-CONTROL API (32-bit x86 runtime)"
 
 ABHOST=optenv32
+
+PKGBREAK="nvidia<=565.77 565.77+utils565.57.01<=565.77+utils565.57.01"
+PKGREP="nvidia<=565.77 565.77+utils565.57.01<=565.77+utils565.57.01"
