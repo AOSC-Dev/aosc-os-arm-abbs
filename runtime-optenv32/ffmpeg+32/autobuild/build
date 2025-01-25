@@ -34,7 +34,8 @@ abinfo "Configuring FFmpeg ..."
     --enable-swresample \
     --enable-vdpau \
     --enable-version3 \
-    --enable-vaapi
+    --enable-vaapi \
+    --disable-doc
 
 abinfo "Building FFmpeg ..."
 make
