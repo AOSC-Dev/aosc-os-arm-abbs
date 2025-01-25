@@ -1,6 +1,6 @@
-VER=1.17.1
-REL=2
+UPSTREAM_VER=1.21.3-final
+VER=${UPSTREAM_VER/-final/}
 SRCS="tbl::https://web.mit.edu/kerberos/dist/krb5/${VER%.*}/krb5-$VER.tar.gz"
-CHKSUMS="sha256::3706d7ec2eaa773e0e32d3a87bf742ebaecae7d064e190443a3acddfd8afb181"
+CHKSUMS="sha256::b7a4cd5ead67fb08b980b21abd150ff7217e85ea320c9ed0c6dadd304840ad35"
 CHKUPDATE="anitya::id=13287"
 SUBDIR="krb5-$VER/src"
