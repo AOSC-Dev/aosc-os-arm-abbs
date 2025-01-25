@@ -43,6 +43,3 @@ index a3dc713..dc3b220 100644
  	break;
      case AA_BOLD:
  	attrset(A_BOLD);
--- 
-2.0.1
-

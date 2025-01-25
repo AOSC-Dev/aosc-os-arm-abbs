@@ -25,6 +25,3 @@ index 610e026..918cb3a 100644
      mypid = getpid();
      if (tty_fd == -1) {
  	tty_fd = fileno(stdin);
--- 
-2.0.1
-
