@@ -6,3 +6,8 @@ rm -v "$PKGDIR"/opt/32/lib/libiberty.a
 
 abinfo "Marking libgcc_s.so.1 as executable ..."
 chmod -v 0755 "$PKGDIR"/opt/32/lib/libgcc_s.so.1
+
+abinfo "Installing multilib header ..."
+mkdir -pv "$PKGDIR/usr/include/gnu"
+ln -sv ../../../opt/32/include/gnu/stubs-32.h \
+    "$PKGDIR"/usr/include/gnu/stubs-32.h

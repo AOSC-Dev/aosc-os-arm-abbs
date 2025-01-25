@@ -48,3 +48,6 @@ NOSTATIC=0
 AB_FLAGS_O3=1
 AB_FLAGS_SPECS=0
 ABHOST=optenv32
+
+PKGBREAK="32subsystem<=1:2"
+PKGREP="32subsystem<=1:2"
