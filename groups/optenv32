@@ -169,7 +169,6 @@ runtime-optenv32/libmad+32
 runtime-optenv32/libpcap+32
 runtime-optenv32/librsvg+32
 runtime-optenv32/libshout+32
-runtime-optenv32/libsidplay+32
 runtime-optenv32/libtasn1+32
 runtime-optenv32/libusb-compat+32
 runtime-optenv32/libva-intel-driver+32
