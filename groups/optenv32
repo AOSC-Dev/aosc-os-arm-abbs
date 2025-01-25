@@ -153,7 +153,6 @@ runtime-optenv32/cups+32
 runtime-optenv32/a52dec+32
 runtime-optenv32/alsa-plugins+32
 runtime-optenv32/celt+32
-runtime-optenv32/db+32
 runtime-optenv32/fluidsynth+32
 runtime-optenv32/gconf+32
 runtime-optenv32/glew+32
