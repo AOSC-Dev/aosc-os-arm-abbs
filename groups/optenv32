@@ -172,7 +172,6 @@ runtime-optenv32/libshout+32
 runtime-optenv32/libtasn1+32
 runtime-optenv32/libusb-compat+32
 runtime-optenv32/libva-intel-driver+32
-runtime-optenv32/libvisual+32
 runtime-optenv32/nlohmann-json+32
 runtime-optenv32/vulkan-headers+32
 runtime-optenv32/mangohud+32
