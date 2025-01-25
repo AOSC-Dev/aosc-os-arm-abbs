@@ -7,7 +7,6 @@ PKGDES="The Kerberos network authentication system (32-bit x86 runtime)"
 AUTOTOOLS_AFTER="--enable-shared \
                  --without-system-et \
                  --without-system-ss \
-                 --without-tcl \
                  --enable-dns-for-realm \
                  --with-ldap \
                  --without-system-verto \
