@@ -1,5 +1,5 @@
 VER=3.6
-SRCS="git::commit=tags/$VER::https://bitbucket.org/multicoreware/x265_git"
-CHKSUMS="SKIP"
+SRCS="tbl::http://ftp.videolan.org/pub/videolan/x265/x265_$VER.tar.gz"
+CHKSUMS="sha256::663531f341c5389f460d730e62e10a4fcca3428ca2ca109693867bc5fe2e2807"
 CHKUPDATE="anitya::id=7275"
-SUBDIR="x265+32/source"
+SUBDIR="x265_$VER/source"
