@@ -1,7 +1,7 @@
-From 55d7d493fc39fa98a3305e250e99ea25a7166caf Mon Sep 17 00:00:00 2001
+From 12aa67a7399e93c21b5905244e4eed0395d10eaf Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Tue, 12 Mar 2024 00:17:46 +0800
-Subject: [PATCH 2/2] AOSCOS: [LOONGARCH64] fix(iris_bufmgr.c): set PAGE_SIZE
+Subject: [PATCH 2/3] AOSCOS: [LOONGARCH64] fix(iris_bufmgr.c): set PAGE_SIZE
  as 16384
 
 Obviously not ideal, but this is simply meant as a preview/PoC.
@@ -12,7 +12,7 @@ Signed-off-by: Mingcong Bai <jeffbai@aosc.io>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/src/gallium/drivers/iris/iris_bufmgr.c b/src/gallium/drivers/iris/iris_bufmgr.c
-index fb59ea226e2..b64d261ff0c 100644
+index ed8d0848279..e78bf98b077 100644
 --- a/src/gallium/drivers/iris/iris_bufmgr.c
 +++ b/src/gallium/drivers/iris/iris_bufmgr.c
 @@ -96,7 +96,7 @@
@@ -25,5 +25,5 @@ index fb59ea226e2..b64d261ff0c 100644
  
  #define WARN_ONCE(cond, fmt...) do {                            \
 -- 
-2.47.1
+2.48.1
 
