@@ -1,4 +1,4 @@
-From cafa3207afefd2fbccfaf79c49bc02a7c473540f Mon Sep 17 00:00:00 2001
+From 2712e982396f5a405802b6a1b7805b54dd3afc84 Mon Sep 17 00:00:00 2001
 From: Icenowy Zheng <uwu@icenowy.me>
 Date: Thu, 16 Jan 2025 09:05:31 +0800
 Subject: [PATCH 3/3] FROMLIST: zink: Do not use demote on IMG blobs
@@ -38,7 +38,7 @@ index 5613724c068..77cceedd68f 100644
  
     screen->nir_options.support_indirect_inputs = (uint8_t)BITFIELD_MASK(PIPE_SHADER_TYPES);
 diff --git a/src/gallium/drivers/zink/zink_screen.c b/src/gallium/drivers/zink/zink_screen.c
-index e4e63f7a35c..8f38a8b7cad 100644
+index 1740238f458..d35e0bca727 100644
 --- a/src/gallium/drivers/zink/zink_screen.c
 +++ b/src/gallium/drivers/zink/zink_screen.c
 @@ -938,8 +938,9 @@ zink_init_screen_caps(struct zink_screen *screen)
