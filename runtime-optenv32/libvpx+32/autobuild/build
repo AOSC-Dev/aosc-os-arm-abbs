@@ -1,8 +1,3 @@
-export PATH=/opt/32/bin:$PATH
-CC=i686-pc-linux-gnu-gcc
-CXX=i686-pc-linux-gnu-g++
-AS=i686-pc-linux-gnu-as
-
 abinfo "Configuring $PKGNAME ..."
 "$SRCDIR"/configure \
     --prefix=/opt/32 \
@@ -29,6 +24,3 @@ make
 abinfo "Installing $PKGNAME ..."
 make install \
     DIST_DIR="$PKGDIR"/opt/32
-
-rm -rf "$PKGDIR"/opt/32/{bin,share,docs}
-rm "$PKGDIR"/opt/32/* || true

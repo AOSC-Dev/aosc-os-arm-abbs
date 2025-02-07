@@ -1,9 +1,10 @@
 abinfo "Building libXNVCtrl.so ..."
-export PATH=/opt/32/bin:$PATH
-export CC=i686-pc-linux-gnu-gcc
-
 make
 
 abinfo "Installing libXNVCtrl.so ..."
 install -dvm755 "$PKGDIR"/opt/32/lib/
 cp -Pv "$SRCDIR"/_out/Linux_*/libXNVCtrl.so* "$PKGDIR"/opt/32/lib/
+
+abinfo "Installing headers ..."
+install -Dvm644 "$SRCDIR"/*.h \
+    -t "$PKGDIR"/opt/32/include/NVCtrl/

@@ -1,7 +1,7 @@
 PKGNAME=mpfr+32
 PKGSEC=libs
 PKGDEP="gmp+32 glibc+32"
-PKGDES="Functions for multiple precision math"
+PKGDES="Functions for multiple precision math (32-bit x86 runtime)"
 BUILDDEP="devel-base+32"
 
 # Configuration:

@@ -2,6 +2,7 @@ _DRIVER_VER=565.77
 # Note: sometimes utilities are not updated timely
 _UTILS_VERS=565.57.01
 VER=${_DRIVER_VER}+utils${_UTILS_VERS}
+REL=1
 SRCS="git::rename=nvidia-driver;commit=tags/aosc/${_DRIVER_VER}/1::https://github.com/AOSC-Tracking/nvidia-open
 	git::rename=nvidia-settings;commit=tags/${_UTILS_VERS}::https://github.com/NVIDIA/nvidia-settings
 	git::rename=nvidia-xconfig;commit=tags/${_UTILS_VERS}::https://github.com/NVIDIA/nvidia-xconfig

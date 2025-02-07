@@ -1,3 +1,4 @@
-mkdir -p "$PKGDIR"/opt/32/lib/glvnd
+abinfo "Moving runtime libraries out for alternatives ..."
+mkdir -pv "$PKGDIR"/opt/32/lib/glvnd
 mv -v "$PKGDIR"/opt/32/lib/*.so* \
     "$PKGDIR"/opt/32/lib/glvnd/

@@ -4,7 +4,6 @@ PKGDEP="tzdata linux+api+32"
 PKGDES="GNU C Library (optenv32)"
 BUILDDEP="binutils+32 gcc+32"
 
-NOLTO=1
 NOSTATIC=0
 ABSTRIP=0
 

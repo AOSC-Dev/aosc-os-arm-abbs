@@ -1,6 +1,6 @@
-VER=4.24
+VER=4.35
 REL=1
 SRCS="tbl::https://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v$VER/src/nspr-$VER.tar.gz"
-CHKSUMS="sha256::90a59a0df6a11528749647fe18401cc7e03881e3e63c309f8c520ce06dd413d0"
-SUBDIR=nspr-$VER/nspr
+CHKSUMS="sha256::7ea3297ea5969b5d25a5dd8d47f2443cda88e9ee746301f6e1e1426f8a6abc8f"
+SUBDIR="nspr-$VER/nspr"
 CHKUPDATE="anitya::id=7953"

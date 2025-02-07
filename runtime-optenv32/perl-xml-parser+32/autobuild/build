@@ -1,2 +1,0 @@
-export PATH=/opt/32/bin:$PATH
-mkdir $PKGDIR

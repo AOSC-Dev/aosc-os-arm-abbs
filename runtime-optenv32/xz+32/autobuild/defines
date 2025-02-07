@@ -1,5 +1,5 @@
 PKGNAME=xz+32
-PKGDES="General-purpose data compression software with a high compression ratio (optenv32)"
+PKGDES="General-purpose data compression software with a high compression ratio (32-bit x86 runtime)"
 PKGDEP="glibc+32"
 BUILDDEP="devel-base+32 po4a"
 PKGSEC=utils

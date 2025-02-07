@@ -1,8 +1,9 @@
-VER=6.7.12
+VER=6.12.7
 # RC=
 # Use this for RC releases.
 #SRCS="tbl::https://git.kernel.org/torvalds/t/linux-${VER%%.0}-rc${RC}.tar.gz"
 # Use this for stable releases.
 SRCS="tbl::https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${VER%%.0}.tar.xz"
-CHKSUMS="sha256::6c2979e3948806a0dbacba193f8453ea42c179c1eb9f6136e3c35d87e5707984"
-CHKUPDATE="anitya::id=6501"
+CHKSUMS="sha256::f785fb648a0e0b66a943bb3228a4b6ed62c90b985cd1ebf69da5d38e589da0cf"
+# Note: linux-stable~6.12 tracks updates on the 6.12 branch (longterm).
+CHKUPDATE="anitya::id=375621"

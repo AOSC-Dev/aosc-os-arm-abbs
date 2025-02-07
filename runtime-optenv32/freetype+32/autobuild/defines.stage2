@@ -1,0 +1,17 @@
+PKGNAME=freetype+32
+PKGSEC=libs
+PKGDEP="brotli+32 bzip2+32 libpng+32 x11-lib+32 zlib+32"
+BUILDDEP="devel-base+32"
+PKGDES="Font rendering engine (32-bit x86 runtime)"
+
+ABHOST=optenv32
+
+ABTYPE=meson
+MESON_AFTER=(
+    '-Dbrotli=enabled'
+    '-Dbzip2=enabled'
+    '-Dharfbuzz=disabled'
+    '-Dmmap=enabled'
+    '-Dpng=enabled'
+    '-Dzlib=system'
+)

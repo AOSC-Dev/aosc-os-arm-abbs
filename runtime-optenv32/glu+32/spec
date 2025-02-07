@@ -1,4 +1,4 @@
-VER=9.0.1
-SRCS="tbl::https://mesa.freedesktop.org/archive/glu/glu-$VER.tar.gz"
-CHKSUMS="sha256::f6f484cfcd51e489afe88031afdea1e173aa652697e4c19ddbcb8260579a10f7"
+VER=9.0.3
+SRCS="tbl::https://mesa.freedesktop.org/archive/glu/glu-$VER.tar.xz"
+CHKSUMS="sha256::bd43fe12f374b1192eb15fe20e45ff456b9bc26ab57f0eee919f96ca0f8a330f"
 CHKUPDATE="anitya::id=13518"

@@ -18,10 +18,6 @@ make -C doc install \
     DESTDIR="$PKGDIR" \
     PREFIX=/usr
 
-abinfo "Installing XNVCtrl headers ..."
-install -Dvm644 src/libXNVCtrl/*.h -t "$PKGDIR"/usr/include/NVCtrl
-popd
-
 pushd "$SRCDIR"/nvidia-xconfig
 abinfo "Building nvidia-xconfig ..."
 make all DO_STRIP=

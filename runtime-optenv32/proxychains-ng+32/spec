@@ -1,4 +1,4 @@
-VER=20161205
-SRCS="git::commit=83b535f86a3ac69c8273f328467d6c791c2ea794::https://github.com/xiaohui-zhangxh/proxychains"
+VER=4.17
+SRCS="git::commit=tags/v$VER::https://github.com/rofl0r/proxychains-ng"
 CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=6499"

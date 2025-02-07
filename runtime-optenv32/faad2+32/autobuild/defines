@@ -4,7 +4,6 @@ PKGDEP="glibc+32"
 BUILDDEP="32subsystem"
 PKGDES="ISO AAC audio decoder (optenv32)"
 
-NOLTO=1
 ABHOST=optenv32
 
 ABTYPE=cmakeninja

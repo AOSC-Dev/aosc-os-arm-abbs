@@ -1,5 +1,0 @@
-PKGNAME=perl-xml-parser+32
-PKGSEC=perl
-PKGDES="Transitional package for perl-xml-parser"
-NOLTO=1
-ABHOST=noarch

@@ -1,2 +1,0 @@
-sed -e "s/pthread-stubs//" -i configure.ac
-autoreconf -fi

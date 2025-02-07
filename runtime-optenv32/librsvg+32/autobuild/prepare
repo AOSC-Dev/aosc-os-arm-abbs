@@ -1,0 +1,4 @@
+abinfo 'Setting LDFLAGS to use LLVM lld ...'
+export LDFLAGS="$LDFLAGS -fuse-ld=lld"
+
+export PATH=/usr/bin:"$PATH"

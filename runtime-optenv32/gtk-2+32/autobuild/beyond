@@ -1,0 +1,2 @@
+abinfo "Dropping gtk-update-icon-cache ..."
+rm -v "$PKGDIR"/opt/32/bin/gtk-update-icon-cache

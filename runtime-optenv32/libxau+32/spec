@@ -1,5 +1,4 @@
-VER=1.0.9
-SRCS="tbl::https://xorg.freedesktop.org/releases/individual/lib/libXau-$VER.tar.bz2"
-CHKSUMS="sha256::ccf8cbf0dbf676faa2ea0a6d64bcc3b6746064722b606c8c52917ed00dcb73ec"
-REL=1
+VER=1.0.12
+SRCS="tbl::https://xorg.freedesktop.org/releases/individual/lib/libXau-$VER.tar.xz"
+CHKSUMS="sha256::74d0e4dfa3d39ad8939e99bda37f5967aba528211076828464d2777d477fc0fb"
 CHKUPDATE="anitya::id=1765"

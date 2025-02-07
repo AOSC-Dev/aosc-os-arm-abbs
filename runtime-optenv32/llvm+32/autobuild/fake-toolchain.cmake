@@ -1,0 +1,7 @@
+set(CMAKE_C_COMPILER_TARGET "i686-aosc-linux-gnu")
+set(CMAKE_CXX_COMPILER_TARGET "i686-aosc-linux-gnu")
+set(LLVM_DEFAULT_TARGET_TRIPLE "i686-aosc-linux-gnu")
+set(LLVM_HOST_TRIPLE "i686-aosc-linux-gnu")
+set(CLANG_DEFAULT_LINKER "/opt/32/bin/i686-aosc-linux-gnu-ld")
+set(RUNTIMES_CMAKE_ARGS "-DCMAKE_EXE_LINKER_FLAGS_INIT=-Wl,--sysroot=;-DCMAKE_SHARED_LINKER_FLAGS_INIT=-Wl,--sysroot=")
+execute_process(COMMAND clang --print-resource-dir OUTPUT_VARIABLE CLANG_RESOURCE_DIR OUTPUT_STRIP_TRAILING_WHITESPACE)

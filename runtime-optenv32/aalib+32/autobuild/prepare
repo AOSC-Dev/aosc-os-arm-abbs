@@ -1,1 +1,2 @@
-export CFLAGS+="-I/opt/32/include/ncursesw"
+abinfo "Appending /opt/32/include/ncursesw to include path ..."
+export CFLAGS="${CFLAGS} -I/opt/32/include/ncursesw"
