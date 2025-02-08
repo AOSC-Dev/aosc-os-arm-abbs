@@ -1,5 +1,5 @@
-VER=2.43.1
-REL=2
-SRCS="tbl::https://ftp.gnu.org/gnu/binutils/binutils-$VER.tar.xz"
-CHKSUMS="sha256::13f74202a3c4c51118b797a39ea4200d3f6cfbe224da6d1d95bb938480132dfd"
+VER=2.43.50
+#SRCS="tbl::https://ftp.gnu.org/gnu/binutils/binutils-$VER.tar.xz"
+SRCS="git::commit=c2dbc2929e87557f8bc030f6f010d67b19f99f12::https://sourceware.org/git/binutils-gdb.git"
+CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=7981"
