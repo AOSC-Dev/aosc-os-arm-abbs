@@ -1,4 +1,4 @@
-VER=0.3.28
+VER=0.3.29
 SRCS="git::commit=tags/v$VER::https://github.com/xianyi/OpenBLAS"
 CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=2540"
