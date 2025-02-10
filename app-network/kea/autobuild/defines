@@ -1,0 +1,8 @@
+PKGNAME=kea
+PKGSEC=net
+PKGDES="IPv4 and IPv6 DHCP server from ISC"
+PKGDEP="boost openssl log4cplus bison"
+PKGSUG="postgresql mariadb"
+BUILDDEP="postgresql mariadb"
+
+AUTOTOOLS_AFTER="--with-pgsql --with-mysql --enable-shell --enable-perfdhcp"

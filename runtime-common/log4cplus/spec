@@ -1,0 +1,4 @@
+VER=2.1.2
+SRCS="tbl::https://github.com/log4cplus/log4cplus/releases/download/REL_${VER//./_}/log4cplus-${VER}.tar.xz"
+CHKSUMS="sha512::d6285e4964e8eda072b61e0585d5fe08c1d942b688752baf75ba230d49691070156ab4da1803d82d0c09128bcb87e21910e38ee9441df13ff762d527fe431444"
+CHKUPDATE="anitya::id=1835"

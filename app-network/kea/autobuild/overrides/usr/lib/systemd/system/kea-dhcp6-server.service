@@ -1,0 +1,13 @@
+[Unit]
+Description=Kea IPv6 DHCP server
+After=network.target
+
+[Service]
+User=kea
+Type=exec
+ExecStart=/usr/bin/kea-dhcp6 -c /etc/kea/kea-dhcp6.conf
+KillSignal=SIGINT
+ExecReload=kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

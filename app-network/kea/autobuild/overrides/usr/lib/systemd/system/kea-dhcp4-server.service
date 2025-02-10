@@ -1,0 +1,13 @@
+[Unit]
+Description=Kea IPv4 DHCP server
+After=network.target
+
+[Service]
+Type=exec
+User=kea
+ExecStart=/usr/bin/kea-dhcp4 -c /etc/kea/kea-dhcp4.conf
+KillSignal=SIGINT
+ExecReload=kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

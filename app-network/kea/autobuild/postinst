@@ -1,0 +1,5 @@
+echo "Setting up kea group and user ..."
+systemd-sysusers kea.conf
+
+echo "Setting up kea runtime directory ..."
+systemd-tmpfiles --create kea.conf

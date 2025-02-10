@@ -1,0 +1,12 @@
+[Unit]
+Wants=network.target
+After=network.target
+
+[Service]
+User=kea
+Type=exec
+ExecStart=/usr/bin/kea-dhcp-ddns -c /etc/kea/kea-dhcp-ddns.conf
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target
