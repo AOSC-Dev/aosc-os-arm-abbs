@@ -1,0 +1,4 @@
+PKGNAME=log4cplus
+PKGSEC=libs
+PKGDES="C++ logging API modeled after the Java log4j API"
+BUILDDEP="doxygen"
