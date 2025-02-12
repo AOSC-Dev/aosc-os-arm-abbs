@@ -1,4 +1,4 @@
-VER=5.4.2
-SRCS="tbl::https://download.gnome.org/sources/gtksourceview/${VER:0:3}/gtksourceview-$VER.tar.xz"
-CHKSUMS="sha256::ad140e07eb841910de483c092bd4885abd29baadd6e95fa22d93ed2df0b79de7"
+VER=5.15.0
+SRCS="tbl::https://download.gnome.org/sources/gtksourceview/${VER:0:4}/gtksourceview-$VER.tar.xz"
+CHKSUMS="sha256::2ef21e55799253b8bdf216d5329e8025eeb1a3f1e3e2be44711ff032aaf17738"
 CHKUPDATE="html::url=https://download.gnome.org/sources/gtksourceview/${VER%.*}/;pattern=gtksourceview-(.+?).tar.xz"
