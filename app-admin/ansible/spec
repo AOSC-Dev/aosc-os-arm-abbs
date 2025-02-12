@@ -1,4 +1,4 @@
-VER=2.12.1
+VER=2.18.2
 SRCS="tbl::https://github.com/ansible/ansible/archive/refs/tags/v$VER.tar.gz"
-CHKSUMS="sha256::69b3cdeb56513fffad95bee5323f4f96a04d5bcc9236d9897cf603eb2a50959c"
+CHKSUMS="sha256::0c90dd74b6ed94678e3806f25ccc7739d82fb6171eaa9d47092cbf0e25cf4ae9"
 CHKUPDATE="anitya::id=6097"
