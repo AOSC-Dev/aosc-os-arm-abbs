@@ -1,7 +1,7 @@
-From 0cf5976db472a31c431e7ff1e52a6f02ea3bab6a Mon Sep 17 00:00:00 2001
+From 506e0fb1af9627d3e33ff3b10b01ff6a93d4fd8b Mon Sep 17 00:00:00 2001
 From: Mitch Curtis <mitch.curtis@qt.io>
 Date: Sat, 5 Oct 2024 23:12:47 +0800
-Subject: [PATCH 08/12] Revert "QQmlDelegateModel: fix delegates not being
+Subject: [PATCH 5/8] Revert "QQmlDelegateModel: fix delegates not being
  created in certain cases"
 
 This reverts commit 6561344dd2d1ba69abe6edec4fe340b256da9e13. It needs
@@ -14,136 +14,14 @@ Reviewed-by: Richard Moe Gustavsen <richard.gustavsen@qt.io>
 (cherry picked from commit 281f620ceea03e7a222d796ae0cca917a9778368)
 Reviewed-by: Qt Cherry-pick Bot <cherrypick_bot@qt-project.org>
 ---
- .../src/qmlmodels/qqmldelegatemodel.cpp       |  61 +++-----
- .../src/qmlmodels/qqmldelegatemodel_p_p.h     |   2 -
  .../auto/qml/qqmldelegatemodel/CMakeLists.txt |   1 -
  .../auto/qml/qqmldelegatemodel/data/reset.qml |  28 ----
  .../data/resetInQAIMConstructor.qml           |  28 ----
  .../tst_qqmldelegatemodel.cpp                 | 135 ++----------------
- 6 files changed, 29 insertions(+), 226 deletions(-)
+ 4 files changed, 10 insertions(+), 182 deletions(-)
  delete mode 100644 qtdeclarative/tests/auto/qml/qqmldelegatemodel/data/reset.qml
  delete mode 100644 qtdeclarative/tests/auto/qml/qqmldelegatemodel/data/resetInQAIMConstructor.qml
 
-diff --git a/qtdeclarative/src/qmlmodels/qqmldelegatemodel.cpp b/qtdeclarative/src/qmlmodels/qqmldelegatemodel.cpp
-index e84e8e6453..8a1482cbf8 100644
---- a/qtdeclarative/src/qmlmodels/qqmldelegatemodel.cpp
-+++ b/qtdeclarative/src/qmlmodels/qqmldelegatemodel.cpp
-@@ -167,7 +167,6 @@ QQmlDelegateModelPrivate::QQmlDelegateModelPrivate(QQmlContext *ctxt)
-     , m_transaction(false)
-     , m_incubatorCleanupScheduled(false)
-     , m_waitingToFetchMore(false)
--    , m_maybeResetRoleNames(false)
-     , m_cacheItems(nullptr)
-     , m_items(nullptr)
-     , m_persistedItems(nullptr)
-@@ -372,7 +371,6 @@ void QQmlDelegateModelPrivate::connectToAbstractItemModel()
-     QObject::connect(aim, &QAbstractItemModel::modelAboutToBeReset, q, &QQmlDelegateModel::_q_modelAboutToBeReset);
-     qmlobject_connect(aim, QAbstractItemModel, SIGNAL(layoutChanged(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint)),
-                       q, QQmlDelegateModel, SLOT(_q_layoutChanged(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint)));
--    QObject::connect(aim, &QAbstractItemModel::modelReset, q, &QQmlDelegateModel::handleModelReset);
-     QObject::connect(aim, &QAbstractItemModel::layoutChanged, q, &QQmlDelegateModel::_q_layoutChanged);
- }
- 
-@@ -403,7 +401,6 @@ void QQmlDelegateModelPrivate::disconnectFromAbstractItemModel()
-     QObject::disconnect(aim, &QAbstractItemModel::modelAboutToBeReset, q, &QQmlDelegateModel::_q_modelAboutToBeReset);
-     QObject::disconnect(aim, SIGNAL(layoutChanged(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint)),
-                         q, SLOT(_q_layoutChanged(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint)));
--    QObject::disconnect(aim, &QAbstractItemModel::modelReset, q, &QQmlDelegateModel::handleModelReset);
-     QObject::disconnect(aim, &QAbstractItemModel::layoutChanged, q, &QQmlDelegateModel::_q_layoutChanged);
- }
- 
-@@ -1914,28 +1911,25 @@ void QQmlDelegateModel::_q_modelAboutToBeReset()
-     Q_D(QQmlDelegateModel);
-     if (!d->m_adaptorModel.adaptsAim())
-         return;
--
--    /*
--        roleNames are generally guaranteed to be stable (given that QAIM has no
--        change signal for them), except that resetting the model is allowed to
--        invalidate them (QTBUG-32132). DelegateModel must take this into account by
--        snapshotting the current roleNames before the model is reset.
--        Afterwards, if we detect that roleNames has changed, we throw the
--        current model set up away and rebuild everything from scratch – it is
--        unlikely that a more efficient implementation would be worth it.
--
--        If we detect no changes, we simply use the existing logic to handle the
--        model reset.
--
--        This (role name resetting) logic relies on the fact that
--        modelAboutToBeReset must be followed by a modelReset signal before any
--        further modelAboutToBeReset can occur. However, it's possible for user
--        code to begin the reset before connectToAbstractItemModel is called
--        (QTBUG-125053), in which case we don't attempt to reset the role names.
--    */
--    Q_ASSERT(!d->m_maybeResetRoleNames);
--    d->m_maybeResetRoleNames = true;
--    d->m_roleNamesBeforeReset = d->m_adaptorModel.aim()->roleNames();
-+    auto aim = d->m_adaptorModel.aim();
-+    auto oldRoleNames = aim->roleNames();
-+    // this relies on the fact that modelAboutToBeReset must be followed
-+    // by a modelReset signal before any further modelAboutToBeReset can occur
-+    QObject::connect(aim, &QAbstractItemModel::modelReset, this, [this, d, oldRoleNames, aim](){
-+        if (!d->m_adaptorModel.adaptsAim() || d->m_adaptorModel.aim() != aim)
-+            return;
-+        if (oldRoleNames == aim->roleNames()) {
-+            // if the rolenames stayed the same (most common case), then we don't have
-+            // to throw away all the setup that we did
-+            handleModelReset();
-+        } else {
-+            // If they did change, we give up and just start from scratch via setMode
-+            setModel(QVariant::fromValue(model()));
-+            // but we still have to call handleModelReset, otherwise views will
-+            // not refresh
-+            handleModelReset();
-+        }
-+    }, Qt::SingleShotConnection);
- }
- 
- void QQmlDelegateModel::handleModelReset()
-@@ -1945,23 +1939,6 @@ void QQmlDelegateModel::handleModelReset()
-         return;
- 
-     int oldCount = d->m_count;
--
--    if (d->m_maybeResetRoleNames) {
--        auto aim = d->m_adaptorModel.aim();
--        if (!d->m_adaptorModel.adaptsAim() || d->m_adaptorModel.aim() != aim)
--            return;
--
--        // If the role names stayed the same (most common case), then we don't have
--        // to throw away all the setup that we did.
--        // If they did change, we give up and just start from scratch via setModel.
--        // We do this before handling the reset to ensure that views refresh.
--        if (aim->roleNames() != d->m_roleNamesBeforeReset)
--            setModel(QVariant::fromValue(model()));
--
--        d->m_maybeResetRoleNames = false;
--        d->m_roleNamesBeforeReset.clear();
--    }
--
-     d->m_adaptorModel.rootIndex = QModelIndex();
- 
-     if (d->m_complete) {
-diff --git a/qtdeclarative/src/qmlmodels/qqmldelegatemodel_p_p.h b/qtdeclarative/src/qmlmodels/qqmldelegatemodel_p_p.h
-index d28d88dac7..44181cf138 100644
---- a/qtdeclarative/src/qmlmodels/qqmldelegatemodel_p_p.h
-+++ b/qtdeclarative/src/qmlmodels/qqmldelegatemodel_p_p.h
-@@ -334,7 +334,6 @@ public:
-     QQmlReusableDelegateModelItemsPool m_reusableItemsPool;
-     QList<QQDMIncubationTask *> m_finishedIncubating;
-     QList<QByteArray> m_watchedRoles;
--    QHash<int, QByteArray> m_roleNamesBeforeReset;
- 
-     QString m_filterGroup;
- 
-@@ -348,7 +347,6 @@ public:
-     bool m_transaction : 1;
-     bool m_incubatorCleanupScheduled : 1;
-     bool m_waitingToFetchMore : 1;
--    bool m_maybeResetRoleNames : 1;
- 
-     union {
-         struct {
 diff --git a/qtdeclarative/tests/auto/qml/qqmldelegatemodel/CMakeLists.txt b/qtdeclarative/tests/auto/qml/qqmldelegatemodel/CMakeLists.txt
 index 966f5229df..8d8a90e0a7 100644
 --- a/qtdeclarative/tests/auto/qml/qqmldelegatemodel/CMakeLists.txt
@@ -225,18 +103,18 @@ index cb1f226737..0000000000
 -    }
 -}
 diff --git a/qtdeclarative/tests/auto/qml/qqmldelegatemodel/tst_qqmldelegatemodel.cpp b/qtdeclarative/tests/auto/qml/qqmldelegatemodel/tst_qqmldelegatemodel.cpp
-index d9f8b7aeba..2cacda5513 100644
+index 3f08d8fc85..47d531e8e8 100644
 --- a/qtdeclarative/tests/auto/qml/qqmldelegatemodel/tst_qqmldelegatemodel.cpp
 +++ b/qtdeclarative/tests/auto/qml/qqmldelegatemodel/tst_qqmldelegatemodel.cpp
-@@ -4,7 +4,6 @@
- #include <QtTest/qtest.h>
+@@ -5,7 +5,6 @@
  #include <QtCore/qjsonobject.h>
+ #include <QtCore/qsortfilterproxymodel.h>
  #include <QtCore/QConcatenateTablesProxyModel>
 -#include <QtCore/qtimer.h>
  #include <QtGui/QStandardItemModel>
  #include <QtQml/qqmlcomponent.h>
  #include <QtQml/qqmlapplicationengine.h>
-@@ -12,17 +11,11 @@
+@@ -13,17 +12,11 @@
  #include <QtQmlModels/private/qqmllistmodel_p.h>
  #include <QtQuick/qquickview.h>
  #include <QtQuick/qquickitem.h>
@@ -254,7 +132,7 @@ index d9f8b7aeba..2cacda5513 100644
  class tst_QQmlDelegateModel : public QQmlDataTest
  {
      Q_OBJECT
-@@ -32,8 +25,6 @@ public:
+@@ -33,8 +26,6 @@ public:
  
  private slots:
      void resettingRolesRespected();
@@ -263,8 +141,8 @@ index d9f8b7aeba..2cacda5513 100644
      void valueWithoutCallingObjectFirst_data();
      void valueWithoutCallingObjectFirst();
      void qtbug_86017();
-@@ -53,9 +44,16 @@ private slots:
-     void viewUpdatedOnDelegateChoiceAffectingRoleChange();
+@@ -55,9 +46,16 @@ private slots:
+     void proxyModelWithDelayedSourceModelInListView();
  };
  
 -class BaseAbstractItemModel : public QAbstractItemModel
@@ -281,7 +159,7 @@ index d9f8b7aeba..2cacda5513 100644
      QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const override
      {
          if (parent.isValid())
-@@ -93,21 +91,10 @@ public:
+@@ -95,21 +93,10 @@ public:
          return mValues.at(index.row());
      }
  
@@ -304,7 +182,7 @@ index d9f8b7aeba..2cacda5513 100644
  tst_QQmlDelegateModel::tst_QQmlDelegateModel()
      : QQmlDataTest(QT_QMLTEST_DATADIR)
  {
-@@ -166,109 +153,7 @@ void tst_QQmlDelegateModel::resettingRolesRespected()
+@@ -168,109 +155,7 @@ void tst_QQmlDelegateModel::resettingRolesRespected()
      QObject *root = engine.rootObjects().constFirst();
      QVERIFY(!root->property("success").toBool());
      model->change();
@@ -416,5 +294,5 @@ index d9f8b7aeba..2cacda5513 100644
  
  void tst_QQmlDelegateModel::valueWithoutCallingObjectFirst_data()
 -- 
-2.46.2
+2.48.1
 

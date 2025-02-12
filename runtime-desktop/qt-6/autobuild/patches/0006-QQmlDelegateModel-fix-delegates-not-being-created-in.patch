@@ -1,7 +1,7 @@
-From c6cfc217414f4e0d86bbc7d21201ea1c32395b84 Mon Sep 17 00:00:00 2001
+From dc2e71d3239a0592fcd9a38d33b9cd475c1dff60 Mon Sep 17 00:00:00 2001
 From: Mitch Curtis <mitch.curtis@qt.io>
 Date: Tue, 24 Sep 2024 10:22:12 +0800
-Subject: [PATCH 09/12] QQmlDelegateModel: fix delegates not being created in
+Subject: [PATCH 6/8] QQmlDelegateModel: fix delegates not being created in
  certain cases v2
 
 Since 837c2f18cd223707e7cedb213257b0158ea07146, we connect to
@@ -30,52 +30,14 @@ Reviewed-by: Richard Moe Gustavsen <richard.gustavsen@qt.io>
 (cherry picked from commit 4bb16ce2c8ea94f768991593a581c8838d48f3a3)
 Reviewed-by: Qt Cherry-pick Bot <cherrypick_bot@qt-project.org>
 ---
- .../src/qmlmodels/qqmldelegatemodel.cpp       |  17 ++
  .../auto/qml/qqmldelegatemodel/CMakeLists.txt |   1 +
- ...yModelWithDelayedSourceModelInListView.qml |  30 +++
- .../auto/qml/qqmldelegatemodel/data/reset.qml |  28 +++
- .../data/resetInQAIMConstructor.qml           |  28 +++
- .../tst_qqmldelegatemodel.cpp                 | 210 +++++++++++++++++-
- 6 files changed, 304 insertions(+), 10 deletions(-)
- create mode 100644 qtdeclarative/tests/auto/qml/qqmldelegatemodel/data/proxyModelWithDelayedSourceModelInListView.qml
+ .../auto/qml/qqmldelegatemodel/data/reset.qml |  28 ++++
+ .../data/resetInQAIMConstructor.qml           |  28 ++++
+ .../tst_qqmldelegatemodel.cpp                 | 135 ++++++++++++++++--
+ 4 files changed, 182 insertions(+), 10 deletions(-)
  create mode 100644 qtdeclarative/tests/auto/qml/qqmldelegatemodel/data/reset.qml
  create mode 100644 qtdeclarative/tests/auto/qml/qqmldelegatemodel/data/resetInQAIMConstructor.qml
 
-diff --git a/qtdeclarative/src/qmlmodels/qqmldelegatemodel.cpp b/qtdeclarative/src/qmlmodels/qqmldelegatemodel.cpp
-index 8a1482cbf8..a4acbb85a6 100644
---- a/qtdeclarative/src/qmlmodels/qqmldelegatemodel.cpp
-+++ b/qtdeclarative/src/qmlmodels/qqmldelegatemodel.cpp
-@@ -3,6 +3,8 @@
- 
- #include "qqmldelegatemodel_p_p.h"
- 
-+#include <QtCore/private/qabstractitemmodel_p.h>
-+
- #include <QtQml/qqmlinfo.h>
- 
- #include <private/qqmlabstractdelegatecomponent_p.h>
-@@ -425,6 +427,21 @@ void QQmlDelegateModel::setModel(const QVariant &model)
-         _q_itemsInserted(0, d->adaptorModelCount());
-         d->requestMoreIfNecessary();
-     }
-+
-+    // Since 837c2f18cd223707e7cedb213257b0158ea07146, we connect to modelAboutToBeReset
-+    // rather than modelReset so that we can handle role name changes. _q_modelAboutToBeReset
-+    // now connects modelReset to handleModelReset with a single shot connection instead.
-+    // However, it's possible for user code to begin the reset before connectToAbstractItemModel is called
-+    // (QTBUG-125053), in which case we connect to modelReset too late and handleModelReset is never called,
-+    // resulting in delegates not being created in certain cases.
-+    // So, we check at the earliest point we can if the model is in the process of being reset,
-+    // and if so, connect modelReset to handleModelReset.
-+    if (d->m_adaptorModel.adaptsAim()) {
-+        auto *aim = d->m_adaptorModel.aim();
-+        auto *aimPrivate = QAbstractItemModelPrivate::get(aim);
-+        if (aimPrivate->resetting)
-+            QObject::connect(aim, &QAbstractItemModel::modelReset, this, &QQmlDelegateModel::handleModelReset, Qt::SingleShotConnection);
-+    }
- }
- 
- /*!
 diff --git a/qtdeclarative/tests/auto/qml/qqmldelegatemodel/CMakeLists.txt b/qtdeclarative/tests/auto/qml/qqmldelegatemodel/CMakeLists.txt
 index 8d8a90e0a7..966f5229df 100644
 --- a/qtdeclarative/tests/auto/qml/qqmldelegatemodel/CMakeLists.txt
@@ -88,42 +50,6 @@ index 8d8a90e0a7..966f5229df 100644
          Qt::QuickTestUtilsPrivate
      TESTDATA ${test_data}
  )
-diff --git a/qtdeclarative/tests/auto/qml/qqmldelegatemodel/data/proxyModelWithDelayedSourceModelInListView.qml b/qtdeclarative/tests/auto/qml/qqmldelegatemodel/data/proxyModelWithDelayedSourceModelInListView.qml
-new file mode 100644
-index 0000000000..b6733bd38c
---- /dev/null
-+++ b/qtdeclarative/tests/auto/qml/qqmldelegatemodel/data/proxyModelWithDelayedSourceModelInListView.qml
-@@ -0,0 +1,30 @@
-+import QtQuick
-+import Test
-+
-+Window {
-+    id: root
-+    title: listView.count
-+
-+    property alias listView: listView
-+    property ProxySourceModel connectionModel: null
-+
-+    Component {
-+        id: modelComponent
-+        ProxySourceModel {}
-+    }
-+
-+    ListView {
-+        id: listView
-+        anchors.fill: parent
-+
-+        delegate: Text {
-+            text: model.Name
-+        }
-+
-+        model: ProxyModel {
-+            sourceModel: root.connectionModel
-+        }
-+    }
-+
-+    Component.onCompleted: root.connectionModel = modelComponent.createObject(root)
-+}
 diff --git a/qtdeclarative/tests/auto/qml/qqmldelegatemodel/data/reset.qml b/qtdeclarative/tests/auto/qml/qqmldelegatemodel/data/reset.qml
 new file mode 100644
 index 0000000000..0fcd5e8afa
@@ -193,20 +119,18 @@ index 0000000000..cb1f226737
 +    }
 +}
 diff --git a/qtdeclarative/tests/auto/qml/qqmldelegatemodel/tst_qqmldelegatemodel.cpp b/qtdeclarative/tests/auto/qml/qqmldelegatemodel/tst_qqmldelegatemodel.cpp
-index 2cacda5513..3f08d8fc85 100644
+index 47d531e8e8..3f08d8fc85 100644
 --- a/qtdeclarative/tests/auto/qml/qqmldelegatemodel/tst_qqmldelegatemodel.cpp
 +++ b/qtdeclarative/tests/auto/qml/qqmldelegatemodel/tst_qqmldelegatemodel.cpp
-@@ -3,7 +3,9 @@
- 
- #include <QtTest/qtest.h>
+@@ -5,6 +5,7 @@
  #include <QtCore/qjsonobject.h>
-+#include <QtCore/qsortfilterproxymodel.h>
+ #include <QtCore/qsortfilterproxymodel.h>
  #include <QtCore/QConcatenateTablesProxyModel>
 +#include <QtCore/qtimer.h>
  #include <QtGui/QStandardItemModel>
  #include <QtQml/qqmlcomponent.h>
  #include <QtQml/qqmlapplicationengine.h>
-@@ -11,11 +13,17 @@
+@@ -12,11 +13,17 @@
  #include <QtQmlModels/private/qqmllistmodel_p.h>
  #include <QtQuick/qquickview.h>
  #include <QtQuick/qquickitem.h>
@@ -224,7 +148,7 @@ index 2cacda5513..3f08d8fc85 100644
  class tst_QQmlDelegateModel : public QQmlDataTest
  {
      Q_OBJECT
-@@ -25,6 +33,8 @@ public:
+@@ -26,6 +33,8 @@ public:
  
  private slots:
      void resettingRolesRespected();
@@ -233,11 +157,8 @@ index 2cacda5513..3f08d8fc85 100644
      void valueWithoutCallingObjectFirst_data();
      void valueWithoutCallingObjectFirst();
      void qtbug_86017();
-@@ -42,18 +52,12 @@ private slots:
-     void doNotUnrefObjectUnderConstruction();
-     void clearCacheDuringInsertion();
-     void viewUpdatedOnDelegateChoiceAffectingRoleChange();
-+    void proxyModelWithDelayedSourceModelInListView();
+@@ -46,16 +55,9 @@ private slots:
+     void proxyModelWithDelayedSourceModelInListView();
  };
  
 -class AbstractItemModel : public QAbstractItemModel
@@ -254,7 +175,7 @@ index 2cacda5513..3f08d8fc85 100644
      QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const override
      {
          if (parent.isValid())
-@@ -91,10 +95,21 @@ public:
+@@ -93,10 +95,21 @@ public:
          return mValues.at(index.row());
      }
  
@@ -277,7 +198,7 @@ index 2cacda5513..3f08d8fc85 100644
  tst_QQmlDelegateModel::tst_QQmlDelegateModel()
      : QQmlDataTest(QT_QMLTEST_DATADIR)
  {
-@@ -153,7 +168,109 @@ void tst_QQmlDelegateModel::resettingRolesRespected()
+@@ -155,7 +168,109 @@ void tst_QQmlDelegateModel::resettingRolesRespected()
      QObject *root = engine.rootObjects().constFirst();
      QVERIFY(!root->property("success").toBool());
      model->change();
@@ -388,86 +309,6 @@ index 2cacda5513..3f08d8fc85 100644
  }
  
  void tst_QQmlDelegateModel::valueWithoutCallingObjectFirst_data()
-@@ -616,6 +733,79 @@ void tst_QQmlDelegateModel::viewUpdatedOnDelegateChoiceAffectingRoleChange()
-     QVERIFY(returnedValue);
- }
- 
-+class ProxySourceModel : public QAbstractListModel
-+{
-+    Q_OBJECT
-+    QML_ELEMENT
-+public:
-+    explicit ProxySourceModel(QObject *parent = nullptr)
-+        : QAbstractListModel(parent)
-+    {
-+        for (int i = 0; i < rows; ++i) {
-+            beginInsertRows(QModelIndex(), i, i);
-+            endInsertRows();
-+        }
-+    }
-+
-+    ~ProxySourceModel() override = default;
-+
-+    int rowCount(const QModelIndex &) const override
-+    {
-+        return rows;
-+    }
-+
-+    QVariant data(const QModelIndex &, int ) const override
-+    {
-+        return "Hello";
-+    }
-+
-+    QHash<int, QByteArray> roleNames() const override
-+    {
-+        QHash<int, QByteArray> roles = QAbstractListModel::roleNames();
-+        roles[Qt::UserRole + 1] = "Name";
-+
-+        return roles;
-+    }
-+
-+    static const int rows = 1;
-+};
-+
-+class ProxyModel : public QSortFilterProxyModel
-+{
-+    Q_OBJECT
-+    QML_ELEMENT
-+    Q_PROPERTY(QAbstractItemModel *sourceModel READ sourceModel WRITE setSourceModel)
-+
-+public:
-+    explicit ProxyModel(QObject *parent = nullptr)
-+        : QSortFilterProxyModel(parent)
-+    {
-+    }
-+
-+    ~ProxyModel() override = default;
-+};
-+
-+// Checks that the correct amount of delegates are created when using a proxy
-+// model whose source model is set after a delay.
-+void tst_QQmlDelegateModel::proxyModelWithDelayedSourceModelInListView()
-+{
-+    QTest::failOnWarning();
-+
-+    qmlRegisterTypesAndRevisions<ProxySourceModel>("Test", 1);
-+    qmlRegisterTypesAndRevisions<ProxyModel>("Test", 1);
-+
-+    QQuickApplicationHelper helper(this, "proxyModelWithDelayedSourceModelInListView.qml");
-+    QVERIFY2(helper.ready, helper.failureMessage());
-+    QQuickWindow *window = helper.window;
-+    window->show();
-+    QVERIFY(QTest::qWaitForWindowExposed(window));
-+
-+    auto *listView = window->property("listView").value<QQuickListView *>();
-+    QVERIFY(listView);
-+    const auto delegateModel = QQuickItemViewPrivate::get(listView)->model;
-+    QTRY_COMPARE(listView->count(), 1);
-+}
-+
- QTEST_MAIN(tst_QQmlDelegateModel)
- 
- #include "tst_qqmldelegatemodel.moc"
 -- 
-2.46.2
+2.48.1
 
