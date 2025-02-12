@@ -1,4 +1,4 @@
-VER=13.6.0
-SRCS="tbl::https://pypi.python.org/packages/source/P/PyQt6_sip/PyQt6_sip-$VER.tar.gz"
-CHKSUMS="sha256::2486e1588071943d4f6657ba09096dc9fffd2322ad2c30041e78ea3f037b5778"
+VER=13.10.0
+SRCS="pypi::version=$VER::pyqt6_sip"
+CHKSUMS="sha256::d6daa95a0bd315d9ec523b549e0ce97455f61ded65d5eafecd83ed2aa4ae5350"
 CHKUPDATE="anitya::id=149588"
