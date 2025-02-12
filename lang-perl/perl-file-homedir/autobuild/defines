@@ -1,0 +1,6 @@
+PKGNAME=perl-file-homedir
+PKGSEC=perl
+PKGDEP="perl-file-which"
+PKGDES="Find your home and other directories on any platform"
+
+ABHOST=noarch

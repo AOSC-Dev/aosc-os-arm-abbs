@@ -1,0 +1,6 @@
+PKGNAME=perl-file-touch
+PKGSEC=perl
+PKGDEP="perl"
+PKGDES="update file access and modification times, optionally creating files if needed"
+
+ABHOST=noarch

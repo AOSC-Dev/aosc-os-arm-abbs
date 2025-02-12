@@ -1,0 +1,6 @@
+PKGNAME=perl-file-dirlist
+PKGSEC=perl
+PKGDEP="perl"
+PKGDES="provide a sorted list of directory content"
+
+ABHOST=noarch
