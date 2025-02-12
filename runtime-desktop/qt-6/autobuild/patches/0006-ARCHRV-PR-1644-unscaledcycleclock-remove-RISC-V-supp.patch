@@ -1,0 +1,85 @@
+From 541043a5b4eec080c4478287a6aa65c1f8a88732 Mon Sep 17 00:00:00 2001
+From: aurel32 <aurelien@aurel32.net>
+Date: Fri, 22 Mar 2024 14:21:13 -0700
+Subject: [PATCH 06/10] ARCHRV: PR #1644: unscaledcycleclock: remove RISC-V
+ support
+
+Imported from GitHub PR https://github.com/abseil/abseil-cpp/pull/1644
+
+Starting with Linux 6.6 [1], RDCYCLE is a privileged instruction on RISC-V and can't be used directly from userland. There is a sysctl option to change that as a transition period, but it will eventually disappear.
+
+The RDTIME instruction is another less accurate alternative, however its frequency varies from board to board, and there is currently now way to get its frequency from userland [2].
+
+Therefore this patch just removes the code for unscaledcycleclock on RISC-V. Without processor specific implementation, abseil relies on std::chrono::steady_clock::now().time_since_epoch() which is basically a wrapper around clock_gettime (CLOCK_MONOTONIC), which in turns use __vdso_clock_gettime(). On RISC-V this VDSO is just a wrapper around RDTIME correctly scaled to use nanoseconds units.
+
+This fixes the testsuite on riscv64, tested on a VisionFive 2 board.
+
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=cc4c07c89aada16229084eeb93895c95b7eabaa3
+[2] https://github.com/abseil/abseil-cpp/pull/1631
+Merge 43356a2548cfde76e164d446cb69004b488c6a71 into 76f8011beabdaee872b5fde7546e02407b220cb1
+
+Merging this change closes #1644
+
+COPYBARA_INTEGRATE_REVIEW=https://github.com/abseil/abseil-cpp/pull/1644 from aurel32:rv64-no-unscaledcycleclock 43356a2548cfde76e164d446cb69004b488c6a71
+PiperOrigin-RevId: 618286262
+Change-Id: Ie4120a727e7d0bb185df6e06ea145c780ebe6652
+
+Link: https://github.com/riscv-forks/electron/raw/4eff53436a1a86ac548a107e21ca5078518833c0/patches/chromium/unscaledcycleclock-remove-riscv-support.patch
+Signed-off-by: Mingcong Bai <jeffbai@aosc.io>
+---
+ .../absl/base/internal/unscaledcycleclock.cc         | 12 ------------
+ .../absl/base/internal/unscaledcycleclock_config.h   |  8 ++++----
+ 2 files changed, 4 insertions(+), 16 deletions(-)
+
+diff --git a/qtwebengine/src/3rdparty/chromium/third_party/abseil-cpp/absl/base/internal/unscaledcycleclock.cc b/qtwebengine/src/3rdparty/chromium/third_party/abseil-cpp/absl/base/internal/unscaledcycleclock.cc
+index 05e0e7ba5e..a0bf3a65f7 100644
+--- a/qtwebengine/src/3rdparty/chromium/third_party/abseil-cpp/absl/base/internal/unscaledcycleclock.cc
++++ b/qtwebengine/src/3rdparty/chromium/third_party/abseil-cpp/absl/base/internal/unscaledcycleclock.cc
+@@ -121,18 +121,6 @@ double UnscaledCycleClock::Frequency() {
+   return aarch64_timer_frequency;
+ }
+ 
+-#elif defined(__riscv)
+-
+-int64_t UnscaledCycleClock::Now() {
+-  int64_t virtual_timer_value;
+-  asm volatile("rdcycle %0" : "=r"(virtual_timer_value));
+-  return virtual_timer_value;
+-}
+-
+-double UnscaledCycleClock::Frequency() {
+-  return base_internal::NominalCPUFrequency();
+-}
+-
+ #elif defined(_M_IX86) || defined(_M_X64)
+ 
+ #pragma intrinsic(__rdtsc)
+diff --git a/qtwebengine/src/3rdparty/chromium/third_party/abseil-cpp/absl/base/internal/unscaledcycleclock_config.h b/qtwebengine/src/3rdparty/chromium/third_party/abseil-cpp/absl/base/internal/unscaledcycleclock_config.h
+index 24b324ac99..43a3dabeea 100644
+--- a/qtwebengine/src/3rdparty/chromium/third_party/abseil-cpp/absl/base/internal/unscaledcycleclock_config.h
++++ b/qtwebengine/src/3rdparty/chromium/third_party/abseil-cpp/absl/base/internal/unscaledcycleclock_config.h
+@@ -21,8 +21,8 @@
+ 
+ // The following platforms have an implementation of a hardware counter.
+ #if defined(__i386__) || defined(__x86_64__) || defined(__aarch64__) || \
+-    defined(__powerpc__) || defined(__ppc__) || defined(__riscv) ||     \
+-    defined(_M_IX86) || (defined(_M_X64) && !defined(_M_ARM64EC))
++    defined(__powerpc__) || defined(__ppc__) || defined(_M_IX86) ||     \
++    (defined(_M_X64) && !defined(_M_ARM64EC))
+ #define ABSL_HAVE_UNSCALED_CYCLECLOCK_IMPLEMENTATION 1
+ #else
+ #define ABSL_HAVE_UNSCALED_CYCLECLOCK_IMPLEMENTATION 0
+@@ -53,8 +53,8 @@
+ #if ABSL_USE_UNSCALED_CYCLECLOCK
+ // This macro can be used to test if UnscaledCycleClock::Frequency()
+ // is NominalCPUFrequency() on a particular platform.
+-#if (defined(__i386__) || defined(__x86_64__) || defined(__riscv) || \
+-     defined(_M_IX86) || defined(_M_X64))
++#if (defined(__i386__) || defined(__x86_64__) || defined(_M_IX86) || \
++     defined(_M_X64))
+ #define ABSL_INTERNAL_UNSCALED_CYCLECLOCK_FREQUENCY_IS_CPU_FREQUENCY
+ #endif
+ #endif
+-- 
+2.48.1
+

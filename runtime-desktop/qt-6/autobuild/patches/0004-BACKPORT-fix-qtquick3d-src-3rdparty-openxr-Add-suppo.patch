@@ -1,11 +1,12 @@
-From 4be214f13f0b31b650023b8eeef442aef19ec6d7 Mon Sep 17 00:00:00 2001
+From 80ca08329d85feff31dea43bc1a68c95621ef314 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Wed, 9 Oct 2024 09:57:25 +0800
-Subject: [PATCH 7/8] BACKPORT: fix(qtquick3d/src/3rdparty/openxr): Add support
- for loongarch64
+Subject: [PATCH 04/10] BACKPORT: fix(qtquick3d/src/3rdparty/openxr): Add
+ support for loongarch64
 
-Ref: https://github.com/KhronosGroup/OpenXR-SDK-Source/pull/479
+Link: https://github.com/KhronosGroup/OpenXR-SDK-Source/pull/479
 Co-authored-by: qiangxuhui <qiangxuhui@loongson.cn>
+Signed-off-by: Mingcong Bai <jeffbai@aosc.io>
 ---
  qtquick3d/src/3rdparty/openxr/src/common/platform_utils.hpp | 2 ++
  1 file changed, 2 insertions(+)

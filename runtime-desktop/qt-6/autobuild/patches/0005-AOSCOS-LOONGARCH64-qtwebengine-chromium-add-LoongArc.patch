@@ -1,8 +1,8 @@
-From e40334579b70681788a95f8e55284b048dfc49bf Mon Sep 17 00:00:00 2001
+From 782469ebdba726f4c3f22e6d825c0a227c12a144 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Wed, 12 Feb 2025 11:14:32 +0800
-Subject: [PATCH 8/8] [LOONGARCH64] qtwebengine: chromium: add LoongArch
- support
+Subject: [PATCH 05/10] AOSCOS: LOONGARCH64: qtwebengine: chromium: add
+ LoongArch support
 
 Co-authored-by: Jiajie Chen <c@jia.je>
 

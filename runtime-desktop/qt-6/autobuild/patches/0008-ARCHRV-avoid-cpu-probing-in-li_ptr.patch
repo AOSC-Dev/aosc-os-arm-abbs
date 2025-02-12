@@ -1,0 +1,45 @@
+From 35957be48b3f6f5cfeced8539cba5f306cd0e6ce Mon Sep 17 00:00:00 2001
+From: Levi Zim <rsworktech@outlook.com>
+Date: Mon, 10 Jun 2024 10:06:27 +0800
+Subject: [PATCH 08/10] ARCHRV: avoid cpu probing in li_ptr
+
+CPU probing is an expensive thing to do and we should avoid doing it upon every li_ptr call.
+
+Fixes performance regresion bisected in https://github.com/riscv-forks/electron/issues/1
+
+Change-Id: Ib5ff89b2a730e08de6735123ae60adeffe811ed8
+
+Link: https://github.com/riscv-forks/electron/raw/1e16216b089b6aaed055d17608667e6582263cfd/patches/v8/avoid-cpu-probing-in-li_ptr.patch
+Signed-off-by: Mingcong Bai <jeffbai@aosc.io>
+---
+ qtwebengine/src/3rdparty/chromium/v8/AUTHORS                     | 1 +
+ .../3rdparty/chromium/v8/src/codegen/riscv/assembler-riscv.cc    | 1 -
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/qtwebengine/src/3rdparty/chromium/v8/AUTHORS b/qtwebengine/src/3rdparty/chromium/v8/AUTHORS
+index 2136b85df2..ad5c8389a0 100644
+--- a/qtwebengine/src/3rdparty/chromium/v8/AUTHORS
++++ b/qtwebengine/src/3rdparty/chromium/v8/AUTHORS
+@@ -179,6 +179,7 @@ Kevin Gibbons <bakkot@gmail.com>
+ Keyhan Vakil <kvakil@googlecontrib.kvakil.me>
+ Kris Selden <kris.selden@gmail.com>
+ Kyounga Ra <kyounga@alticast.com>
++Levi Zim <rsworktech@outlook.com>
+ Loo Rong Jie <loorongjie@gmail.com>
+ Lu Yahan <yahan@iscas.ac.cn>
+ Ludovic Mermod <ludovic.mermod@gmail.com>
+diff --git a/qtwebengine/src/3rdparty/chromium/v8/src/codegen/riscv/assembler-riscv.cc b/qtwebengine/src/3rdparty/chromium/v8/src/codegen/riscv/assembler-riscv.cc
+index 81e0d735ff..5734e70c53 100644
+--- a/qtwebengine/src/3rdparty/chromium/v8/src/codegen/riscv/assembler-riscv.cc
++++ b/qtwebengine/src/3rdparty/chromium/v8/src/codegen/riscv/assembler-riscv.cc
+@@ -1085,7 +1085,6 @@ void Assembler::GeneralLi(Register rd, int64_t imm) {
+ }
+ 
+ void Assembler::li_ptr(Register rd, int64_t imm) {
+-  base::CPU cpu;
+   // Initialize rd with an address
+   // Pointers are 48 bits
+   // 6 fixed instructions are generated
+-- 
+2.48.1
+

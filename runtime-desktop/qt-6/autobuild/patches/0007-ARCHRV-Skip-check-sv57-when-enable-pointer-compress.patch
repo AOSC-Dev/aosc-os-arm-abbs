@@ -1,0 +1,78 @@
+From 875e6e807897629cea5db3e082bdb01504f474f0 Mon Sep 17 00:00:00 2001
+From: Lu Yahan <yahan@iscas.ac.cn>
+Date: Sun, 7 Apr 2024 09:52:59 +0800
+Subject: [PATCH 07/10] ARCHRV: Skip check sv57 when enable pointer compress
+
+Change-Id: I4332d3849d113af105630c0e20cd2b5e3deb9392
+Reviewed-on: https://chromium-review.googlesource.com/c/v8/v8/+/5430889
+Commit-Queue: Ji Qiu <qiuji@iscas.ac.cn>
+Reviewed-by: Ji Qiu <qiuji@iscas.ac.cn>
+Cr-Commit-Position: refs/heads/main@{#93244}
+
+Link: https://github.com/riscv-forks/electron/raw/1e16216b089b6aaed055d17608667e6582263cfd/patches/v8/Skip-check-sv57-when-enable-pointer-compress.patch
+Signed-off-by: Mingcong Bai <jeffbai@aosc.io>
+---
+ .../v8/src/codegen/riscv/assembler-riscv.cc   | 36 +++++++++----------
+ 1 file changed, 17 insertions(+), 19 deletions(-)
+
+diff --git a/qtwebengine/src/3rdparty/chromium/v8/src/codegen/riscv/assembler-riscv.cc b/qtwebengine/src/3rdparty/chromium/v8/src/codegen/riscv/assembler-riscv.cc
+index 621ae7ffb8..81e0d735ff 100644
+--- a/qtwebengine/src/3rdparty/chromium/v8/src/codegen/riscv/assembler-riscv.cc
++++ b/qtwebengine/src/3rdparty/chromium/v8/src/codegen/riscv/assembler-riscv.cc
+@@ -83,10 +83,12 @@ void CpuFeatures::ProbeImpl(bool cross_compile) {
+   base::CPU cpu;
+   if (cpu.has_fpu()) supported_ |= 1u << FPU;
+   if (cpu.has_rvv()) supported_ |= 1u << RISCV_SIMD;
++#ifdef V8_COMPRESS_POINTERS
+   if (cpu.riscv_mmu() == base::CPU::RV_MMU_MODE::kRiscvSV57) {
+     FATAL("SV57 is not supported");
+     UNIMPLEMENTED();
+   }
++#endif
+   // Set a static value on whether SIMD is supported.
+   // This variable is only used for certain archs to query SupportWasmSimd128()
+   // at runtime in builtins using an extern ref. Other callers should use
+@@ -1084,25 +1086,21 @@ void Assembler::GeneralLi(Register rd, int64_t imm) {
+ 
+ void Assembler::li_ptr(Register rd, int64_t imm) {
+   base::CPU cpu;
+-  if (cpu.riscv_mmu() != base::CPU::RV_MMU_MODE::kRiscvSV57) {
+-    // Initialize rd with an address
+-    // Pointers are 48 bits
+-    // 6 fixed instructions are generated
+-    DCHECK_EQ((imm & 0xfff0000000000000ll), 0);
+-    int64_t a6 = imm & 0x3f;                      // bits 0:5. 6 bits
+-    int64_t b11 = (imm >> 6) & 0x7ff;             // bits 6:11. 11 bits
+-    int64_t high_31 = (imm >> 17) & 0x7fffffff;   // 31 bits
+-    int64_t high_20 = ((high_31 + 0x800) >> 12);  // 19 bits
+-    int64_t low_12 = high_31 & 0xfff;             // 12 bits
+-    lui(rd, (int32_t)high_20);
+-    addi(rd, rd, low_12);  // 31 bits in rd.
+-    slli(rd, rd, 11);      // Space for next 11 bis
+-    ori(rd, rd, b11);      // 11 bits are put in. 42 bit in rd
+-    slli(rd, rd, 6);       // Space for next 6 bits
+-    ori(rd, rd, a6);       // 6 bits are put in. 48 bis in rd
+-  } else {
+-    FATAL("SV57 is not supported");
+-  }
++  // Initialize rd with an address
++  // Pointers are 48 bits
++  // 6 fixed instructions are generated
++  DCHECK_EQ((imm & 0xfff0000000000000ll), 0);
++  int64_t a6 = imm & 0x3f;                      // bits 0:5. 6 bits
++  int64_t b11 = (imm >> 6) & 0x7ff;             // bits 6:11. 11 bits
++  int64_t high_31 = (imm >> 17) & 0x7fffffff;   // 31 bits
++  int64_t high_20 = ((high_31 + 0x800) >> 12);  // 19 bits
++  int64_t low_12 = high_31 & 0xfff;             // 12 bits
++  lui(rd, (int32_t)high_20);
++  addi(rd, rd, low_12);  // 31 bits in rd.
++  slli(rd, rd, 11);      // Space for next 11 bis
++  ori(rd, rd, b11);      // 11 bits are put in. 42 bit in rd
++  slli(rd, rd, 6);       // Space for next 6 bits
++  ori(rd, rd, a6);       // 6 bits are put in. 48 bis in rd
+ }
+ 
+ void Assembler::li_constant(Register rd, int64_t imm) {
+-- 
+2.48.1
+

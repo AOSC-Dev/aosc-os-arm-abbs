@@ -1,8 +1,8 @@
-From 85664a1be1730915451b52318031fc308fad21c5 Mon Sep 17 00:00:00 2001
+From 06de6527554047a471f25ce1db26ccab4b09e7cc Mon Sep 17 00:00:00 2001
 From: Icenowy Zheng <uwu@icenowy.me>
 Date: Wed, 26 Jun 2024 22:16:10 +0800
-Subject: [PATCH 4/8] qtbase: fallback to GLES if GL EGL context creation
- failed
+Subject: [PATCH 03/10] AOSCOS: qtbase: fallback to GLES if GL EGL context
+ creation failed
 
 Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
 ---
