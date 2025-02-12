@@ -1,13 +1,13 @@
 PKGNAME=qtcreator
 PKGSEC=devel
-PKGDEP="qt-6 llvm cmake gdb git valgrind rustc-demangle syntax-highlighting \
-        litehtml"
+PKGDEP="cmake gdb git go litehtml llvm qt-6 rustc-demangle \
+        syntax-highlighting valgrind"
 # FIXME: Valgrind is not yet available.
 PKGDEP__LOONGARCH64="${PKGDEP/valgrind/}"
 PKGDEP__RISCV64="${PKGDEP/valgrind/}"
 PKGSUG="bzr mercurial"
 BUILDDEP="${PKGSUG}"
-PKGDES="An integrated development environment for Qt/C++"
+PKGDES="Integrated development environment for Qt/C++"
 PKGPROV="qt-creator"
 
 CMAKE_AFTER="-DBUILD_PLUGIN_CLANGREFACTORING=ON \

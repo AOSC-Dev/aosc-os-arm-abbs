@@ -1,4 +1,4 @@
-VER=14.0.1
+VER=15.0.1
 SRCS="tbl::https://download.qt.io/official_releases/qtcreator/${VER%.*}/$VER/qt-creator-opensource-src-$VER.tar.xz"
-CHKSUMS="sha256::9595d2e6c65bb918e78376314341dc2bef491c3200a5c6d5ce6f305509b0b28b"
+CHKSUMS="sha256::743bad5bbe35ed7f5009f7ce161f1da2f26c17bb5131473e061ce65b3a7ae093"
 CHKUPDATE="anitya::id=4136"
