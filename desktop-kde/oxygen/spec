@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/oxygen-$VER.tar.xz"
-CHKSUMS="sha256::ba2f47033bd78b7c9f1bbda1faefca530453965999b4d7fad85b1ddd08b4f570"
+CHKSUMS="sha256::45ccaf1e06d1b37c42d61c84e27b1b103539f5e2e46bbfe122d375550b86f987"
 CHKUPDATE="anitya::id=8761"

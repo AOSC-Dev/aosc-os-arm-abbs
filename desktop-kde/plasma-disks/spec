@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/plasma-disks-$VER.tar.xz"
-CHKSUMS="sha256::98d074f772c71cbd06440cfb495e4ef3a559583e6981d431831a1eb80ca941cb"
+CHKSUMS="sha256::79a165d805bfb703ef43b678f1687581b377ad634869dbbcc242b2f2a121c373"
 CHKUPDATE="anitya::id=8761"

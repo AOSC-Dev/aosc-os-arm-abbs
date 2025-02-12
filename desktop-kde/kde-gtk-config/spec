@@ -1,5 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/kde-gtk-config-$VER.tar.xz"
-CHKSUMS="sha256::a48915b5077b8b3a520549f2dc739886685868c94d9e832eeadb9bbb4bf10d0a"
+CHKSUMS="sha256::842563287488280c312a4eedf1b6478114b13918c22e67a9c5ee7252c56186cf"
 CHKUPDATE="anitya::id=8761"
-REL=1

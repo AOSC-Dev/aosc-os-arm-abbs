@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/sddm-kcm-$VER.tar.xz"
-CHKSUMS="sha256::3b9bfe81359be12eb7aeee492160877bf29d1a6ff6ed381c6afcbd0c8b7874c0"
+CHKSUMS="sha256::6ef1a9eeb688fe1c1d13072795dc5c3a0c92265e0025b43bee82ebdd52a6e30d"
 CHKUPDATE="anitya::id=8761"

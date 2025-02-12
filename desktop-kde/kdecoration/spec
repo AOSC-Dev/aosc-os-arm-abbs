@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/kdecoration-$VER.tar.xz"
-CHKSUMS="sha256::71c417461993923a2245b6f954ff72fb1737bc10db218ca9595194017cf1f838"
+CHKSUMS="sha256::867e2169d6e8b8755d4a22f2d48bcf39413e7d9872eab878871fd7a0b03747ec"
 CHKUPDATE="anitya::id=8761"

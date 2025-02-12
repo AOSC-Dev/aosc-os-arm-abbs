@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/plasma-vault-$VER.tar.xz"
-CHKSUMS="sha256::0b599d79d7f728bcc1517b30d0462894dc2186fa76601628d3d0f2198c2276c2"
+CHKSUMS="sha256::e083adb99f18706d4754f6a0652f916022b073ad0f3461f826b595e40ee7587c"
 CHKUPDATE="anitya::id=8761"

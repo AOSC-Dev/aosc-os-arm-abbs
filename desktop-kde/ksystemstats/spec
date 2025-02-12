@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/ksystemstats-$VER.tar.xz"
-CHKSUMS="sha256::378e5fc88899d538bde930a8f20fc22e7d4067ecfd63dfce47a1e7c722825cd5"
+CHKSUMS="sha256::4351da135d6f8c2ac726dedab74879eef786643ce0dfe1bf85a150e5b7a0fa87"
 CHKUPDATE="anitya::id=8761"

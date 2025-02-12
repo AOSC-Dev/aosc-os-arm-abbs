@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/plasma-thunderbolt-$VER.tar.xz"
-CHKSUMS="sha256::5fe7c2d6338bcdb234eecb31296ccd49cc3746626ac41c7bc65d2e76ab5a89fb"
+CHKSUMS="sha256::579340eb4fa2847c0e5329c6b26c903fcd42e73e7e03f882fbfc993a261d4de4"
 CHKUPDATE="anitya::id=8761"

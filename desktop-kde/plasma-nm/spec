@@ -1,5 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/plasma-nm-$VER.tar.xz"
-CHKSUMS="sha256::ff6a819de2d48e17860d822b048de7157561742c067eb85a6dafa76e255e9e56"
+CHKSUMS="sha256::5167dc9704502559d30d232fb55710af78b04d3de9a7ab3fc2dab19850753264"
 CHKUPDATE="anitya::id=8761"
-REL=1

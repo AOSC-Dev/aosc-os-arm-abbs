@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/plasma-browser-integration-$VER.tar.xz"
-CHKSUMS="sha256::c4e6aa1c6986ae88fa0d6bd590834da6a11ce4b193fc8538ee61bfba215c124c"
+CHKSUMS="sha256::972b7252a1ee2c8d5ae8945b2dd84d14ba87325be7652b3de4305675cc055437"
 CHKUPDATE="anitya::id=8761"

@@ -1,5 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/kgamma5-$VER.tar.xz"
-CHKSUMS="sha256::b654d80344ab8e5fdb7eec9fed98c68998a24430c354b8c591569f066e13d678"
+CHKSUMS="sha256::d4554747467e627d2525431798808aed93e24fc9f5d8f936032e543524d2cddc"
 CHKUPDATE="anitya::id=8761"
-REL=1

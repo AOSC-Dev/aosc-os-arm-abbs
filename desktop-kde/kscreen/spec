@@ -1,5 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/kscreen-$VER.tar.xz"
-CHKSUMS="sha256::7e7f7a8ef4e7d5c8567653b8278c3412ff28bbb55d37a28ad890be144acbc753"
+CHKSUMS="sha256::67d544109374df719d517f7d37d2d661dd80aa712c2ce565eefd99e897ee33c0"
 CHKUPDATE="anitya::id=8761"
-REL=1

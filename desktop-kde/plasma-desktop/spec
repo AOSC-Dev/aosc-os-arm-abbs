@@ -1,5 +1,4 @@
-VER=5.27.11
-REL=3
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/${VER}/plasma-desktop-$VER.tar.xz"
-CHKSUMS="sha256::d09f1e576251e7b4b6fde20407bdbfb018e495eba604487b0a05f4f011fc44a3"
+CHKSUMS="sha256::c045876e401c37fc63254a5582e92e53d89ac317bb1a9c362f65c438581dd700"
 CHKUPDATE="anitya::id=8761"

@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/breeze-plymouth-$VER.tar.xz"
-CHKSUMS="sha256::0dd90b3e25a688132c21f8dc9e041aa9826298828d2c96163f459bbb8432779b"
+CHKSUMS="sha256::9bc561c1682913d0439e31bef1e86fa500c2d55bb8bf5b523f3011c7ed1ec693"
 CHKUPDATE="anitya::id=8761"

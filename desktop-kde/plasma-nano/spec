@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/${VER}/plasma-nano-$VER.tar.xz"
-CHKSUMS="sha256::0c40393d52b37857400b88a71b9c7675488e56d03e2266ef35ac6d2321742ffb"
+CHKSUMS="sha256::d9e9d56c639895fd363c12681fff1a0f882bc18deaae4a03f0d408e6f22faae9"
 CHKUPDATE="anitya::id=8761"

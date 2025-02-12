@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/milou-$VER.tar.xz"
-CHKSUMS="sha256::0b816940dc7adb2921f7af1befb79f6ee611cbef067dc7cf40bfa760bf583e1a"
+CHKSUMS="sha256::b0f2ea9941913a6365235cae5268d0fa5f325c25e5ca9adde37055322e8b0a7d"
 CHKUPDATE="anitya::id=8761"

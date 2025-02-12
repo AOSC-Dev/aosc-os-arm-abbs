@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/ksshaskpass-$VER.tar.xz"
-CHKSUMS="sha256::9e78bdf1b29c88ad7f61f1a7885480a29bd78c2e288107b3f9ed3d97ace119bb"
+CHKSUMS="sha256::6bda11fe7735949a210871f56691e497920ed0d90fe0f9ac7338f58a7bc926ce"
 CHKUPDATE="anitya::id=8761"

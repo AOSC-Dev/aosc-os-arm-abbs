@@ -1,5 +1,4 @@
-VER=5.27.11
-REL=1
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/kwin-$VER.tar.xz"
-CHKSUMS="sha256::8902b23b29bd54cd26590fe04abfe58fe334a5bf9c0dfd1f7dc5aacc4191b56f"
+CHKSUMS="sha256::e9b14eab8538b8386e23757446382a2f1be505e5ccabe336020f9a13b14160b6"
 CHKUPDATE="anitya::id=8761"

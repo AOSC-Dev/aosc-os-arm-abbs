@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/libksysguard-$VER.tar.xz"
-CHKSUMS="sha256::21f4f54cdde8cda10a5ab2f05ebb22b67c375a1d47cf6a0c0fecc0f0cacb9659"
+CHKSUMS="sha256::7b69e4e519c647d1a33782b902bde75f5e6bd0fa6aad202ec8af09735c8722b2"
 CHKUPDATE="anitya::id=8761"

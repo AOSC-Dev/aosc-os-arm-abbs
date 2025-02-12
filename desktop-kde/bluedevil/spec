@@ -1,5 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/bluedevil-$VER.tar.xz"
-CHKSUMS="sha256::b4d5a8bfd066d66a4572732fd41ad3b8aad0428e899582d381e0ac6642bd6484"
+CHKSUMS="sha256::76a124b39f573682aa1e64ec09bac9d41e5662ab1d7e1de21688a0eebf18ec22"
 CHKUPDATE="anitya::id=8761"
-REL=1

@@ -1,5 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/drkonqi-$VER.tar.xz"
-CHKSUMS="sha256::20a0b509ef0b34dfc5429996025925d29bdc8777b512b985bd5c72cd5349583c"
+CHKSUMS="sha256::a96131dbbe88471965a6d0efa1c1f6c01b96582c0631919e990c1cbd38d5977a"
 CHKUPDATE="anitya::id=8761"
-REL=1

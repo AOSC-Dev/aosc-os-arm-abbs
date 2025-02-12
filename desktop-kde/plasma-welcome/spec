@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/${VER}/plasma-welcome-$VER.tar.xz"
-CHKSUMS="sha256::cfbecae8dd27f8551c6118ffdeaa8c1d3caf3ca17a1289a356963b8c87a8320b"
+CHKSUMS="sha256::1943989fb929021f204bf4945095c03f302b6551044d2346b5c880f193651381"
 CHKUPDATE="anitya::id=8761"

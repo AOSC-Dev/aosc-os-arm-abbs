@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/kscreenlocker-$VER.tar.xz"
-CHKSUMS="sha256::33b8ceea3b4240354d87f55d67659a542bf5933947550aff7530c6a1eb77d6df"
+CHKSUMS="sha256::dba5021350541f44809bc1d3b9e7546e46f13a1dcbc0d3e2ed25a8d395aff1b7"
 CHKUPDATE="anitya::id=8761"

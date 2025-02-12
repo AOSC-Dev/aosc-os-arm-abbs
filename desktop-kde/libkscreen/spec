@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/libkscreen-$VER.tar.xz"
-CHKSUMS="sha256::0d11f41d489f32303988e5a2eee8cef7f4eb18faea5614e65bf202007ea21dd5"
+CHKSUMS="sha256::ae64e87b8f69b065f18623981c2defcb9c33a5294b3343f29d293f247051fa44"
 CHKUPDATE="anitya::id=8761"

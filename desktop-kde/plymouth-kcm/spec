@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/plymouth-kcm-$VER.tar.xz"
-CHKSUMS="sha256::2fa269ceaa4f972fed0804771b484f7072e687e887d18bb5913fc40df82fc4d4"
+CHKSUMS="sha256::b4c32e07cce21ec0e1eadf2270db8f37fdae58b526647eebe43d04383ecbaee1"
 CHKUPDATE="anitya::id=8761"

@@ -1,5 +1,4 @@
-VER=5.27.11
-REL=3
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/plasma-workspace-$VER.tar.xz"
-CHKSUMS="sha256::07d69bc43660ec5335f250abb34c1059cef6cc64833838a7f0f749a4b4ee7add"
+CHKSUMS="sha256::4f74a707739faef4bac0e2b833de6e092a995adfe153ed758f6ce6c4ba1708c6"
 CHKUPDATE="anitya::id=8761"

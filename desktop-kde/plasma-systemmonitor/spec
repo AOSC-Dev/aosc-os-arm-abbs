@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="https://download.kde.org/stable/plasma/$VER/plasma-systemmonitor-$VER.tar.xz"
-CHKSUMS="sha256::0acacbbd921b5d43e72a8e0e26635bab50e0aab7ca3f40d83dee7a28736b5dfd"
+CHKSUMS="sha256::41e070edab9670979adcab2140a732304d0552df6ffa26e8f7b6ad810d93a9aa"
 CHKUPDATE="anitya::id=8761"

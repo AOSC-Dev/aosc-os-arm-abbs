@@ -1,4 +1,4 @@
-VER=5.27.11
+VER=5.27.12
 SRCS="tbl::https://download.kde.org/stable/plasma/$VER/breeze-$VER.tar.xz"
-CHKSUMS="sha256::14756a2fe5bc3db11ca954ff0df9b98e8d78ada4b231111780c42ee627dd4cab"
+CHKSUMS="sha256::b20443f360164a070416b642215e71ac4df89f544f27805907e7fc074e18fb6f"
 CHKUPDATE="anitya::id=8761"
