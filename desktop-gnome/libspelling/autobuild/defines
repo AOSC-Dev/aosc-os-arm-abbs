@@ -1,0 +1,5 @@
+PKGNAME=libspelling
+PKGSEC=gnome
+PKGDEP="enchant-2 gcc-runtime glib glibc gtk-4 gtksourceview-5 icu pango"
+BUILDDEP="gi-docgen gobject-introspection vala"
+PKGDES="Spellcheck library for GTK 4"
