@@ -1,0 +1,11 @@
+PKGNAME=loupe
+PKGSEC=gnome
+PKGDEP="cairo dconf fontconfig gcc-runtime glib glibc glycin graphene gtk-4 hicolor-icon-theme \
+        lcms2 libadwaita libgweather libseccomp pango gdk-pixbuf"
+BUILDDEP="itstool rustc gtk-update-icon-cache llvm"
+PKGDES="Image Viewer for GNOME"
+
+USECLANG=1
+
+# FIXME: ld.lld: relocation R_MIPS_64 cannot be used against local symbol
+NOLTO__LOONGSON3=1
