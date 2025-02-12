@@ -1,0 +1,7 @@
+PKGNAME=pypandoc
+PKGSEC=python
+PKGDEP="pandoc"
+BUILDDEP="python-build python-installer poetry wheel"
+PKGDES="Thin wrapper for pandoc"
+
+ABHOST=noarch

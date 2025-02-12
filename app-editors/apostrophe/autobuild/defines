@@ -1,0 +1,8 @@
+PKGNAME=apostrophe
+PKGSEC=editors
+PKGDEP="dconf glib2 graphene gtk-4 gtksourceview-5 hicolor-icon-theme \
+	libadwaita pango python chardet pygobject-3 webkit2gtk \
+	libspelling pypandoc"
+PKGRECOM="texlive"
+BUILDDEP="appstream"
+PKGDES="Distraction free Markdown editor"
