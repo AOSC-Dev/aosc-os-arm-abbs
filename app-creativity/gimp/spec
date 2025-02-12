@@ -1,5 +1,4 @@
-VER=2.10.38
-REL=1
-SRCS="tbl::https://download.gimp.org/pub/gimp/v${VER:0:4}/gimp-$VER.tar.bz2"
-CHKSUMS="sha256::50a845eec11c8831fe8661707950f5b8446e35f30edfb9acf98f85c1133f856e"
+VER=3.0.0~rc3
+SRCS="tbl::https://download.gimp.org/pub/gimp/v${VER:0:3}/gimp-${VER/~rc/-RC}.tar.xz"
+CHKSUMS="sha256::61fb527cf22d093a3f3501884796ababd3c30dd7f0e354dbdc041bef0f7e38ec"
 CHKUPDATE="anitya::id=1161"
