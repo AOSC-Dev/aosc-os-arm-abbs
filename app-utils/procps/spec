@@ -1,5 +1,4 @@
-VER=4.0.4
+VER=4.0.5
 SRCS="https://gitlab.com/procps-ng/procps/-/archive/v$VER/procps-v$VER.tar.gz"
-CHKSUMS="sha256::3214fab0f817d169f2c117842ba635bafb1cd6090273e311a8b5c6fc393ddb9d"
+CHKSUMS="sha256::2c6d7ed9f2acde1d4dd4602c6172fe56eff86953fe8639bd633dbd22cc18f5db"
 CHKUPDATE="anitya::id=3708"
-REL=2
