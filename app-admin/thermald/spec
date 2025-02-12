@@ -1,4 +1,4 @@
-VER=2.5.7
+VER=2.5.9
 SRCS="git::commit=tags/v$VER::https://github.com/intel/thermal_daemon"
 CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=14500"
