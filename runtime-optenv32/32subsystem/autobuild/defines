@@ -29,7 +29,7 @@ pixman+32 popt+32 portaudio+32 proxychains-ng+32 pulseaudio+32 readline+32
 recode+32 rtmpdump+32 rustc+32 s2tc+32 sbc+32 schroedinger+32 sdl+32 sdl-ttf+32
 shared-mime-info+32 smpeg+32 soundtouch+32 soxr+32 speex+32
 spirv-llvm-translator+32 spirv-tools+32 sqlite+32 srtp+32 taglib+32 tcl+32
-tk+32 twolame+32 util-linux+32 v4l-utils+32 vkd3d+32 volk-meta-loader+32
+twolame+32 util-linux+32 v4l-utils+32 vkd3d+32 volk-meta-loader+32
 vulkan+32 vulkan-headers+32 vulkan-loader+32 vulkan-tools+32 wavpack+32
 wayland+32 wildmidi+32 x11-lib+32 x11-proto+32 x264+32 x265+32 xvidcore+32
 xz+32 zlib+32 zstd+32

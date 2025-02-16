@@ -146,7 +146,6 @@ runtime-optenv32/speex+32
 runtime-optenv32/soxr+32
 runtime-optenv32/ffmpeg+32
 runtime-optenv32/libnl+32
-runtime-optenv32/tk+32
 runtime-optenv32/libexif+32
 runtime-optenv32/libdvdcss+32
 runtime-optenv32/libdvdread+32
