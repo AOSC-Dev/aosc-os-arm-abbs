@@ -1,4 +1,4 @@
-VER=2.80.0
+VER=2.83.3
 SRCS="https://download.gnome.org/sources/glib/${VER:0:4}/glib-$VER.tar.xz"
-CHKSUMS="sha256::8228a92f92a412160b139ae68b6345bd28f24434a7b5af150ebe21ff587a561d"
+CHKSUMS="sha256::d0c65318bb2e3fa594277cf98a71cffaf5f666c078db39dcec121757b2ba328d"
 CHKUPDATE="anitya::id=10024"
