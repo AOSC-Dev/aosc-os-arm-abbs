@@ -1,3 +1,4 @@
+# Note: Sync version with the main package.
 VER=3.11.3
 REL=1
 DUMMYSRC=1
