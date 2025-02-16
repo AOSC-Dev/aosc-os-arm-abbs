@@ -1,0 +1,16 @@
+PKGNAME=sdl2+32
+PKGSEC=x11
+PKGDEP="glibc+32 libxkbcommon+32 mesa+32 tslib+32 x11-lib+32"
+BUILDDEP="devel-base+32 alsa-lib+32 pulseaudio+32 wayland+32"
+PKGDES="A library for portable low-level access to a video framebuffer, audio output, mouse, and keyboard (Version 2, 32-bit x86 runtime)"
+
+# FIXME: The CMake configuration for SDL2 is painful for cross-like builds.
+#
+# We needed to specify the path to each library (and it defaults to /usr/lib)
+# as the search path.
+ABTYPE=autotools
+AUTOTOOLS_AFTER=(
+    '--disable-jack'
+)
+
+ABHOST=optenv32
