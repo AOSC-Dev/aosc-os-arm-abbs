@@ -2,7 +2,7 @@ PKGNAME=mesa+32
 PKGSEC=x11
 PKGDEP="llvm+32 x11-lib+32 libdrm+32 expat+32 eudev+32 elfutils+32 \
         libvdpau+32 libglvnd+32 libva+32 spirv-llvm-translator+32 \
-        libunwind+32 lm-sensors+32 wayland+32"
+        libunwind+32 lm-sensors+32 wayland+32 libcl+32 libclc+32"
 BUILDDEP="devel-base+32 glslang mako pyyaml rust-bindgen rustc+32 \
           spirv-tools+32 cbindgen"
 PKGDES="Runtime library for OpenGL, Vulkan, OpenCL, and more (32-bit x86 runtime)"
@@ -16,6 +16,7 @@ NOLTO=1
 ABHOST=optenv32
 
 # Note: Intel Ray Tracing is only supported for x86_64.
+# Note: RustICL was disabled, as there is no useful driver for x86 yet.
 MESON_AFTER=(
     '-Ddri-drivers-path=/opt/32/lib/xorg/modules/dri'
     '-Db_ndebug=true'
@@ -43,4 +44,8 @@ MESON_AFTER=(
     '-Dsse2=true'
     '-Dvulkan-icd-dir=/usr/share/vulkan/icd.d'
     '-Dlmsensors=enabled'
+    '-Dgallium-opencl=icd'
+    '-Dgallium-rusticl=false'
+    '-Dopencl-spirv=true'
+    '-Dintel-clc=enabled'
 )
