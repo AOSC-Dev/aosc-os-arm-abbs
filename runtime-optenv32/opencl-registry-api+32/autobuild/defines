@@ -1,0 +1,9 @@
+PKGNAME=opencl-registry-api+32
+PKGSEC=libs
+PKGDEP="opencl-registry-api"
+PKGDES="OpenCL (Open Computing Language) header files (32-bit x86 runtime)"
+
+ABHOST=optenv32
+
+# Note: Header-only package.
+ABSPLITDBG=0
