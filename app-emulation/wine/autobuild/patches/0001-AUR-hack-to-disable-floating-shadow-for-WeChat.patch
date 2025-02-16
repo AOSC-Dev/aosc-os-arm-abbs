@@ -1,4 +1,4 @@
-From c20a5119b8e908b0fc9de39d8cf982765f5af21f Mon Sep 17 00:00:00 2001
+From 06ac46c5d2cb658fef5b30e3db476e97e60924a6 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Tue, 20 Feb 2024 12:32:22 +0800
 Subject: [PATCH 1/2] AUR: hack to disable floating shadow for WeChat
@@ -8,10 +8,10 @@ Subject: [PATCH 1/2] AUR: hack to disable floating shadow for WeChat
  1 file changed, 11 insertions(+)
 
 diff --git a/dlls/user32/win.c b/dlls/user32/win.c
-index b8c04047333..0aaf027b0db 100644
+index e6eb05aeebb..f4e4c42a400 100644
 --- a/dlls/user32/win.c
 +++ b/dlls/user32/win.c
-@@ -467,6 +467,17 @@ HWND WINAPI DECLSPEC_HOTPATCH CreateWindowExW( DWORD exStyle, LPCWSTR className,
+@@ -474,6 +474,17 @@ HWND WINAPI DECLSPEC_HOTPATCH CreateWindowExW( DWORD exStyle, LPCWSTR className,
      cs.lpszClass      = className;
      cs.dwExStyle      = exStyle;
  
@@ -30,5 +30,5 @@ index b8c04047333..0aaf027b0db 100644
  }
  
 -- 
-2.43.0
+2.48.1
 
