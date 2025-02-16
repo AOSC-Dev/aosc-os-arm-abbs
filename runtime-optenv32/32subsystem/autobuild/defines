@@ -41,3 +41,5 @@ PKGPROV="optenv32 ia32-libs"
 ABHOST=optenv32
 # Note: Non-arch-agnostic package.
 ABSPLITDBG=0
+
+PKGEPOCH=1
