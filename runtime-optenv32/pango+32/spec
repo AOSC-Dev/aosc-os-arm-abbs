@@ -1,4 +1,4 @@
-VER=1.52.2
+VER=1.56.1
 SRCS="tbl::https://download.gnome.org/sources/pango/${VER%.*}/pango-$VER.tar.xz"
-CHKSUMS="sha256::d0076afe01082814b853deec99f9349ece5f2ce83908b8e58ff736b41f78a96b"
+CHKSUMS="sha256::426be66460c98b8378573e7f6b0b2ab450f6bb6d2ec7cecc33ae81178f246480"
 CHKUPDATE="anitya::id=11783"
