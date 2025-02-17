@@ -32,8 +32,8 @@ runtime-optenv32/json-c+32
 runtime-optenv32/elfutils+32
 runtime-optenv32/libffi+32
 runtime-optenv32/pcre2+32
-runtime-optenv32/dbus+32
 runtime-optenv32/glib+32
+runtime-optenv32/dbus+32
 runtime-optenv32/icu+32
 runtime-optenv32/lzo+32
 runtime-optenv32/pixman+32
