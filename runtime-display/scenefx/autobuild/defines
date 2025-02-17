@@ -7,9 +7,9 @@ PKGDES="A drop-in replacement for the wlroots scene API"
 
 ABTYPE=meson
 
-# FIXME: other renderers / backends are not actually implemented by upstream
-# yet, the options here need to match the ones in wlroots once they are
-# implemented.
-MESON_AFTER="-Dxwayland=enabled \
-    -Drenderers=gles2 \
-    -Dbackends=drm"
+MESON_AFTER=(
+    -Dexamples=true
+    -Drenderers=gles2
+)
+
+PKGBREAK="swayfx<=0.4-2"
