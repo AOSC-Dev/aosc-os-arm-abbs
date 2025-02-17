@@ -14,6 +14,7 @@ runtime-optenv32/expat+32
 runtime-optenv32/brotli+32
 runtime-optenv32/bzip2+32
 runtime-optenv32/libpng+32
+runtime-optenv32/libpng-1.6+32
 runtime-optenv32/x11-proto+32
 runtime-optenv32/libxau+32
 runtime-optenv32/libxdmcp+32
@@ -43,7 +44,6 @@ runtime-optenv32/harfbuzz+32
 runtime-optenv32/freetype+32
 runtime-optenv32/fontconfig+32
 runtime-optenv32/x11-lib+32
-runtime-optenv32/libpng-1.6+32
 runtime-optenv32/libunwind+32
 runtime-optenv32/libjpeg-turbo+32
 runtime-optenv32/libtiff+32
