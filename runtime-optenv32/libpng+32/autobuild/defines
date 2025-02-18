@@ -1,6 +1,6 @@
 PKGNAME=libpng+32
 PKGSEC=libs
-PKGDEP="zlib+32"
+PKGDEP="aosc-aaa+32 zlib+32"
 BUILDDEP="devel-base+32"
 PKGDES="Libraries used by other programs for reading and writing PNG files (32-bit x86 runtime)"
 
