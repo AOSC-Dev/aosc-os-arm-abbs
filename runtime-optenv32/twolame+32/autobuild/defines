@@ -1,6 +1,6 @@
 PKGNAME=twolame+32
 PKGSEC=libs
-PKGDEP="libsndfile+32"
+PKGDEP="aosc-aaa+32 libsndfile+32"
 BUILDDEP="devel-base+32"
 PKGDES="An optimized MPEG Audio Layer 2 encoder (32-bit x86 runtime)"
 
