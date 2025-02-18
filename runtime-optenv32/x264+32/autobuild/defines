@@ -1,6 +1,6 @@
 PKGNAME=x264+32
 PKGSEC=libs
-PKGDEP="glibc+32"
+PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32 nasm+32"
 PKGDES="H264 encoding library (32-bit x86 runtime)"
 
