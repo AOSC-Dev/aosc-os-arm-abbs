@@ -1,6 +1,6 @@
 PKGNAME=krb5+32
 PKGSEC=libs
-PKGDEP="openldap+32"
+PKGDEP="aosc-aaa+32 openldap+32"
 BUILDDEP="devel-base+32"
 PKGDES="The Kerberos network authentication system (32-bit x86 runtime)"
 
