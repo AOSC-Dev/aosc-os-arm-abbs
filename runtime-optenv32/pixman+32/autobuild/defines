@@ -1,6 +1,6 @@
 PKGNAME=pixman+32
 PKGSEC=libs
-PKGDEP="glibc+32 libpng+32"
+PKGDEP="aosc-aaa+32 glibc+32 libpng+32"
 BUILDDEP="devel-base+32"
 PKGDES="Pixel manipulation library for X and Cairo (32-bit x86 runtime)"
 
