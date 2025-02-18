@@ -1,0 +1,13 @@
+PKGNAME=aosc-aaa+32
+PKGSEC=misc
+PKGDEP=""
+PKGDES="Bed-rock level system definitions (32-bit x86 runtime)"
+
+ABQA=0
+ABHOST=optenv32
+
+# Note: Skeleton package.
+ABSPLITDBG=0
+
+PKGBREAK="32subsystem<=1:2"
+PKGREP="32subystem<=1:2"

@@ -1,0 +1,5 @@
+for i in etc share var; do
+    if [ -L /opt/32/$i ]; then
+        rm /opt/32/$i
+    fi
+done
