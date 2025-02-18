@@ -1,6 +1,6 @@
 PKGNAME=libclc+32
 PKGSEC=libs
-PKGDEP="libclc"
+PKGDEP="aosc-aaa+32 libclc"
 PKGDES="Library requirements of the OpenCL C programming language (32-bit x86 runtime)"
 
 ABHOST=optenv32
