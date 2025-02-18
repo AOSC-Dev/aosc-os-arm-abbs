@@ -1,7 +1,7 @@
 PKGNAME="devel-base+32"
 PKGDES="Meta package for AOSC OS optenv32 development support (32-bit x86 runtime)"
 PKGSEC=misc
-PKGDEP="devel-base gcc+32 binutils+32 linux+api+32 glibc+32"
+PKGDEP="aosc-aaa+32 devel-base gcc+32 binutils+32 linux+api+32 glibc+32"
 
 ABSPLITDBG=0
 ABHOST="optenv32"
