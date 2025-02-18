@@ -1,5 +1,5 @@
 PKGNAME=mpc+32
-PKGDEP="gmp+32 mpfr+32"
+PKGDEP="aosc-aaa+32 gmp+32 mpfr+32"
 PKGSEC=libs
 PKGDES="Library for the arithmetic of complex numbers (32-bit x86 runtime)"
 BUILDDEP="devel-base+32"
