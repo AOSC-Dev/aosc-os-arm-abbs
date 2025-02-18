@@ -1,6 +1,6 @@
 PKGNAME=opencore-amr+32
 PKGSEC=libs
-PKGDEP="glibc+32"
+PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="Open source implementation of the Adaptive Multi Rate (AMR) speech codec (32-bit x86 runtime)"
 
