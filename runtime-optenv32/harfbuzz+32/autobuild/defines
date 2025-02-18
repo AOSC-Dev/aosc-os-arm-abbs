@@ -1,6 +1,6 @@
 PKGNAME=harfbuzz+32
 PKGSEC=libs
-PKGDEP="cairo+32 freetype+32 glibc+32 glib+32 icu+32"
+PKGDEP="aosc-aaa+32 cairo+32 freetype+32 glibc+32 glib+32 icu+32"
 BUILDDEP="devel-base+32 ragel"
 PKGDES="OpenType text shaping engine (32-bit x86 runtime)"
 
