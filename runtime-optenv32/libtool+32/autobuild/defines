@@ -1,6 +1,6 @@
 PKGNAME=libtool+32
 PKGSEC=devel
-PKGDEP="glibc+32"
+PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="GNU generic library support script (32-bit x86 runtime)"
 
