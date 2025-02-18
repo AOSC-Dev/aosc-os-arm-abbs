@@ -1,6 +1,6 @@
 PKGNAME=libva-vdpau-driver+32
 PKGSEC=libs
-PKGDEP="libva+32 libvdpau+32"
+PKGDEP="aosc-aaa+32 libva+32 libvdpau+32"
 BUILDDEP="devel-base+32"
 PKGDES="VDPAU backend for VA-API (32-bit x86 runtime)"
 
