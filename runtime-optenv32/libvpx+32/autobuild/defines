@@ -1,6 +1,6 @@
 PKGNAME=libvpx+32
 PKGSEC=libs
-PKGDEP="glibc+32"
+PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32 nasm"
 PKGDES="VPx (8, 9, 10) Video Codec SDK (32-bit x86 runtime)"
 
