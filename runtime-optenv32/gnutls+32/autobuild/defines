@@ -1,6 +1,6 @@
 PKGNAME=gnutls+32
 PKGSEC=libs
-PKGDEP="brotli+32 nettle+32 zstd+32"
+PKGDEP="aosc-aaa+32 brotli+32 nettle+32 zstd+32"
 BUILDDEP="devel-base+32 gtk-doc python-3"
 PKGDES="Library that provides a secure layer over a reliable transport layer (32-bit x86 runtime)"
 
