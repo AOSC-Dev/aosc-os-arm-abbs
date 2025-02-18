@@ -1,6 +1,6 @@
 PKGNAME=libffi+32
 PKGSEC=libs
-PKGDEP="glibc+32"
+PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="Portable foreign function interface library (32-bit x86 runtime)"
 
