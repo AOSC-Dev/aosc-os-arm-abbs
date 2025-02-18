@@ -1,6 +1,6 @@
 PKGNAME=sqlite+32
 PKGSEC=database
-PKGDEP="readline+32 tcl+32"
+PKGDEP="aosc-aaa+32 readline+32 tcl+32"
 BUILDDEP="devel-base+32"
 PKGDES="A full-featured and self-contained SQL database engine (32-bit x86 runtime)"
 
