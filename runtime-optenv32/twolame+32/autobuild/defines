@@ -4,7 +4,7 @@ PKGDEP="aosc-aaa+32 libsndfile+32"
 BUILDDEP="devel-base+32"
 PKGDES="An optimized MPEG Audio Layer 2 encoder (32-bit x86 runtime)"
 
-ABHOST=noarch
+ABHOST=optenv32
 
 # FIXME: Fails with "source directory already configured."
 ABSHADOW=0
