@@ -1,6 +1,6 @@
 PKGNAME=libid3tag+32
 PKGSEC=libs
-PKGDEP="zlib+32"
+PKGDEP="aosc-aaa+32 zlib+32"
 BUILDDEP="devel-base+32 gperf"
 PKGDES="ID3 Tag Library (32-bit x86 runtime)"
 
