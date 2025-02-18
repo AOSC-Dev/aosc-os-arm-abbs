@@ -5,13 +5,13 @@ PKGDEP="""
 a52dec+32 aalib+32 acl+32 alsa-lib+32 alsa-plugins+32 at-spi2-core+32 attr+32
 binutils+32 brotli+32 bzip2+32 cairo+32 cdparanoia+32 celt+32 cups+32 curl+32
 dbus+32 dbus-glib+32 devel-base+32 elfutils+32 enca+32 eudev+32 expat+32
-faac+32 faad2+32 ffmpeg+32 fftw+32 flac+32 fluidsynth+32 fontconfig+32
+faac+32 ffmpeg+32 fftw+32 flac+32 fluidsynth+32 fontconfig+32
 freealut+32 freeglut+32 freetype+32 fribidi+32 game-music-emu+32 gcc+32
 gconf+32 gdbm+32 gdk-pixbuf+32 giflib+32 glew+32 glib+32 glibc+32 glslang+32
 glu+32 gmp+32 gnutls+32 gsm+32 gtk-2+32 gtk-3+32 harfbuzz+32 icu+32 imlib2+32
 json-c+32 krb5+32 lame+32 lcms2+32 libaio+32 libass+32 libasyncns+32
 libavc1394+32 libbluray+32 libbsd+32 libcaca+32 libcap+32 libcddb+32 libcdio+32
-libcroco+32 libdatrie+32 libdca+32 libdrm+32 libdv+32 libdvdcss+32 libdvdnav+32
+libdatrie+32 libdca+32 libdrm+32 libdv+32 libdvdcss+32 libdvdnav+32
 libdvdread+32 libepoxy+32 libexif+32 libffi+32 libgcrypt+32 libglvnd+32
 libgpg-error+32 libid3tag+32 libidn+32 libiec61883+32 libjpeg-turbo+32
 libmad+32 libmd+32 libmikmod+32 libmms+32 libmodplug+32 libmpeg2+32 libnl+32
@@ -28,7 +28,7 @@ openssl-1.1+32 openssl+32 opus+32 orc+32 p11-kit+32 pango+32 pcre2+32 pcre+32
 pixman+32 popt+32 portaudio+32 proxychains-ng+32 pulseaudio+32 readline+32
 recode+32 rtmpdump+32 rustc+32 s2tc+32 sbc+32 schroedinger+32 sdl+32 sdl-ttf+32
 shared-mime-info+32 smpeg+32 soundtouch+32 soxr+32 speex+32
-spirv-llvm-translator+32 spirv-tools+32 sqlite+32 srtp+32 taglib+32 tcl+32
+spirv-llvm-translator+32 spirv-tools+32 sqlite+32 taglib+32 tcl+32
 twolame+32 util-linux+32 v4l-utils+32 vkd3d+32 volk-meta-loader+32
 vulkan+32 vulkan-headers+32 vulkan-loader+32 vulkan-tools+32 wavpack+32
 wayland+32 wildmidi+32 x11-lib+32 x11-proto+32 x264+32 x265+32 xvidcore+32
