@@ -1,6 +1,6 @@
 PKGNAME=vulkan-headers+32
 PKGSEC=libs
-PKGDEP=""
+PKGDEP="aosc-aaa+32 "
 BUILDDEP="devel-base+32"
 PKGDES="Vulkan header files and API registry (32-bit x86 runtime)"
 
