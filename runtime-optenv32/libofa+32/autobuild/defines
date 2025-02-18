@@ -1,6 +1,6 @@
 PKGNAME=libofa+32
 PKGSEC=libs
-PKGDEP="fftw+32 curl+32 expat+32"
+PKGDEP="aosc-aaa+32 fftw+32 curl+32 expat+32"
 BUILDDEP="devel-base+32"
 PKGDES="Libraries that implements MusicIP (32-bit x86 runtime)"
 
