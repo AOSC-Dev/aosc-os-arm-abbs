@@ -1,6 +1,6 @@
 PKGNAME=vulkan-loader+32
 PKGSEC=libs
-PKGDEP="libxkbcommon+32 mesa+32 x11-lib+32"
+PKGDEP="aosc-aaa+32 libxkbcommon+32 mesa+32 x11-lib+32"
 # FIXME: vulkan-headers is used to provide the CMake modules needed during the
 # CMake configuration process.
 BUILDDEP="devel-base+32 libxcb+32 lxml vulkan-headers vulkan-headers+32"
