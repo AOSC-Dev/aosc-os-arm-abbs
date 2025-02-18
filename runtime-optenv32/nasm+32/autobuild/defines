@@ -1,6 +1,6 @@
 PKGNAME=nasm+32
 PKGSEC=devel
-PKGDEP="glibc+32"
+PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="An 80x86 assembler designed for portability and modularity (32-bit x86 runtime)"
 
