@@ -1,6 +1,6 @@
 PKGNAME=libepoxy+32
 PKGSEC=libs
-PKGDEP="mesa+32 x11-lib+32"
+PKGDEP="aosc-aaa+32 mesa+32 x11-lib+32"
 BUILDDEP="devel-base+32"
 PKGDES="A library for handling OpenGL function pointer management for you (32-bit x86 runtime)"
 
