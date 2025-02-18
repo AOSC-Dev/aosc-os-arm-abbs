@@ -1,6 +1,6 @@
 PKGNAME=giflib+32
 PKGSEC=libs
-PKGDEP="glibc+32"
+PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32 xmlto docbook-xsl"
 PKGDES="A library for reading and writing GIF images (32-bit x86 runtime)"
 
