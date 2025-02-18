@@ -1,6 +1,6 @@
 PKGNAME=brotli+32
 PKGSEC=utils
-PKGDEP="gcc+32"
+PKGDEP="aosc-aaa+32 gcc+32"
 BUILDDEP="devel-base+32"
 PKGDES="Brotli compression library and utility (32-bit x86 runtime)"
 
