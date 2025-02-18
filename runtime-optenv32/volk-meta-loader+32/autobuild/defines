@@ -1,6 +1,6 @@
 PKGNAME=volk-meta-loader+32
 PKGSEC=libs
-PKGDEP="vulkan-headers+32"
+PKGDEP="aosc-aaa+32 vulkan-headers+32"
 BUILDDEP="devel-base+32"
 PKGDES="Meta loader for Vulkan API (32-bit x86 runtime)"
 
