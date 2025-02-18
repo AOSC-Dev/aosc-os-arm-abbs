@@ -1,6 +1,6 @@
 PKGNAME=sdl2+32
 PKGSEC=x11
-PKGDEP="glibc+32 libxkbcommon+32 mesa+32 tslib+32 x11-lib+32"
+PKGDEP="aosc-aaa+32 glibc+32 libxkbcommon+32 mesa+32 tslib+32 x11-lib+32"
 BUILDDEP="devel-base+32 alsa-lib+32 pulseaudio+32 wayland+32"
 PKGDES="A library for portable low-level access to a video framebuffer, audio output, mouse, and keyboard (Version 2, 32-bit x86 runtime)"
 
