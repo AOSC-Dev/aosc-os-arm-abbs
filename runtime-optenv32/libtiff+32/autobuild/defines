@@ -1,6 +1,6 @@
 PKGNAME=libtiff+32
 PKGSEC=libs
-PKGDEP="glibc+32 libjpeg-turbo+32 x11-lib+32"
+PKGDEP="aosc-aaa+32 glibc+32 libjpeg-turbo+32 x11-lib+32"
 BUILDDEP="devel-base+32"
 PKGDES="Library for manipulation of TIFF images (32-bit x86 runtime)"
 
