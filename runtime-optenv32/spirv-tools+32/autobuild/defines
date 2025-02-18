@@ -1,6 +1,6 @@
 PKGNAME=spirv-tools+32
 PKGSEC=libs
-PKGDEP="gcc+32 spirv-headers"
+PKGDEP="aosc-aaa+32 gcc+32 spirv-headers"
 BUILDDEP="python-3"
 PKGDES="API and commands for processing SPIR-V modules (32-bit x86 runtime)"
 
