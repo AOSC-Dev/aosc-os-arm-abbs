@@ -1,4 +1,0 @@
-abinfo "Building symlinks to shared data between main and 32-bit environments ..."
-mkdir -pv "$PKGDIR"/{opt/32/lib,usr/include/gnu}
-ln -sv ../../../usr/lib/locale \
-    "$PKGDIR"/opt/32/lib

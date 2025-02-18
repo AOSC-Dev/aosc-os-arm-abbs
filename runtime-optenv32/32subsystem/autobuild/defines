@@ -1,5 +1,5 @@
 PKGNAME=32subsystem
-PKGSEC=libs 
+PKGSEC=libs
 # Note: Everything, basically.
 PKGDEP="""
 a52dec+32 aalib+32 acl+32 alsa-lib+32 alsa-plugins+32 at-spi2-core+32 attr+32
@@ -32,7 +32,7 @@ spirv-llvm-translator+32 spirv-tools+32 sqlite+32 srtp+32 taglib+32 tcl+32
 twolame+32 util-linux+32 v4l-utils+32 vkd3d+32 volk-meta-loader+32
 vulkan+32 vulkan-headers+32 vulkan-loader+32 vulkan-tools+32 wavpack+32
 wayland+32 wildmidi+32 x11-lib+32 x11-proto+32 x264+32 x265+32 xvidcore+32
-xz+32 zlib+32 zstd+32
+xz+32 zlib+32 zstd+32 aosc-aaa+32
 """
 PKGDES="32-bit runtime and development environment"
 
@@ -43,3 +43,5 @@ ABHOST=optenv32
 ABSPLITDBG=0
 
 PKGEPOCH=1
+
+ABTYPE=dummy
