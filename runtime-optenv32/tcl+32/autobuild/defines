@@ -1,6 +1,6 @@
 PKGNAME=tcl+32
 PKGSEC=devel
-PKGDEP="zlib+32"
+PKGDEP="aosc-aaa+32 zlib+32"
 BUILDDEP="devel-base+32"
 PKGDES="Tool Command Lanuage (32-bit x86 runtime)"
 
