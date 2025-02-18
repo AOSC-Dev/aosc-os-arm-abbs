@@ -1,6 +1,6 @@
 PKGNAME=fluidsynth+32
 PKGSEC=sound
-PKGDEP="glib+32 pulseaudio+32"
+PKGDEP="aosc-aaa+32 glib+32 pulseaudio+32"
 BUILDDEP="devel-base+32"
 PKGDES="A real-time software synthesizer based on the SoundFont 2 specifications (32-bit x86 runtime)"
 
