@@ -1,6 +1,6 @@
 PKGNAME=gconf+32
 PKGSEC=gnome
-PKGDEP="dbus-glib+32 libxml2+32 openldap+32"
+PKGDEP="aosc-aaa+32 dbus-glib+32 libxml2+32 openldap+32"
 BUILDDEP="devel-base+32 gtk-doc intltool"
 PKGDES="GConf configuration database system (32-bit x86 runtime)"
 
