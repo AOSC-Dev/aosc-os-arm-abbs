@@ -1,6 +1,6 @@
 PKGNAME=rtmpdump+32
 PKGSEC=libs
-PKGDEP="openssl+32"
+PKGDEP="aosc-aaa+32 openssl+32"
 BUILDDEP="devel-base+32"
 PKGDES="A tool to download RTMP streams (32-bit x86 runtime)"
 
