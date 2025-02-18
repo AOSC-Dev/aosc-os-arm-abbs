@@ -1,6 +1,6 @@
 PKGNAME=libdrm+32
 PKGSEC=x11
-PKGDEP="cairo+32 x11-lib+32"
+PKGDEP="aosc-aaa+32 cairo+32 x11-lib+32"
 BUILDDEP="devel-base+32"
 PKGDES="Direct Rendering Manager runtime library (32-bit x86 runtime)"
 
