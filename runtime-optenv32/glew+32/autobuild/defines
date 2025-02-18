@@ -1,6 +1,6 @@
 PKGNAME=glew+32
 PKGSEC=libs
-PKGDEP="glu+32"
+PKGDEP="aosc-aaa+32 glu+32"
 BUILDDEP="devel-base+32"
 PKGDES="The OpenGL Extension Wrangler Library (32-bit x86 runtime)"
 
