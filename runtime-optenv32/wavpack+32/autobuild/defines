@@ -1,6 +1,6 @@
 PKGNAME=wavpack+32
 PKGSEC=libs
-PKGDEP="glibc+32"
+PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="Audio compression format with lossless, lossy and hybrid compression modes (32-bit x86 runtime)"
 
