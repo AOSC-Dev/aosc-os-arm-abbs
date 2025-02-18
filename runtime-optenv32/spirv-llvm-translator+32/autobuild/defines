@@ -1,6 +1,6 @@
 PKGNAME=spirv-llvm-translator+32
 PKGSEC=devel
-PKGDEP="llvm+32"
+PKGDEP="aosc-aaa+32 llvm+32"
 BUILDDEP="spirv-tools+32 spirv-headers"
 PKGDES="A tool and a library for bi-directional translation between SPIR-V and LLVM IR (32-bit x86 runtime)"
 
