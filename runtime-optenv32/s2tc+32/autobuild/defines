@@ -1,6 +1,6 @@
 PKGNAME=s2tc+32
 PKGSEC=libs
-PKGDEP="mesa+32"
+PKGDEP="aosc-aaa+32 mesa+32"
 BUILDDEP="devel-base+32"
 PKGDES="S2TC texture compress library (32-bit x86 runtime)"
 
