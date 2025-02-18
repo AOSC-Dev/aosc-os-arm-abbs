@@ -1,6 +1,6 @@
 PKGNAME=soundtouch+32
 PKGSEC=libs
-PKGDEP="gcc+32"
+PKGDEP="aosc-aaa+32 gcc+32"
 BUILDDEP="devel-base+32"
 PKGDES="An audio processing library (32-bit x86 runtime)"
 
