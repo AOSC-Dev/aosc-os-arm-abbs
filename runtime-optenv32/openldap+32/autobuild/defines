@@ -1,6 +1,6 @@
 PKGNAME=openldap+32
 PKGSEC=net
-PKGDEP="openssl+32"
+PKGDEP="aosc-aaa+32 openssl+32"
 BUILDDEP="devel-base+32"
 PKGDES="Lightweight Directory Access Protocol (LDAP) client/server (32-bit x86 runtime)"
 
