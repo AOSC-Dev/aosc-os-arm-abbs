@@ -1,6 +1,6 @@
 PKGNAME=libshout+32
 PKGSEC=libs
-PKGDEP="libogg+32 libvorbis+32 speex+32 libtheora+32"
+PKGDEP="aosc-aaa+32 libogg+32 libvorbis+32 speex+32 libtheora+32"
 BUILDDEP="devel-base+32"
 PKGDES="MP3/Ogg Vorbis broadcast streaming library (32-bit x86 runtime)"
 
