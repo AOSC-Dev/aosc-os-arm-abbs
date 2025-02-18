@@ -1,6 +1,6 @@
 PKGNAME=fribidi+32
 PKGSEC=libs
-PKGDEP="glib+32"
+PKGDEP="aosc-aaa+32 glib+32"
 BUILDDEP="devel-base+32"
 PKGDES="Free implementation of BiDi algorithm (32-bit x86 runtime)"
 
