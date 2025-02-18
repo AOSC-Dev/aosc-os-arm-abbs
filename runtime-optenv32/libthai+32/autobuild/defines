@@ -1,6 +1,6 @@
 PKGNAME=libthai+32
 PKGSEC=libs
-PKGDEP="libdatrie+32"
+PKGDEP="aosc-aaa+32 libdatrie+32"
 BUILDDEP="devel-base+32"
 PKGDES="Thai language support routines (32-bit x86 runtime)"
 
