@@ -1,6 +1,6 @@
 PKGNAME=libdv+32
 PKGSEC=libs
-PKGDEP="popt+32"
+PKGDEP="aosc-aaa+32 popt+32"
 BUILDDEP="autoconf-archive devel-base+32"
 PKGDES="The Quarsar DV codec (32-bit x86 runtime)"
 
