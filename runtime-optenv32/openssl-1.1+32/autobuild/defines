@@ -1,6 +1,6 @@
 PKGNAME=openssl-1.1+32
 PKGSEC=libs
-PKGDEP="ca-certs glibc+32 zlib+32"
+PKGDEP="aosc-aaa+32 ca-certs glibc+32 zlib+32"
 BUILDDEP="devel-base+32"
 PKGDES="Open Source toolkit for Secure Sockets Layer and Transport Layer Security (1.1, 32-bit x86 runtime)"
 
