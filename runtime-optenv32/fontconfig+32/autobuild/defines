@@ -1,6 +1,7 @@
 PKGNAME=fontconfig+32
 PKGSEC=libs
-PKGDEP="expat+32 freetype+32 glibc+32 json-c+32 libxml2+32 util-linux+32"
+PKGDEP="expat+32 freetype+32 glibc+32 json-c+32 libpng+32 libxml2+32 \
+        util-linux+32"
 BUILDDEP="devel-base+32 gperf"
 PKGDES="A library for configuring and customizing font access (32-bit x86 runtime)"
 
