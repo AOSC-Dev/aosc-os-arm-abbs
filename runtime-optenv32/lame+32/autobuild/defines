@@ -1,6 +1,6 @@
 PKGNAME=lame+32
 PKGSEC=sound
-PKGDEP="ncurses+32"
+PKGDEP="aosc-aaa+32 ncurses+32"
 BUILDDEP="devel-base+32"
 PKGDES="A high quality MP3 Encoder (32-bit x86 runtime)"
 
