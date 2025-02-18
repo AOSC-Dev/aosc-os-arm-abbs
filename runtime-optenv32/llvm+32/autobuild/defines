@@ -1,6 +1,6 @@
 PKGNAME=llvm+32
 PKGSEC=devel
-PKGDEP="libffi+32 llvm zstd+32"
+PKGDEP="aosc-aaa+32 libffi+32 llvm zstd+32"
 BUILDDEP="devel-base+32"
 PKGDES="Low Level Virtual Machine Infrastructure (32-bit x86 runtime)"
 
