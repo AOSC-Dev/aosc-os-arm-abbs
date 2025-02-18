@@ -1,6 +1,6 @@
 PKGNAME=opus+32
 PKGSEC=libs
-PKGDEP="glibc+32"
+PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="Codec designed for interactive speech and audio transmission over the Internet (32-bit x86 runtime)"
 
