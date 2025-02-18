@@ -1,6 +1,6 @@
 PKGNAME=libmpeg2+32
 PKGSEC=libs
-PKGDEP="sdl+32 x11-lib+32"
+PKGDEP="aosc-aaa+32 sdl+32 x11-lib+32"
 BUILDDEP="devel-base+32"
 PKGDES="Library for decoding MPEG-1 and MPEG-2 video streams (32-bit x86 runtime)"
 
