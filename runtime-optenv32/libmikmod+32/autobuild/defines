@@ -1,6 +1,6 @@
 PKGNAME=libmikmod+32
 PKGSEC=libs
-PKGDEP="pulseaudio+32"
+PKGDEP="aosc-aaa+32 pulseaudio+32"
 BUILDDEP="devel-base+32"
 PKGDES="Modular music player and library (32-bit x86 runtime)"
 
