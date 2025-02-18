@@ -1,6 +1,6 @@
 PKGNAME=libdca+32
 PKGSEC=libs
-PKGDEP="glibc+32"
+PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="Free library for decoding DTS Coherent Acoustics streams (32-bit x86 runtime)"
 
