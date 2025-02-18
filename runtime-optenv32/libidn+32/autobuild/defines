@@ -1,6 +1,6 @@
 PKGNAME=libidn+32
 PKGSEC=libs
-PKGDEP="glibc+32"
+PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32 gtk-doc"
 PKGDES="Implementation of the Stringprep, Punycode and IDNA specifications (32-bit x86 runtime)"
 
