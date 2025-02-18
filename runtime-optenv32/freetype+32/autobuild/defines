@@ -1,6 +1,7 @@
 PKGNAME=freetype+32
 PKGSEC=libs
-PKGDEP="brotli+32 bzip2+32 harfbuzz+32 libpng+32 x11-lib+32 zlib+32"
+PKGDEP="aosc-aaa+32 brotli+32 bzip2+32 harfbuzz+32 libpng+32 x11-lib+32 \
+        zlib+32"
 BUILDDEP="devel-base+32"
 PKGDES="Font rendering engine (32-bit x86 runtime)"
 
