@@ -1,6 +1,6 @@
 PKGNAME=vulkan+32
 PKGSEC=libs
-PKGDEP="vulkan-headers+32 vulkan-loader+32 vulkan-tools+32"
+PKGDEP="aosc-aaa+32 vulkan-headers+32 vulkan-loader+32 vulkan-tools+32"
 PKGDES="A low-overhead, cross-platform 3D graphics and compute API (metapackage, 32-bit x86 runtime)"
 
 PKGEPOCH=1
