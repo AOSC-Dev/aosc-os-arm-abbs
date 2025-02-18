@@ -1,6 +1,6 @@
 PKGNAME=neon+32
 PKGSEC=libs
-PKGDEP="expat+32 krb5+32 ca-certs"
+PKGDEP="aosc-aaa+32 expat+32 krb5+32 ca-certs"
 BUILDDEP="devel-base+32"
 PKGDES="An HTTP and WebDAV client library, with a C interface (32-bit x86 runtime)"
 
