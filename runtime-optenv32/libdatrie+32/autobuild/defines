@@ -1,6 +1,6 @@
 PKGNAME=libdatrie+32
 PKGSEC=libs
-PKGDEP="glibc+32"
+PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="Implementation of double-array structure for representing trie (32-bit x86 runtime)"
 
