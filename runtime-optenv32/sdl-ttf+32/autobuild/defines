@@ -1,6 +1,6 @@
 PKGNAME=sdl-ttf+32
 PKGSEC=libs
-PKGDEP="sdl+32 freetype+32"
+PKGDEP="aosc-aaa+32 sdl+32 freetype+32"
 BUILDDEP="devel-base+32"
 PKGDES="A library that allows you to use TrueType fonts in your SDL applications (32-bit x86 runtime)"
 
