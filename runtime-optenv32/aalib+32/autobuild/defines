@@ -1,6 +1,6 @@
 PKGNAME=aalib+32
 PKGSEC=libs
-PKGDEP="ncurses+32 x11-lib+32"
+PKGDEP="aosc-aaa+32 ncurses+32 x11-lib+32"
 BUILDDEP="devel-base+32"
 PKGDES="ASCII Art Library (32-bit x86 runtime)"
 
