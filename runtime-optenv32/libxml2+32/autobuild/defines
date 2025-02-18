@@ -1,6 +1,6 @@
 PKGNAME=libxml2+32
 PKGSEC=libs
-PKGDEP="glibc+32 zlib+32 readline+32 ncurses+32 xz+32"
+PKGDEP="aosc-aaa+32 glibc+32 zlib+32 readline+32 ncurses+32 xz+32"
 BUILDDEP="devel-base+32"
 PKGDES="Utilities and libraries for parsing XMLs (32-bit x86 runtime)"
 
