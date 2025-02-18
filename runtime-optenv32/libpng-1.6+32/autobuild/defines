@@ -1,6 +1,6 @@
 PKGNAME=libpng-1.6+32
 PKGSEC=libs
-PKGDEP="libpng+32"
+PKGDEP="aosc-aaa+32 libpng+32"
 PKGDES="Transitional package for libpng+32 (32-bit x86 runtime)"
 
 PKGEPOCH=2
