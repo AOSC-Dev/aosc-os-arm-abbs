@@ -1,6 +1,6 @@
 PKGNAME=libvdpau+32
 PKGSEC=libs
-PKGDEP="x11-lib+32"
+PKGDEP="aosc-aaa+32 x11-lib+32"
 BUILDDEP="devel-base+32"
 PKGDES="Video Decode and Presentation API for Unix, from NVIDIA (32-bit x86 runtime)"
 
