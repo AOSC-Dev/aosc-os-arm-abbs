@@ -1,6 +1,6 @@
 PKGNAME=libvorbis+32
 PKGSEC=libs
-PKGDEP="libogg+32"
+PKGDEP="aosc-aaa+32 libogg+32"
 BUILDDEP="devel-base+32"
 PKGDES="Vorbis codec library (32-bit x86 runtime)"
 
