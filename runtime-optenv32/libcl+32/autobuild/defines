@@ -1,6 +1,6 @@
 PKGNAME=libcl+32
 PKGSEC=libs
-PKGDEP="glibc+32"
+PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32 opencl-registry-api+32 ruby"
 PKGDES="OpenCL ICD bindings and headers (32-bit x86 runtime)"
 
