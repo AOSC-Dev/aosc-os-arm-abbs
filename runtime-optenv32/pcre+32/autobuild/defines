@@ -1,6 +1,6 @@
 PKGNAME=pcre+32
 PKGSEC=libs
-PKGDEP="zlib+32 bzip2+32 readline+32 glibc+32"
+PKGDEP="aosc-aaa+32 zlib+32 bzip2+32 readline+32 glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="Perl Compatible Regular Expression (32-bit x86 runtime)"
 
