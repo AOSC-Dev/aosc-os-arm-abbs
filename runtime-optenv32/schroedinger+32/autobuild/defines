@@ -1,6 +1,6 @@
 PKGNAME=schroedinger+32
 PKGSEC=libs
-PKGDEP="orc+32"
+PKGDEP="aosc-aaa+32 orc+32"
 BUILDDEP="devel-base+32 gtk-doc"
 PKGDES="An implementation of the Dirac video codec in ANSI C code (32-bit x86 runtime)"
 
