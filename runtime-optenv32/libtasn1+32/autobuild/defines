@@ -1,6 +1,6 @@
 PKGNAME=libtasn1+32
 PKGSEC=libs
-PKGDEP="glibc+32"
+PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32 gtk-doc"
 PKGDES="A highly portable C library that encodes and decodes DER/BER data following an ASN.1 schema (32-bit x86 runtime)"
 
