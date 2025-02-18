@@ -1,6 +1,6 @@
 PKGNAME=libcap+32
 PKGSEC=libs
-PKGDEP="attr+32 glibc+32"
+PKGDEP="aosc-aaa+32 attr+32 glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="POSIX 1003.1e capabilities (32-bit x86 runtime)"
 
