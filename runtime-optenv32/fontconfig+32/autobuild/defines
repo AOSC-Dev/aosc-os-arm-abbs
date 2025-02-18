@@ -17,5 +17,4 @@ MESON_AFTER=(
     '-Dnls=disabled'
     '-Dtools=enabled'
     '-Dcache-build=disabled'
-    '-Dbaseconfig-dir=/etc'
 )
