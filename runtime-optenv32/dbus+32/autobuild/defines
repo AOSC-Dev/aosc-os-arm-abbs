@@ -1,6 +1,6 @@
 PKGNAME=dbus+32
 PKGSEC=libs
-PKGDEP="expat+32 glib+32 glibc+32"
+PKGDEP="aosc-aaa+32 expat+32 glib+32 glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="D-Bus, a system message bus (32-bit x86 runtime)"
 
