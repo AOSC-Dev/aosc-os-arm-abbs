@@ -1,6 +1,6 @@
 PKGNAME=libxslt+32
 PKGSEC=libs
-PKGDEP="glibc+32 libxml2+32 libgcrypt+32 python-2+32"
+PKGDEP="aosc-aaa+32 glibc+32 libxml2+32 libgcrypt+32 python-2+32"
 BUILDDEP="devel-base+32"
 PKGDES="C library for eXtensible Stylesheet Language Transformations (XSLT) (32-bit x86 runtime)"
 
