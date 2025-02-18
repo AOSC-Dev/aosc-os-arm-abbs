@@ -1,6 +1,6 @@
 PKGNAME=libcaca+32
 PKGSEC=libs
-PKGDEP="imlib2+32 ncurses+32 pango+32"
+PKGDEP="aosc-aaa+32 imlib2+32 ncurses+32 pango+32"
 BUILDDEP="devel-base+32"
 PKGDES="Color ASCII art libraries (32-bit x86 runtime)"
 
