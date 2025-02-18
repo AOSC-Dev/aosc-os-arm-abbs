@@ -1,6 +1,6 @@
 PKGNAME=nlohmann-json+32
 PKGSEC=libs
-PKGDEP="nlohmann-json"
+PKGDEP="aosc-aaa+32 nlohmann-json"
 PKGDES="JSON for Modern C++ (32-bit x86 runtime)"
 
 ABHOST=optenv32
