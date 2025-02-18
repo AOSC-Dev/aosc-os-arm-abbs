@@ -1,6 +1,6 @@
 PKGNAME=x11-lib+32
 PKGSEC=x11
-PKGDEP="fontconfig+32 libxcb+32 util-linux+32"
+PKGDEP="aosc-aaa+32 fontconfig+32 libxcb+32 util-linux+32"
 BUILDDEP="devel-base+32 x11-lib+32"
 PKGDES="X11 runtime libraries (32-bit x86 runtime)"
 
