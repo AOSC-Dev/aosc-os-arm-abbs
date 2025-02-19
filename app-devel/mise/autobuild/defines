@@ -1,0 +1,10 @@
+PKGNAME=mise
+PKGDES="Toolchain/development environment manager and task runner for multiple programming languages"
+PKGSEC=devel
+PKGDEP="bzip2 debconf gcc-runtime openssl usage zlib"
+BUILDDEP="rustc llvm"
+
+USECLANG=1
+
+# FIXME: ld.lld: error: relocation R_MIPS_64 cannot be used against local symbol; recompile with -fPIC
+NOLTO__LOONGSON3=1
