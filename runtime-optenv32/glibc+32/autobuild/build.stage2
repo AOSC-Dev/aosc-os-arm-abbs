@@ -15,7 +15,6 @@ EOF
 
 abinfo "Configuring glibc ..."
     ../configure --prefix=/opt/32 \
-    		 --sysconfdir=/etc \
 		 --sbindir=/opt/32/bin \
                  --host=i686-aosc-linux-gnu \
                  --target=i686-aosc-linux-gnu \
