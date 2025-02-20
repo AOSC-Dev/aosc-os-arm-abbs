@@ -1,2 +1,5 @@
 abinfo "Dropping unneeded configuration files ..."
 rm -rv "$PKGDIR"/etc
+
+abinfo "Dropping unneeded shared data ..."
+rm -rv "$PKGDIR"/usr/share
