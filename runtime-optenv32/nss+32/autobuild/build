@@ -60,11 +60,3 @@ abinfo "Dropping libnssckbi.so and replacing with p11-kit ..."
 rm -v "$PKGDIR"/opt/32/lib/libnssckbi.so
 ln -sv pkcs11/p11-kit-trust.so \
     "$PKGDIR"/opt/32/lib/libnssckbi.so
-
-abinfo "Installing certificates ..."
-install -Dvm644 "$SRCDIR"/nss/certs/*.crt \
-    -t "$PKGDIR"/opt/32/share/ca-certificates/mozilla/
-
-abinfo "Installing Mozilla CA configuration ..."
-install -Dvm644 "$SRCDIR"/nss/certs/mozilla.conf \
-    "$PKGDIR"/etc/ca-certificates/conf.d/mozilla.conf
