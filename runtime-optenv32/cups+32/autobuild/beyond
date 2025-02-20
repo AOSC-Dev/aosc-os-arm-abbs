@@ -1,0 +1,2 @@
+abinfo "Dropping unneeded configuration files ..."
+rm -rv "$PKGDIR"/etc
