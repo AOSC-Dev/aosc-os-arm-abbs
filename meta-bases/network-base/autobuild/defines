@@ -1,6 +1,6 @@
 PKGNAME=network-base
 PKGSEC=Bases
-PKGRECOM="arp-scan bind bluez core-base dhcp dnsmasq ethtool geoip-api-c \
+PKGRECOM="arp-scan bind bluez core-base dhcpcd dnsmasq ethtool geoip-api-c \
           iana-etc idnkit inetutils iproute2 iptables iw lksctp-tools mtr \
           netcat net-tools nfs-utils nghttp2 openssh ppp proxychains-ng \
           rsync shadowsocks-libev wireless-tools wpa-supplicant \
