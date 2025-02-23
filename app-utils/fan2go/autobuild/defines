@@ -1,0 +1,9 @@
+PKGNAME="fan2go"
+PKGSEC=utils
+PKGDES="A daemon providing dynamic fan speed control based on temperature sensors"
+PKGDEP="glibc lm-sensors"
+BUILDDEP="go"
+
+# FIXME: Autobuild does not yet support splitting debug symbols out of
+# Go executables.
+ABSPLITDBG=0
