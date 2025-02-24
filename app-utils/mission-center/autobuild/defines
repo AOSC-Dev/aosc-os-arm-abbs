@@ -1,0 +1,16 @@
+PKGNAME=mission-center
+PKGSEC=utils
+PKGDES="A GUI tool displays CPU, memory, disk, network and GPU usage"
+PKGDEP="dmidecode libadwaita gtk-4"
+BUILDDEP="rustc llvm gtk-4 gtk-update-icon-cache desktop-file-utils blueprint-compiler libadwaita appdata-tools"
+
+ABTYPE=meson
+
+#FIXME:
+#
+#Compiling gatherer v0.6.2 (/var/cache/acbs/build/acbs.12yu2ehl/mission-center/src/sys_info_v2/gatherer)
+#note: ld.lld: error: undefined hidden symbol: ring_core_0_17_8_*
+#ld.lld: error: too many errors emitted, stopping now (use --error-limit=0 to see all errors)
+#clang: error: linker command failed with exit code 1 (use -v to see invocation)
+#error: could not compile `gatherer` (build script) due to 1 previous error
+NOLTO=1
