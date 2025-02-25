@@ -1,4 +1,5 @@
 VER=0.7.1
+REL=1
 SRCS="
 	tbl::https://github.com/xiph/rav1e/archive/refs/tags/v${VER}.tar.gz
 	file::rename=Cargo.lock::https://github.com/xiph/rav1e/releases/download/v${VER}/Cargo.lock
