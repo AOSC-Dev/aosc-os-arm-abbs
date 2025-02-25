@@ -1,4 +1,4 @@
-VER=1.9.2
+VER=1.10.0
 SRCS="tbl::https://xorg.freedesktop.org/releases/individual/driver/xf86-input-synaptics-$VER.tar.gz"
-CHKSUMS="sha256::ab1fd79957d680a770afa4c123deb603ea0fe843e876391387eddb6b7f29ce17"
+CHKSUMS="sha256::4d0538454c636c763731f601db0ef5164e089fc6eb0988fe6bcd53e4b5d377da"
 CHKUPDATE="anitya::id=5239"
