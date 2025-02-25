@@ -1,0 +1,42 @@
+From 171202e80a06ba33a8fe9faaff2f049a9d0780ef Mon Sep 17 00:00:00 2001
+From: Ian Rogers <irogers@google.com>
+Date: Wed, 19 Feb 2025 10:56:57 -0800
+Subject: [PATCH 066/299] FROMLIST: perf syscalltbl: Mask off ABI type for MIPS
+ system calls
+
+Arnd Bergmann described that MIPS system calls don't necessarily start
+from 0 as an ABI prefix is applied:
+https://lore.kernel.org/lkml/8ed7dfb2-1e4d-4aa4-a04b-0397a89365d1@app.fastmail.com/
+When decoding the "id" (aka system call number) for MIPS ignore values
+greater-than 1000.
+
+Signed-off-by: Ian Rogers <irogers@google.com>
+
+Link: https://lore.kernel.org/all/20250219185657.280286-9-irogers@google.com/
+Signed-off-by: Kexy Biscuit <kexybiscuit@aosc.io>
+---
+ tools/perf/util/syscalltbl.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/tools/perf/util/syscalltbl.c b/tools/perf/util/syscalltbl.c
+index db0d2b81aed1..ace66e69c1bc 100644
+--- a/tools/perf/util/syscalltbl.c
++++ b/tools/perf/util/syscalltbl.c
+@@ -46,6 +46,14 @@ const char *syscalltbl__name(int e_machine, int id)
+ {
+ 	const struct syscalltbl *table = find_table(e_machine);
+ 
++	if (e_machine == EM_MIPS && id > 1000) {
++		/*
++		 * MIPS may encode the N32/64/O32 type in the high part of
++		 * syscall number. Mask this off if present. See the values of
++		 * __NR_N32_Linux, __NR_64_Linux, __NR_O32_Linux and __NR_Linux.
++		 */
++		id = id % 1000;
++	}
+ 	if (table && id >= 0 && id < table->num_to_name_len)
+ 		return table->num_to_name[id];
+ 	return NULL;
+-- 
+2.48.1
+

@@ -1,7 +1,7 @@
 From 3ca7f43c0753cdb59314c39f81bc73b38bf1e9e6 Mon Sep 17 00:00:00 2001
 From: Damon Ding <damon.ding@rock-chips.com>
 Date: Thu, 6 Feb 2025 11:03:30 +0800
-Subject: [PATCH 008/289] FROMGIT: arm64: dts: rockchip: Fix label name of
+Subject: [PATCH 008/299] FROMGIT: arm64: dts: rockchip: Fix label name of
  hdptxphy for RK3588
 
 The hdptxphy is a combo transmit-PHY for HDMI2.1 TMDS Link, FRL Link, DP
