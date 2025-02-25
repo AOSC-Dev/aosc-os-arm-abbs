@@ -1,0 +1,4 @@
+VER=0.2.2
+SRCS="git::commit=tags/v$VER::https://github.com/raphamorim/rio"
+CHKSUMS="SKIP"
+CHKUPDATE="anitya::id=375035"

@@ -1,0 +1,19 @@
+diff --git a/teletypewriter/src/unix/mod.rs b/teletypewriter/src/unix/mod.rs
+index 18336b263..bbd6baedf 100644
+--- a/teletypewriter/src/unix/mod.rs
++++ b/teletypewriter/src/unix/mod.rs
+@@ -278,14 +278,6 @@ pub fn create_termp(utf8: bool) -> libc::termios {
+             | libc::ECHOKE
+             | libc::ECHOCTL,
+         c_cc: Default::default(),
+-        #[cfg(not(target_env = "musl"))]
+-        c_ispeed: Default::default(),
+-        #[cfg(not(target_env = "musl"))]
+-        c_ospeed: Default::default(),
+-        #[cfg(target_env = "musl")]
+-        __c_ispeed: Default::default(),
+-        #[cfg(target_env = "musl")]
+-        __c_ospeed: Default::default(),
+         c_line: 0,
+     };
+ 

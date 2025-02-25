@@ -1,0 +1,2 @@
+abinfo "Installing .desktop file ..."
+install -Dm644 "$SRCDIR"/misc/rio.desktop "$PKGDIR"/usr/share/applications/rio.desktop

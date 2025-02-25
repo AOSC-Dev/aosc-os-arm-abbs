@@ -1,0 +1,9 @@
+PKGNAME=rio
+PKGSEC=utils
+BUILDDEP="rustc llvm"
+PKGDES="A hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers."
+USECLANG=1
+
+# FIXME: ld.lld is not yet available.
+NOLTO__LOONGSON3=1
+NOLTO__MIPS64R6EL=1
