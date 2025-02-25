@@ -1,0 +1,33 @@
+From 472c5f24f44ec2519abfe2beb4d0317cd9f74b4f Mon Sep 17 00:00:00 2001
+From: Icenowy Zheng <uwu@icenowy.me>
+Date: Tue, 25 Feb 2025 14:29:31 +0800
+Subject: [PATCH] eventcomm: add VID 0x06cb for Synaptics devices
+
+The vendor ID 0x06cb is used by HID devices from Synaptics.
+
+Match it to MODEL_SYNAPTICS.
+
+Tested on a Panasonic CF-SV equipped with "Synaptics TM3136-020"
+touchpad, which previously uses MODEL_UNKNOWN to calculate edge width
+and the result is too narrow.
+
+Signed-off-by: Icenowy Zheng <uwu@icenowy.me>
+---
+ src/eventcomm.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/eventcomm.c b/src/eventcomm.c
+index aac94d5..cfbfb74 100644
+--- a/src/eventcomm.c
++++ b/src/eventcomm.c
+@@ -345,6 +345,7 @@ struct model_lookup_t {
+ static struct model_lookup_t model_lookup_table[] = {
+     {0x0002, 0x0007, 0x0007, MODEL_SYNAPTICS},
+     {0x0002, 0x0008, 0x0008, MODEL_ALPS},
++    {0x06cb, PRODUCT_ANY, PRODUCT_ANY, MODEL_SYNAPTICS},
+     {0x05ac, PRODUCT_ANY, 0x222, MODEL_APPLETOUCH},
+     {0x05ac, 0x223, 0x228, MODEL_UNIBODY_MACBOOK},
+     {0x05ac, 0x229, 0x22b, MODEL_APPLETOUCH},
+-- 
+2.48.1
+
