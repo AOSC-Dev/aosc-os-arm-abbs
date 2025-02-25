@@ -1,8 +1,9 @@
 PKGNAME=rathole
 PKGSEC=net
-PKGDEP="glibc"
-BUILDDEP="rustc cargo"
-PKGDES="A reverse proxy for NAT traversal, written in Rust."
+PKGDEP="gcc-runtime glibc openssl"
+BUILDDEP="rustc llvm"
+PKGDES="A reverse proxy for NAT traversal"
 
-USECLANG=0
-NOLTO=1
+USECLANG=1
+# FIXME: ld.lld is not yet available.
+NOLTO__LOONGSON=1
