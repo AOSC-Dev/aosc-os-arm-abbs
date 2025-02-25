@@ -1,0 +1,6 @@
+abinfo "Installing systemd services"
+cd "$SRCDIR"/examples/systemd
+for file in "*.service"; do
+    install -Dvm644 "$SRCDIR"/examples/systemd/$file \
+        -t "$PKGDIR"/usr/lib/systemd/system
+done
