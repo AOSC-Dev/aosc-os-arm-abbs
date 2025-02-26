@@ -1,5 +1,5 @@
-VER=1.44.1
+VER=2.2.2
 SRCS="tbl::https://github.com/denoland/deno/releases/download/v$VER/deno_src.tar.gz"
-CHKSUMS="sha256::9fb530b85dc795310ee9e0c4edd2dbfa722d2489a3b7bebc9a4078c2d2f67594"
+CHKSUMS="sha256::0c802c7ed0035739d2c0b836de24a0f4215a1a864226573b12412e6516f5d198"
 SUBDIR=deno
 CHKUPDATE="anitya::id=133196"
