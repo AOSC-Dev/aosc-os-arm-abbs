@@ -1,5 +1,6 @@
-VER=1.8.6
-SRCS="tbl::https://github.com/nm-l2tp/network-manager-l2tp/archive/$VER.tar.gz"
-CHKSUMS="sha256::1455b2bc0dd802522e79a176c654d1a19482b6a26d7c3a9c0fce2ee2dbb892e2"
+VER=1.20.20
+# FIXME: Add a more dynamic way to detect PPP version.
+__PPP_VER=2.5.2
+SRCS="git::commit=tags/$VER::https://github.com/nm-l2tp/network-manager-l2tp"
+CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=10788"
-REL=1
