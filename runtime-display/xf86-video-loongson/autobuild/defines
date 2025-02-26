@@ -1,0 +1,16 @@
+PKGNAME=xf86-video-loongson
+PKGDES="XF86 driver for LS7A1000/2000 GPUs"
+PKGDEP="xorg-server libdrm"
+PKGSEC=x11
+
+# Note: Only provide Vivante (7A1000) support for now, as 7A2000 users
+# would be better served by LoongGPU.
+AUTOTOOLS_AFTER=(
+    '--disable-gsgpu'
+)
+
+# Note: Only useful for loongson3, (and much less for) loongarch64.
+FAIL_ARCH="!(loongarch64|loongson3)"
+
+AB_FLAGS_RRO=0
+AB_FLAGS_NOW=0

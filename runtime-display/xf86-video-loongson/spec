@@ -1,0 +1,4 @@
+VER=0+git20230305
+SRCS="git::commit=7c23fb46899c34fa1aff27751ede5d42f7619f07::https://github.com/suijingfeng/xf86-video-loongson"
+CHKSUMS="SKIP"
+# FIXME: No release/tag yet.
