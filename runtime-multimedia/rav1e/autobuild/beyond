@@ -4,3 +4,6 @@ cargo cinstall \
     --destdir="$PKGDIR" \
     --prefix=/usr \
     --libdir=/usr/lib
+
+abinfo "Fixing soname ..."
+ln -sv /usr/lib/librav1e.so.0.7.1 "$PKGDIR"/usr/lib/librav1e.so.0
