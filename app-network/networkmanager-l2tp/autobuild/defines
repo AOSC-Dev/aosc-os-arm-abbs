@@ -4,8 +4,10 @@ PKGDEP="libgnome-keyring network-manager-applet ppp xl2tpd strongswan"
 BUILDDEP="intltool"
 PKGDES="L2TP support plugin for NetworkManager"
 
-AUTOTOOLS_AFTER="--with-pppd-plugin-dir=/usr/lib/pppd/2.4.9 \
+# FIXME: Add a more dynamic way to detect PPP version.
+AUTOTOOLS_AFTER="--with-pppd-plugin-dir=/usr/lib/pppd/${__PPP_VER} \
                  --enable-lto=yes \
-                 --enable-more-warnings=yes \
-                 --without-libnm-glib"
-ABSHADOW=no
+                 --enable-more-warnings=yes"
+
+# FIXME: /usr/bin/msgfmt: cannot create output file "appdata/network-manager-l2tp.metainfo.xml": No such file or directory
+ABSHADOW=0
