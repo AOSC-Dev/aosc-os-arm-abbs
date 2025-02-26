@@ -22,14 +22,3 @@ CMAKE_AFTER=(
     '-DSUNSHINE_ASSETS_DIR=share/sunshine'
     '-DSUNSHINE_ENABLE_CUDA=OFF'
 )
-
-CMAKE_AFTER__AMD64=(
-    "${CMAKE_AFTER[@]}"
-    '-DSUNSHINE_ENABLE_CUDA=ON'
-    '-DCMAKE_CUDA_COMPILER:PATH=/usr/lib/cuda/bin/nvcc'
-)
-CMAKE_AFTER__ARM64=(
-    "${CMAKE_AFTER[@]}"
-    '-DSUNSHINE_ENABLE_CUDA=ON'
-    '-DCMAKE_CUDA_COMPILER:PATH=/usr/lib/cuda/bin/nvcc'
-)
