@@ -9,8 +9,10 @@ BUILDDEP="devel-base+32"
 # 1. Enables threaded safety;
 # 2. Enables shared libraries (DO NOT disable, you will need this for shared GCC build);
 # 3. Declares documentation directory;
-AUTOTOOLS_AFTER="--enable-thread-safe \
-                 --enable-shared"
+AUTOTOOLS_AFTER=(
+    '--enable-thread-safe'
+    '--enable-shared'
+)
 
 AB_FLAGS_O3=1
 AB_FLAGS_SPECS=0
