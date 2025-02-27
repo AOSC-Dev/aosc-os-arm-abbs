@@ -4,6 +4,4 @@ PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="Audio compression format with lossless, lossy and hybrid compression modes (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--disable-asm"
-
 ABHOST=optenv32
