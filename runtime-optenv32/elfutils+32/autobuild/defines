@@ -7,5 +7,7 @@ PKGDES="Libraries and utilities to handle ELF object files and DWARF debugging i
 ABHOST=optenv32
 
 # Note: Minimise dependency.
-AUTOTOOLS_AFTER="--disable-debuginfod \
-                 --disable-libdebuginfod"
+AUTOTOOLS_AFTER=(
+    '--disable-debuginfod'
+    '--disable-libdebuginfod'
+)
