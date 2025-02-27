@@ -4,7 +4,9 @@ PKGDEP="aosc-aaa+32 popt+32"
 BUILDDEP="autoconf-archive devel-base+32"
 PKGDES="The Quarsar DV codec (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--disable-gtk"
+AUTOTOOLS_AFTER=(
+    '--disable-gtk'
+)
 RECONF=0
 ABSHADOW=0
 
