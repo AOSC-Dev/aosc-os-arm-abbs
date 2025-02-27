@@ -4,6 +4,4 @@ PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="A command line option parser (32-bit x86 runtime)"
 
-AUTOTOLS_AFTER="--enable-static"
-
 ABHOST=optenv32
