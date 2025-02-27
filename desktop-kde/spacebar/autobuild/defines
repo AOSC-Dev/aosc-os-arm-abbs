@@ -1,0 +1,5 @@
+PKGNAME=spacebar
+PKGDES="SMS/MMS application for Plasma Mobile"
+PKGSEC=kde
+PKGDEP="qt-5 kirigami2 libphonenumber qcoro kpeople ki18n knotifications kconfig kcoreaddons kdbusaddons kcontacts kio modemmanager-qt kirigami-addons qcoro"
+BUILDDEP="extra-cmake-modules"
