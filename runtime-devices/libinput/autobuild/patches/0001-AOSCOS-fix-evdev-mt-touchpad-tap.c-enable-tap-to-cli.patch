@@ -1,8 +1,8 @@
-From 453c30492f2ce20c4631db16fea6757672685df6 Mon Sep 17 00:00:00 2001
+From d98739b3952af85cf4e01e1967f48d7c388b6375 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Tue, 10 Sep 2024 00:10:11 +0800
-Subject: [PATCH 1/3] fix(evdev-mt-touchpad-tap.c): enable tap-to-click by
- default
+Subject: [PATCH 1/2] AOSCOS: fix(evdev-mt-touchpad-tap.c): enable tap-to-click
+ by default
 
 As we know, most touchpads these days come with no buttons *and*, more
 importantly, decent palm rejection and tap zones/recognition. The original
@@ -82,5 +82,5 @@ index 3c76c3d6..7f912276 100644
  
  static enum libinput_config_tap_state
 -- 
-2.47.1
+2.48.1
 
