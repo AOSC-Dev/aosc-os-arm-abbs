@@ -6,4 +6,6 @@ PKGDES="A library that allows you to use TrueType fonts in your SDL applications
 
 ABHOST=optenv32
 
-AUTOTOOLS_AFTER="--with-freetype-prefix=/opt/32"
+AUTOTOOLS_AFTER=(
+    '--with-freetype-prefix=/opt/32'
+)
