@@ -1,5 +1,4 @@
-VER=1.50.2
-REL=1
+VER=1.50.3
 SRCS="tbl::https://gitlab.freedesktop.org/NetworkManager/NetworkManager/-/releases/$VER/downloads/NetworkManager-$VER.tar.xz"
-CHKSUMS="sha256::10473be9d3ab89f8a27a68b7bf5bc9557851a5183b74b6241e5e0fa5c6921fef"
+CHKSUMS="sha256::a86b5ae1cb27b7c09eea88fbd25c460f6ee6935d2ba8dfb04a56969de4781169"
 CHKUPDATE="anitya::id=21197"
