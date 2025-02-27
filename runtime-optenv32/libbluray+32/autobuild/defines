@@ -4,6 +4,8 @@ PKGDEP="aosc-aaa+32 libxml2+32 freetype+32"
 BUILDDEP="devel-base+32"
 PKGDES="Library to access Blu-Ray disks for video playback (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--disable-examples \
-                 --disable-bdjava-jar"
+AUTOTOOLS_AFTER=(
+    '--disable-examples'
+    '--disable-bdjava-jar'
+)
 ABHOST=optenv32
