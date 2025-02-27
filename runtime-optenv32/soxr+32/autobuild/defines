@@ -4,13 +4,16 @@ PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="A library that aims to give fast and high quality results for any constant resampling ratio (32-bit x86 runtime)"
 
-CMAKE_AFTER="-DBUILD_EXAMPLES=OFF \
-             -DBUILD_SHARED_LIBS=ON \
-             -DVISIBILITY_HIDDENL=ON \
-             -DWITH_AVFFT=ON \
-             -DWITH_DOUBLE_PRECISION=ON \
-             -DWITH_LSR_BINDINGS=ON \
-             -DWITH_OPENMP=ON \
-             -DWITH_PFFFT=ON \
-             -DWITH_SIMD=ON"
+CMAKE_AFTER=(
+    '-DBUILD_EXAMPLES=OFF'
+    '-DBUILD_SHARED_LIBS=ON'
+    '-DVISIBILITY_HIDDENL=ON'
+    '-DWITH_AVFFT=ON'
+    '-DWITH_DOUBLE_PRECISION=ON'
+    '-DWITH_LSR_BINDINGS=ON'
+    '-DWITH_OPENMP=ON'
+    '-DWITH_PFFFT=ON'
+    '-DWITH_SIMD=ON'
+)
+
 ABHOST=optenv32
