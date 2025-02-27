@@ -6,5 +6,7 @@ PKGDES="A way to load and enumerate PKCS #11 (a Cryptographic Token Interface St
 
 ABHOST=optenv32
 
-AUTOTOOLS_AFTER="--without-systemd \
-                 PYTHON=/usr/bin/python3"
+AUTOTOOLS_AFTER=(
+    '--without-systemd'
+    'PYTHON=/usr/bin/python3'
+)
