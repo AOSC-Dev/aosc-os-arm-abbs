@@ -1,5 +1,5 @@
-UPSTREAM_VER=2.5.0
-GMPVER=114_2
+UPSTREAM_VER=2.6.0
+GMPVER=135
 VER=${UPSTREAM_VER}+gmp${GMPVER/_/+}
 SRCS="git::commit=tags/v${UPSTREAM_VER}::https://github.com/cisco/openh264 \
       git::commit=tags/Firefox${GMPVER};rename=gmp-api::https://github.com/mozilla/gmp-api"

@@ -6,12 +6,9 @@ PKGDES="Codec applications and runtime for H.264 (Cisco)"
 
 AB_FLAGS_O3=1
 
-# FIXME: lto1: fatal error: target specific builtin not available.
-NOLTO__LOONGARCH64=1
-
 PKGBREAK="""
-freerdp<=2:2.10.0-1
-gstreamer<=1.22.0-2
-libopenglrecorder<=0.1.0-4
-telegram-desktop<=4.12.2
+freerdp<=2:3.9.0
+gstreamer<=1.24.12
+libopenglrecorder<=0.1.0-6
+telegram-desktop<=5.11.1
 """
