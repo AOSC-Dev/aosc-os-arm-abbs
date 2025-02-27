@@ -4,14 +4,16 @@ PKGDEP="aosc-aaa+32 openldap+32"
 BUILDDEP="devel-base+32"
 PKGDES="The Kerberos network authentication system (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--enable-shared \
-                 --without-system-et \
-                 --without-system-ss \
-                 --enable-dns-for-realm \
-                 --with-ldap \
-                 --without-system-verto \
-                 --without-libedit \
-                 --disable-aesni"
+AUTOTOOLS_AFTER=(
+    '--enable-shared'
+    '--without-system-et'
+    '--without-system-ss'
+    '--enable-dns-for-realm'
+    '--with-ldap'
+    '--without-system-verto'
+    '--without-libedit'
+    '--disable-aesni'
+)
 
 RECONF=0
 NOPARALLEL=1
