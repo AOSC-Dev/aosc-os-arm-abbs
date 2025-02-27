@@ -1,10 +1,12 @@
 PKGNAME=libva+32
 PKGSEC=libs
-PKGDEP="aosc-aaa+32 mesa+32 libdrm+32"
+PKGDEP="aosc-aaa+32 mesa+32 libdrm+32 wayland+32"
 BUILDDEP="devel-base+32"
 PKGDES="Video Acceleration (VA) API for Linux (32-bit x86 runtime)"
 
 ABTYPE=meson
-MESON_AFTER="-Dwith_wayland=no"
+MESON_AFTER=(
+    '-Dwith_wayland=yes'
+)
 
 ABHOST=optenv32
