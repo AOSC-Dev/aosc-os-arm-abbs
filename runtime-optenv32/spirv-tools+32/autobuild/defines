@@ -4,10 +4,12 @@ PKGDEP="aosc-aaa+32 gcc+32 spirv-headers"
 BUILDDEP="python-3"
 PKGDES="API and commands for processing SPIR-V modules (32-bit x86 runtime)"
 
-CMAKE_AFTER="-DSPIRV-Headers_SOURCE_DIR=/opt/32 \
-             -DSPIRV_TOOLS_BUILD_STATIC=ON \
-             -DBUILD_SHARED_LIBS=ON \
-             -DPYTHON_EXECUTABLE=/usr/bin/python${ABPY3VER}"
+CMAKE_AFTER=(
+    '-DSPIRV-Headers_SOURCE_DIR=/opt/32'
+    '-DSPIRV_TOOLS_BUILD_STATIC=ON'
+    '-DBUILD_SHARED_LIBS=ON'
+    "-DPYTHON_EXECUTABLE=/usr/bin/python${ABPY3VER}"
+)
 
 NOSTATIC=0
 ABHOST=optenv32
