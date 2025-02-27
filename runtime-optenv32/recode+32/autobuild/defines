@@ -4,6 +4,8 @@ PKGDEP="aosc-aaa+32 glibc+32"
 BUILDDEP="devel-base+32"
 PKGDES="Converts file between various character sets and usages (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="PYTHON=/usr/bin/python3"
+AUTOTOOLS_AFTER=(
+    'PYTHON=/usr/bin/python3'
+)
 
 ABHOST=optenv32
