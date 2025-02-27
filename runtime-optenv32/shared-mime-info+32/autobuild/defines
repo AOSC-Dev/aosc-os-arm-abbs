@@ -5,7 +5,9 @@ BUILDDEP="devel-base+32"
 PKGDES="Freedesktop.org shared MIME info (32-bit x86 runtime)"
 
 # Note: Do not run this during build-time.
-AUTOTOOLS_AFTER="--disable-update-mimedb"
+AUTOTOOLS_AFTER=(
+    '--disable-update-mimedb'
+)
 # FIXME: Installation may fail with parallelism.
 NOPARALLEL=1
 
