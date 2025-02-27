@@ -2,3 +2,4 @@ VER=3.9.0
 SRCS="tbl::https://pub.freerdp.com/releases/freerdp-${VER/rc/-rc}.tar.gz"
 CHKSUMS="sha256::2eef25f2b421dbe7b6ca64a96045afe57a4b8c559339baca8cb8528c42518b83"
 CHKUPDATE="anitya::id=10442"
+REL=1
