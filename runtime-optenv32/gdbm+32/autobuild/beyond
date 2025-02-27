@@ -1,5 +1,5 @@
 abinfo "Creating compatibility symlinks for gdbm headers ..."
-install -dm755 "$PKGDIR"/opt/32/include/gdbm
+install -dvm755 "$PKGDIR"/opt/32/include/gdbm
 ln -sv ../gdbm.h \
     "$PKGDIR"/opt/32/include/gdbm/gdbm.h
 ln -sv ../ndbm.h \
