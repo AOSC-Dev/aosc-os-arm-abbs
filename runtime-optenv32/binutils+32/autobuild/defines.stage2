@@ -6,3 +6,5 @@ PKGDEP="glibc zlib"
 ABSPLITDBG=0
 # FIXME: Autobuild4 strangely crashes if strip is enabled.
 ABSTRIP=0
+
+ABHOST=optenv32
