@@ -8,7 +8,7 @@ CHKSUMS="sha256::e23ec747a06ffd3e94155046f40b6664ac152c9ee3c2adfd90353a7ccff2422
 # to bootstrap from an adjacent release.
 #
 # Comment the following segment if this is not the case.
-#SRCS="tbl::https://static.rust-lang.org/dist/rustc-${VER}-src.tar.x \
+#SRCS="tbl::https://static.rust-lang.org/dist/rustc-${VER}-src.tar.xz \
 #      tbl::rename=rustc-bootstrap-${VER}-loongson3.tar.xz::https://repo.aosc.io/aosc-repacks/rust-loongson3/rustc-bootstrap-${VER}-loongson3.tar.xz"
 #CHKSUMS="sha256::bc2c1639f26814c7b17a323992f1e08c3b01fe88cdff9a27d951987d886e00b3 \
 #         sha256::c8bad5abe44f459fd7983a66337543952fea756fcfa73ddd10a869c4c753c336"
