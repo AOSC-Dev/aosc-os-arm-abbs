@@ -1,7 +1,7 @@
 VER=2.48.1
 
 # Use this for stable releases.
-REL=1
+REL=3
 SRCS="https://cdn.kernel.org/pub/software/scm/git/git-$VER.tar.gz"
 
 # Use this for RC releases.
