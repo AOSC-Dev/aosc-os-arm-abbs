@@ -1,4 +1,5 @@
-VER=8.2.1
-SRCS="https://ftp.gnu.org/gnu/readline/readline-${VER:0:3}.tar.gz"
-CHKSUMS="sha256::3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35"
+VER=8.3
+#SRCS="https://ftp.gnu.org/gnu/readline/readline-${VER:0:3}.tar.gz"
+SRCS="https://ftp.gnu.org/gnu/readline/readline-$VER-beta.tar.gz"
+CHKSUMS="sha256::c33018ec63b1636e5a86a1e7c9168333ccd074fe834826e79fd159b2450c0246"
 CHKUPDATE="anitya::id=4173"
