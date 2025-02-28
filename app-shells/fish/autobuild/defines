@@ -20,4 +20,4 @@ RECONF=0
 # 'DW.ref.rust_eh_personality'; recompile with -fPIC
 NOLTO__LOONGSON3=1
 
-PKGBREAK="just<=1.39.0"
+PKGBREAK="just<=1.39.0 rclone<=1.68.0-1"
