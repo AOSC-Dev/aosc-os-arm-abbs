@@ -1,5 +1,4 @@
-VER=20240203+110809+5046fc22
-REL=2
-SRCS="tbl::https://github.com/wez/wezterm/releases/download/${VER//+/-}/wezterm-${VER//+/-}-src.tar.gz"
-CHKSUMS="sha256::df60b1081d402b5a9239cc4cef16fc699eab68bbbeac9c669cb5d991a6010b2c"
+VER=20240203+110809+5046fc22+git20250214
+SRCS="git::commit=ee0c04e735fb94cb5119681f704fb7fa6731e713::https://github.com/wez/wezterm"
+CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=235427"
