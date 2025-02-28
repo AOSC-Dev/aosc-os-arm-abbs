@@ -1,8 +1,8 @@
-From 1417382a9ffb9c8141ded377d3a4d5d94b4873b8 Mon Sep 17 00:00:00 2001
+From be79f2b9b3c52b5dd356ca23fa500ff6187ee25f Mon Sep 17 00:00:00 2001
 From: mengqinggang <mengqinggang@loongson.cn>
 Date: Thu, 26 Dec 2024 14:14:12 +0800
-Subject: [PATCH 5/5] LoongArch: Add relaxation support for call36 that jump to
- PLT entry
+Subject: [PATCH 5/6] BACKPORT: LoongArch: Add relaxation support for call36
+ that jump to PLT entry
 
 Part of commit a104f0a3e620 ("LoongArch: Add more relaxation support for
 call36") in master.  This part is needed for 2.43 branch to fix a link
@@ -20,6 +20,8 @@ test case (with -shared):
       jr $t0
 
 Signed-off-by: Xi Ruoyao <xry111@xry111.site>
+
+Link: https://sourceware.org/git/?p=binutils-gdb.git;a=commit;h=bb9a0a36e78aa564021b377a4a7fab4851b2c22b
 ---
  bfd/elfnn-loongarch.c | 5 +++++
  1 file changed, 5 insertions(+)

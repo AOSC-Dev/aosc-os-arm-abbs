@@ -1,7 +1,7 @@
-From e9c89527c6e796e475c79971cb3747944d9aa0db Mon Sep 17 00:00:00 2001
+From 5a06a97019fa55c7631130664fd0faa2adecb9bd Mon Sep 17 00:00:00 2001
 From: root <c@jia.je>
 Date: Fri, 2 Feb 2024 06:06:46 -0800
-Subject: [PATCH 1/5] Fix gold on mips64 targets (loongson3/loongson2f only)
+Subject: [PATCH 1/6] DEBIAN: Fix gold on mips64 targets
 
 gold/
 

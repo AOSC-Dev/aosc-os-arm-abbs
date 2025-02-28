@@ -1,7 +1,8 @@
-From 8575cfa9cb29a2a59676dee611747a7ad3944371 Mon Sep 17 00:00:00 2001
+From b035c9171d3ba22a8df3a2889e5acaea16e1eb0f Mon Sep 17 00:00:00 2001
 From: mengqinggang <mengqinggang@loongson.cn>
 Date: Fri, 28 Jun 2024 14:24:19 +0800
-Subject: [PATCH 2/5] LoongArch: Add support for OUTPUT_FORMAT("binary")
+Subject: [PATCH 2/6] BACKPORT: LoongArch: Add support for
+ OUTPUT_FORMAT("binary")
 
 In binary output format, loongarch_elf_hash_table return NULL and result
 in segment fault.
@@ -26,6 +27,8 @@ The tests of binutils, glibc and gcc is ok.
 8  0x000055555558dac0 in ldemul_after_allocation ()
 9  0x000055555557f6c0 in lang_process ()
 10 0x0000555555585314 in main ()
+
+Link: https://sourceware.org/git/?p=binutils-gdb.git;a=commit;h=3a83f0342e545a638aba06f27bba76938ef251ab
 ---
  bfd/elfnn-loongarch.c                            |  4 +---
  ld/emultempl/loongarchelf.em                     | 16 ----------------

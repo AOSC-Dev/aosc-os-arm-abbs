@@ -1,7 +1,7 @@
-From 08460fc56c7db0f7a341005bc33340c95df64b14 Mon Sep 17 00:00:00 2001
+From cc9aac8bbae7da61877f8879055c7de950fb06f2 Mon Sep 17 00:00:00 2001
 From: Xi Ruoyao <xry111@xry111.site>
 Date: Thu, 19 Dec 2024 13:23:02 +0800
-Subject: [PATCH 3/5] FROMLIST: LoongArch: Fix broken DESC => IE transition for
+Subject: [PATCH 3/6] BACKPORT: LoongArch: Fix broken DESC => IE transition for
  2.43 branch
 
 If code compiled with -fPIC -mtls-dialect=desc is linked into a PDE or

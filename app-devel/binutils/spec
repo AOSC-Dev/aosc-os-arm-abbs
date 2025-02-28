@@ -1,5 +1,5 @@
 VER=2.43.1
-REL=2
+REL=3
 SRCS="tbl::https://ftp.gnu.org/gnu/binutils/binutils-$VER.tar.xz"
 CHKSUMS="sha256::13f74202a3c4c51118b797a39ea4200d3f6cfbe224da6d1d95bb938480132dfd"
 CHKUPDATE="anitya::id=7981"
