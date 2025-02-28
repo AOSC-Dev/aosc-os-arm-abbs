@@ -1,0 +1,6 @@
+abinfo "Building FBNeo ..."
+make sdl2
+
+abinfo "Installing FBNeo ..."
+install -Dvm755 "$SRCDIR"/fbneo \
+    "$PKGDIR"/usr/bin/fbneo

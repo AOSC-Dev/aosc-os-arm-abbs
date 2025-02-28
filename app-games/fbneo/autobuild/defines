@@ -1,0 +1,11 @@
+PKGNAME=fbneo
+PKGSEC=games
+PKGDEP="sdl2-image"
+PKGDES="Emulator for arcade games and machines"
+
+# FIXME:
+#
+# /usr/bin/ld: obj/dep/libs/libpng/pngrutil.o: in function `png_read_filter_row':
+# pngrutil.c:(.text+0x6bc8): undefined reference to `png_init_filter_functions_vsx'
+# collect2: error: ld returned 1 exit status
+NOLTO=1
