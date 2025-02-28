@@ -22,7 +22,8 @@ AUTOTOOLS_AFTER="--enable-fhs \
                  --systemd-install-services \
                  --with-pam \
                  --with-pammodulesdir=/usr/lib/security \
-                 --bundled-libraries=!tdb,!talloc,!pytalloc-util,!tevent,!popt,!ldb,!pyldb-util \
+                 --private-libraries='!ldb' \
+                 --bundled-libraries='!tdb,!talloc,!pytalloc-util,!tevent,!popt,!ldb,!pyldb-util' \
                  --with-shared-modules=${_samba4_idmap_modules},${_samba4_pdb_modules},${_samba4_auth_modules},vfs_io_uring \
                  --disable-rpath-install \
                  --with-cluster-support \
