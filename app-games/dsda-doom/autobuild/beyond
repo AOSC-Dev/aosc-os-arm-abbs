@@ -1,0 +1,3 @@
+abinfo "Installing dsda-doom desktop entry..."
+install -Dvm644 "$SRCDIR"/ICONS/dsda-doom.png "$PKGDIR"/usr/share/pixmaps/dsda-doom.png --verbose
+install -Dvm644 "$SRCDIR"/ICONS/dsda-doom.desktop "$PKGDIR"/usr/share/applications/dsda-doom.desktop --verbose
