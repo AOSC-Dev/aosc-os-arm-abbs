@@ -1,2 +1,8 @@
 abinfo "Installing a configuration directory for Dnsmasq ..."
 install -dvm755 "$PKGDIR"/etc/NetworkManager/dnsmasq.d
+
+if ab_match_archgroup retro; then
+    abinfo "Installing a bitmap icon to help with performance ..."
+    install -Dvm644 "$SRCDIR"/autobuild/networkmanager.png \
+        "$PKGDIR"/usr/share/pixmaps/networkmanager.png
+fi
