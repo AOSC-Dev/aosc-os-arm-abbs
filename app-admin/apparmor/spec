@@ -1,5 +1,4 @@
-VER=3.0.8
-REL=3
+VER=4.0.3
 SRCS="tbl::https://gitlab.com/apparmor/apparmor/-/archive/v$VER/apparmor-v$VER.tar.gz"
-CHKSUMS="sha256::d68dae9fb7b8b54fa2f9b421e3f11e78233a132ec37bc006ba2ada438b3995ac"
+CHKSUMS="sha256::87a77896e82047a5794725c5e0c06c6dad91a9988a163f771199719c5a95ae1c"
 CHKUPDATE="anitya::id=94819"
