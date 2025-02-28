@@ -1,4 +1,4 @@
-VER=0.1.5.1
+VER=0.2.1
 SRCS="tbl::https://github.com/wxiwnd/bash-pinyin-completion-rs/archive/v$VER.tar.gz"
-CHKSUMS="sha256::0405f9b2e8ca059f3133b7b61951681f0f0d97d7450a784f518217a5379e704d"
+CHKSUMS="sha256::6d9b358d079b32d5c7f1da28a05eb34b619131c21c75187c3951ca3d4b7be5d8"
 CHKUPDATE="anitya::id=376526"
