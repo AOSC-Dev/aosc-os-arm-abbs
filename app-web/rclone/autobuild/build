@@ -17,7 +17,7 @@ make TAG=v$PKGVER DESTDIR="$PKGDIR" install
 abinfo "Installing shell completions ..."
 install -Dvm644 "$SRCDIR"/rclone.bash_completion "$PKGDIR"/usr/share/bash-completion/completions/rclone
 install -Dvm644 "$SRCDIR"/rclone.zsh_completion "$PKGDIR"/usr/share/zsh/site-functions/_rclone
-install -Dvm644 "$SRCDIR"/rclone.zsh_completion "$PKGDIR"/usr/share/fish/completions/rclone.fish
+install -Dvm644 "$SRCDIR"/rclone.fish_completion "$PKGDIR"/usr/share/fish/vendor_completions.d/rclone.fish
 
 abinfo "Installing manual ..."
 install -Dvm644 "$SRCDIR"/rclone.1 "$PKGDIR"/usr/share/man/man1/rclone.1
