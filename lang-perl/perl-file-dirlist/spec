@@ -1,0 +1,4 @@
+VER=0.05
+SRCS="tbl::https://search.cpan.org/CPAN/authors/id/T/TP/TPABA/File-DirList/File-DirList-$VER.tar.gz"
+CHKSUMS="sha256::993b7d7662e55798448a1edaccb9abd281d2bd23be7eab99f569b8e2962d3bc3"
+CHKUPDATE="anitya::id=376735"
