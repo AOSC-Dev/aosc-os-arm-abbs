@@ -83,3 +83,12 @@ abinfo "Making Clang prefix symlinks ..."
 mkdir -pv "$PKGDIR"/usr/lib/clang
 ln -sv ../llvm-${PKGVER%%.*}/lib/clang/${PKGVER%%.*} \
     "$PKGDIR"/usr/lib/clang/${PKGVER%%.*}
+
+abinfo "Creating versioned executable symlinks ..."
+mkdir -pv "$PKGDIR"/usr/bin
+cd "$PKGDIR"/usr/bin
+for i in ../lib/llvm-${PKGVER%%.*}/bin/*; do 
+    ln -sv $i $(basename $i)-${PKGVER%%.*}
+done
+# Note: Remove double-suffixed executables.
+rm -v "$PKGDIR"/usr/bin/*-${PKGVER%%.*}-${PKGVER%%.*}
