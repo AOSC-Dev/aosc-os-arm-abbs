@@ -1,3 +1,11 @@
+./configure \
+    --prefix="$PKGDIR"/usr \
+    --sysconfdir=/etc \
+    --enable-ntp-signd \
+    --with-hwclockfile=/etc/adjtime
+
+make
+make install
 # By default docs aren't built.
 abinfo "Building docs…"
 make install-docs DESTDIR="$PKGDIR"

@@ -1,15 +1,15 @@
-From 5f55c0b33d75c99068358a45e2c147c92a41f6ca Mon Sep 17 00:00:00 2001
+From 80f37d9d10179de0770c5b5e871503fa4964bf68 Mon Sep 17 00:00:00 2001
 From: Kexy Biscuit <kexybiscuit@aosc.io>
 Date: Mon, 22 Jan 2024 16:47:15 +0800
 Subject: [PATCH] example: use AOSC OS's own NTP Pool vendor zone
 
 ---
- examples/chrony.conf.example3 | 10 +++++-----
+ examples/chrony.conf.example3 |  8 ++++----
  examples/chronyd.service      | 13 +++++++------
- 2 files changed, 12 insertions(+), 11 deletions(-)
+ 2 files changed, 11 insertions(+), 10 deletions(-)
 
 diff --git a/examples/chrony.conf.example3 b/examples/chrony.conf.example3
-index 6d84c01..c8c03f5 100644
+index 8d895d0..895fba8 100644
 --- a/examples/chrony.conf.example3
 +++ b/examples/chrony.conf.example3
 @@ -31,7 +31,7 @@
@@ -30,15 +30,6 @@ index 6d84c01..c8c03f5 100644
  ! maxupdateskew 5
  
  # If you want to increase the minimum number of selectable sources
-@@ -130,7 +130,7 @@ ntsdumpdir /var/lib/chrony
- # right/UTC timezone, chronyd can use it to determine the current
- # TAI-UTC offset and when will the next leap second occur.
- 
--! leapsectz right/UTC
-+leapsectz right/UTC
- 
- #######################################################################
- ### INITIAL CLOCK CORRECTION
 @@ -143,7 +143,7 @@ ntsdumpdir /var/lib/chrony
  # the clock.  Some software can get upset if the system clock jumps
  # (especially backwards), so be careful!
@@ -58,7 +49,7 @@ index 6d84c01..c8c03f5 100644
  #######################################################################
  ### REAL TIME SCHEDULER
 diff --git a/examples/chronyd.service b/examples/chronyd.service
-index a42eb92..2018c5d 100644
+index e322454..69b8d6a 100644
 --- a/examples/chronyd.service
 +++ b/examples/chronyd.service
 @@ -1,15 +1,15 @@
@@ -74,10 +65,10 @@ index a42eb92..2018c5d 100644
  ConditionCapability=CAP_SYS_TIME
  
  [Service]
- Type=forking
+ Type=notify
  PIDFile=/run/chrony/chronyd.pid
 -EnvironmentFile=-/etc/sysconfig/chronyd
--ExecStart=/usr/sbin/chronyd $OPTIONS
+-ExecStart=/usr/sbin/chronyd -n $OPTIONS
 +EnvironmentFile=-/etc/default/chronyd
 +ExecStart=/usr/sbin/chronyd -u chrony $OPTIONS
  
@@ -90,5 +81,5 @@ index a42eb92..2018c5d 100644
 +Alias=chrony.service
  WantedBy=multi-user.target
 -- 
-2.43.0.windows.1
+2.48.1
 
