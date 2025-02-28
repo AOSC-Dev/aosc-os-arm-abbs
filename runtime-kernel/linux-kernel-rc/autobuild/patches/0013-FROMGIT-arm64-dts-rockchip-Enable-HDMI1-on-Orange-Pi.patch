@@ -1,7 +1,7 @@
 From a875410340cceaf9f8a8e2adab34bd37a7a8196d Mon Sep 17 00:00:00 2001
 From: Jimmy Hon <honyuenkwun@gmail.com>
 Date: Wed, 8 Jan 2025 23:16:18 -0600
-Subject: [PATCH 013/289] FROMGIT: arm64: dts: rockchip: Enable HDMI1 on Orange
+Subject: [PATCH 013/299] FROMGIT: arm64: dts: rockchip: Enable HDMI1 on Orange
  Pi 5 Max
 
 Enable the second HDMI output port on the Orange Pi 5 Max

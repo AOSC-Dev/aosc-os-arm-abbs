@@ -1,0 +1,44 @@
+From 7678c58281a605b9494341bc5ecc7258cbe66fac Mon Sep 17 00:00:00 2001
+From: Xi Ruoyao <xry111@xry111.site>
+Date: Fri, 21 Feb 2025 17:25:23 +0800
+Subject: [PATCH 067/299] FROMLIST: LoongArch: vDSO: Remove --hash-style=sysv
+
+glibc added support for .gnu.hash in 2006 and .hash has been obsoleted
+far before the first LoongArch CPU was taped.  Using
+--hash-style=sysv might imply unaddressed issues and confuse readers.
+
+In the past we really had an unaddressed issue: the vdso selftests did
+not know how to process .gnu.hash.  But it has been addressed by commit
+e0746bde6f82 ("selftests/vDSO: support DT_GNU_HASH") now.
+
+Just drop the option and rely on the linker default, which is likely
+"both" (AOSC) or "gnu" (Arch, Debian, Gentoo, LFS) on all LoongArch
+distros.
+
+Similar to commit 6b7e26547fad ("x86/vdso: Emit a GNU hash") and commit
+48f6430505c0 ("arm64/vdso: Remove --hash-style=sysv").
+
+Signed-off-by: Xi Ruoyao <xry111@xry111.site>
+
+Link: https://lore.kernel.org/all/20250221092523.85632-1-xry111@xry111.site/
+Signed-off-by: Kexy Biscuit <kexybiscuit@aosc.io>
+---
+ arch/loongarch/vdso/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/loongarch/vdso/Makefile b/arch/loongarch/vdso/Makefile
+index fdde1bcd4e26..abaf87c58f9d 100644
+--- a/arch/loongarch/vdso/Makefile
++++ b/arch/loongarch/vdso/Makefile
+@@ -37,7 +37,7 @@ endif
+ # VDSO linker flags.
+ ldflags-y := -Bsymbolic --no-undefined -soname=linux-vdso.so.1 \
+ 	$(filter -E%,$(KBUILD_CFLAGS)) -nostdlib -shared \
+-	--hash-style=sysv --build-id -T
++	--build-id -T
+ 
+ #
+ # Shared build commands.
+-- 
+2.48.1
+

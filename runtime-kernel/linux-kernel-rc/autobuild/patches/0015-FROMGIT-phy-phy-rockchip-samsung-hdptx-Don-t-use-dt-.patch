@@ -1,7 +1,7 @@
 From a449f808133086debe2c7bf47517a679d75d3d58 Mon Sep 17 00:00:00 2001
 From: Heiko Stuebner <heiko.stuebner@cherry.de>
 Date: Fri, 6 Dec 2024 11:34:01 +0100
-Subject: [PATCH 015/289] FROMGIT: phy: phy-rockchip-samsung-hdptx: Don't use
+Subject: [PATCH 015/299] FROMGIT: phy: phy-rockchip-samsung-hdptx: Don't use
  dt aliases to determine phy-id
 
 The phy needs to know its identity in the system (phy0 or phy1 on rk3588)

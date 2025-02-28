@@ -1,7 +1,7 @@
 From 4711ef75491a019871da4fe6c3d62d43b4a41892 Mon Sep 17 00:00:00 2001
 From: Jagan Teki <jagan@edgeble.ai>
 Date: Fri, 27 Dec 2024 18:59:36 +0530
-Subject: [PATCH 012/289] FROMGIT: arm64: dts: rockchip: Enable HDMI1 out for
+Subject: [PATCH 012/299] FROMGIT: arm64: dts: rockchip: Enable HDMI1 out for
  Edgeble-6TOPS Modules
 
 Edgeble-6TOPS modules configure HDMI1 for HDMI Out from RK3588.
