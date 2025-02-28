@@ -1,18 +1,27 @@
 PKGNAME=musescore
 PKGSEC=sound
-PKGDEP="lame portaudio pulseaudio qt-5 shared-mime-info flac freetype"
+PKGDEP="lame portaudio pulseaudio qt-6 shared-mime-info flac freetype"
 BUILDDEP="doxygen gtk-2"
 PKGDES="Create, play and print beautiful sheet music"
 
-CMAKE_AFTER="-DMUSESCORE_BUILD_MODE=release \
-             -DMUE_ENABLE_AUDIO_JACK=ON \
-             -DMUE_DOWNLOAD_SOUNDFONT=OFF \
-             -DMUE_COMPILE_USE_SYSTEM_FLAC=ON \
-             -DMUE_COMPILE_USE_SYSTEM_FREETYPE=ON \
-             -DMUE_BUILD_UNIT_TESTS=OFF \
-             -DMUE_BUILD_CRASHPAD_CLIENT=OFF"
+CMAKE_AFTER=(
+    '-DCMAKE_SKIP_RPATH=OFF'
+    '-DMUSESCORE_LABEL=Alpha'
+    '-DMUSESCORE_BUILD_CONFIG=release'
+    '-DMUSESCORE_REVISION='
+    '-DTELEMETRY_TRACK_ID='
+    '-DCRASH_REPORT_URL='
+    '-DBUILD_JACK=ON'
+    '-DBUILD_WEBENGINE=OFF'
+    '-DDOWNLOAD_SOUNDFONT=ON'
+    '-DUSE_SYSTEM_FREETYPE=ON'
+    '-DBUILD_UNIT_TESTS=OFF'
+    '-DMUSESCORE_BUILD_MODE=release'
+    '-DCMAKE_SKIP_INSTALL_RPATH=OFF'
+)
 
-# FIXME: No data signature found in rcc
-# See https://bugreports.qt.io/browse/QTBUG-73834
-# & https://bugs.gentoo.org/908808
+# FIXME: No data signature found in rcc.
+# See:
+#   - https://bugreports.qt.io/browse/QTBUG-73834
+#   - https://bugs.gentoo.org/908808
 NOLTO=1
