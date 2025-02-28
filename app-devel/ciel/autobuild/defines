@@ -2,6 +2,7 @@ PKGNAME=ciel
 PKGSEC=devel
 PKGDEP="systemd libgit2 dbus openssl xz squashfs-tools"
 BUILDDEP="rustc llvm"
+PKGRECOM="qemu-user-static"
 PKGDES="An integrated packaging environment for AOSC OS"
 
 USECLANG=1
