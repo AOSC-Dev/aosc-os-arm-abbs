@@ -1,0 +1,4 @@
+PKGNAME=lxqt-sudo
+PKGSEC=LxQt
+PKGDEP="liblxqt sudo"
+PKGDES="GUI frontend for sudo/su"

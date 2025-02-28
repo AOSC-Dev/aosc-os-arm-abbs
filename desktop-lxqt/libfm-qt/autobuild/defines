@@ -1,0 +1,5 @@
+PKGNAME=libfm-qt
+PKGSEC=LxQt
+PKGDEP="qt-5 menu-cache"
+BUILDDEP=lxqt-build-tools lxqt-menu-data"
+PKGDES="Core library of PCManFM-Qt (Qt binding for libfm)"

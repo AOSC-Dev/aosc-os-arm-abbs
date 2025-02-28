@@ -1,0 +1,4 @@
+PKGNAME=pavucontrol-qt
+PKGSEC=LxQt
+PKGDEP="qt-5 pulseaudio liblxqt"
+PKGDES="A Pulseaudio mixer in Qt (port of pavucontrol)"

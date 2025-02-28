@@ -1,0 +1,4 @@
+PKGNAME=lxqt-session
+PKGSEC=LxQt
+PKGDEP="xdg-user-dirs liblxqt qtxdg-tools"
+PKGDES="The LXQt session manager"

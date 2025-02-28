@@ -1,0 +1,5 @@
+PKGNAME=qtxdg-tools
+PKGSEC=LxQt
+PKGDEP="qt-5"
+BUILDDEP=libqtxdg"
+PKGDES="libqtxdg user tools"

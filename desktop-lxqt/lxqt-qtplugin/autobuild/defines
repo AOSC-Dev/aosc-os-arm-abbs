@@ -1,0 +1,5 @@
+PKGNAME=lxqt-qtplugin
+PKGSEC=LxQt
+PKGDEP="libdbusmenu-qt libfm-qt libqtxdg"
+BUILDDEP=lxqt-build-tools qt-5"
+PKGDES="LXQt Qt platform integration plugin"

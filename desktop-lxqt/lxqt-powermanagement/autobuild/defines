@@ -1,0 +1,5 @@
+PKGNAME=lxqt-powermanagement
+PKGSEC=LxQt
+PKGDEP="upower kidletime liblxqt"
+BUILDDEP=solid"
+PKGDES="Power management module for LXQt"

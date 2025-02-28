@@ -1,0 +1,5 @@
+PKGNAME=qps
+PKGSEC=LxQt
+PKGDEP="qt-5 liblxqt"
+BUILDDEP=lxqt-build-tools"
+PKGDES="Qt process viewer and manager"

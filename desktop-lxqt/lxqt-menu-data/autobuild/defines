@@ -1,0 +1,4 @@
+PKGNAME=lxqt-menu-data
+PKGSEC=LxQt
+BUILDDEP="lxqt-build-tools"
+PKGDES="Menu files for LXQt Panel, Configuration Center and PCManFM-Qt/libfm-qt"

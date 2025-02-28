@@ -1,0 +1,5 @@
+PKGNAME=lxqt-archiver
+PKGSEC=LxQt
+PKGDEP="qt-5 libfm-qt glib pkg-config json-glib"
+BUILDDEP=lxqt-build-tools"
+PKGDES="A simple & lightweight desktop-agnostic Qt file archiver"

@@ -1,0 +1,4 @@
+PKGNAME=lxqt-policykit
+PKGSEC=LxQt
+PKGDEP="polkit-qt-1 liblxqt"
+PKGDES="The LXQt PolicyKit agent"

@@ -1,0 +1,6 @@
+PKGNAME=lxqt-wallet
+PKGSEC=LxQt
+PKGDEP="qt-5"
+PKGRECOM="kwallet libsecret"
+BUILDDEP=kwallet libsecret"
+PKGDES="create a kwallet like functionality for lxqt"

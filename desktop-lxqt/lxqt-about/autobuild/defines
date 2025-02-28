@@ -1,0 +1,4 @@
+PKGNAME=lxqt-about
+PKGSEC=LxQt
+PKGDEP="liblxqt"
+PKGDES="Dialogue window providing information about LXQt and the system it's running on"

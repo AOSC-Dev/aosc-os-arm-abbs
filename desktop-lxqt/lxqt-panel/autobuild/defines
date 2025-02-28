@@ -1,0 +1,6 @@
+PKGNAME=lxqt-panel
+PKGSEC=LxQt
+PKGDEP="liblxqt kguiaddons libdbusmenu-qt lxqt-globalkeys"
+PKGRECOM="pulseaudio lm-sensors libsysstat"
+BUILDDEP=lxqt-build-tools"
+PKGDES="The LXQt desktop panel"

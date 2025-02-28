@@ -1,0 +1,4 @@
+PKGNAME=lxqt-globalkeys
+PKGSEC=LxQt
+PKGDEP="liblxqt"
+PKGDES="Daemon used to register global keyboard shortcuts"

@@ -1,0 +1,4 @@
+PKGNAME=lxqt-config
+PKGSEC=LxQt
+PKGDEP="liblxqt kscreen lxqt-menu-data"
+PKGDES="Tools to configure LXQt and the underlying operating system"

@@ -1,0 +1,5 @@
+PKGNAME=pcmanfm-qt
+PKGSEC=LxQt
+PKGDEP="liblxqt libfm-qt lxmenu-data"
+PKGRECOM="gvfs"
+PKGDES="File manager and desktop icon manager (Qt port of PCManFM and libfm)"

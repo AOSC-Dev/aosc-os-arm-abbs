@@ -1,0 +1,6 @@
+PKGNAME=lxqt-themes
+PKGSEC=LxQt
+BUILDDEP=lxqt-build-tools"
+PKGDES="Themes, graphics and icons for LXQt"
+
+ABHOST=noarch

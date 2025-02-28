@@ -1,0 +1,5 @@
+PKGNAME=obconf-qt
+PKGSEC=LxQt
+PKGDEP="qt-5 gtk-update-icon-cache hicolor-icon-theme openbox"
+BUILDDEP=lxqt-build-tools liblxqt"
+PKGDES="The Qt port of obconf, the Openbox configuration tool"

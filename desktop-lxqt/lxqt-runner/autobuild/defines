@@ -1,0 +1,5 @@
+PKGNAME=lxqt-runner
+PKGSEC=LxQt
+PKGDEP="lxqt-globalkeys muparser kwindowsystem"
+PKGRECOM="menu-cache"
+PKGDES="Tool used to launch programs quickly by typing their names"

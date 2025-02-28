@@ -1,0 +1,4 @@
+PKGNAME=lxqt-notificationd
+PKGSEC=LxQt
+PKGDEP="liblxqt lxqt-session"
+PKGDES="The LXQt notification daemon"
