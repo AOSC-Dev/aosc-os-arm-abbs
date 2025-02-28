@@ -1,0 +1,31 @@
+From 8bb459b773be537b727096267d839938e910c6b5 Mon Sep 17 00:00:00 2001
+From: Peter Jones <pjones@redhat.com>
+Date: Thu, 10 May 2012 14:47:35 -0400
+Subject: [PATCH 4/5] FEDORA: 20macosx: do not count dummy mach_kernel as real
+ Mac OS X
+
+Signed-off-by: Hedayat Vatankhah <hedayat.fwd@gmail.com>
+
+[Mingcong Bai: Usually found in GRUB-generated ISO images.]
+Link: https://src.fedoraproject.org/rpms/os-prober/blob/aea4f9e88e59ce3b965ae81f7037a9b01a271906/f/os-prober-no-dummy-mach-kernel.patch
+Signed-off-by: Mingcong Bai <jeffbai@aosc.io>
+---
+ os-probes/mounted/powerpc/20macosx | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/os-probes/mounted/powerpc/20macosx b/os-probes/mounted/powerpc/20macosx
+index 2fc7e85..ce51d63 100755
+--- a/os-probes/mounted/powerpc/20macosx
++++ b/os-probes/mounted/powerpc/20macosx
+@@ -23,7 +23,7 @@ esac
+ # but I don't think it exists on Mac OS <= 9, and it's XML so parsing in
+ # shell will be nasty.
+ 
+-if [ -e "$2/mach_kernel" ]; then
++if [ -e "$2/mach_kernel" ] && ! dd if="$2/mach_kernel" count=1 bs=5 2>/dev/null | grep -aq Dummy ; then
+   label="$(count_next_label MacOSX)"
+   result "$1:Mac OS X:$label:macosx"
+   exit 0
+-- 
+2.48.1
+

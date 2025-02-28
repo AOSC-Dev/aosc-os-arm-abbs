@@ -1,0 +1,37 @@
+From d66e824e8613a5f2d1cdaf202b33efff0ac6d28e Mon Sep 17 00:00:00 2001
+From: Mingcong Bai <jeffbai@aosc.io>
+Date: Thu, 20 Feb 2025 20:46:32 +0800
+Subject: [PATCH 3/5] FEDORA: arm64/20microsoft: detect Windows 11
+
+Update to latest upstream version with better support for latest OSes,
+
+closes rhbz#2090942
+
+Add support for Win 11 on ARM 64 systems
+
+Signed-off-by: Hedayat Vatankhah <hedayat.fwd@gmail.com>
+
+Link: https://src.fedoraproject.org/rpms/os-prober/blob/56ec8a1f4b38c03f8b568c268633af6cec7e7925/f/os-prober-arm64-win11.patch
+Signed-off-by: Mingcong Bai <jeffbai@aosc.io>
+---
+ os-probes/mounted/arm64/20microsoft | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/os-probes/mounted/arm64/20microsoft b/os-probes/mounted/arm64/20microsoft
+index 066918a..b69c2ba 100755
+--- a/os-probes/mounted/arm64/20microsoft
++++ b/os-probes/mounted/arm64/20microsoft
+@@ -31,7 +31,9 @@ if item_in_dir -q bootmgr "$2"; then
+ 	for boot in $(item_in_dir boot "$2"); do
+ 		bcd=$(item_in_dir bcd "$2/$boot")
+ 		if [ -n "$bcd" ]; then
+-			if   grep -aqs "W.i.n.d.o.w.s. .1.0" "$2/$boot/$bcd"; then
++			if   grep -aqs "W.i.n.d.o.w.s. .1.1" "$2/$boot/$bcd"; then
++				long="Windows 11"
++			elif grep -aqs "W.i.n.d.o.w.s. .1.0" "$2/$boot/$bcd"; then
+ 				long="Windows 10"
+ 			elif grep -aqs "W.i.n.d.o.w.s. .8" "$2/$boot/$bcd"; then
+ 				long="Windows 8"
+-- 
+2.48.1
+

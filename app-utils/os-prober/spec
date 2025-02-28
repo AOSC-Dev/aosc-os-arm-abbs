@@ -1,5 +1,4 @@
-VER=1.81
-REL=3
+VER=1.83
 SRCS="tbl::http://http.debian.net/debian/pool/main/o/os-prober/os-prober_$VER.tar.xz"
-CHKSUMS="sha256::2fd928ec86538227711e2adf49cfd6a1ef74f6bb3555c5dad4e0425ccd978883"
+CHKSUMS="sha256::8c82d5084c2b6f8935f6633612f18d16d04a0deffd6b99c264985fb7204140a6"
 CHKUPDATE="anitya::id=2574"
