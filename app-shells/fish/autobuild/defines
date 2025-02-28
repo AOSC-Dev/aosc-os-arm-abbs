@@ -19,3 +19,5 @@ RECONF=0
 # FIXME: ld.lld: error: relocation R_MIPS_64 cannot be used against symbol
 # 'DW.ref.rust_eh_personality'; recompile with -fPIC
 NOLTO__LOONGSON3=1
+
+PKGBREAK="just<=1.39.0"
