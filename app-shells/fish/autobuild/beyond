@@ -1,2 +1,2 @@
-abinfo "Removing completion for rclone to resolve file conflict ..."
-rm -v "$PKGDIR"/usr/share/fish/completions/rclone.fish
+abinfo "Removing some completions to resolve file conflicts ..."
+rm -v "$PKGDIR"/usr/share/fish/completions/{rclone,just}.fish
