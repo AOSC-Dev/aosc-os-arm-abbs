@@ -1,6 +1,5 @@
-VER=3.4.1
-REL=2
+VER=3.17.2
 SRCS="tbl::https://github.com/ocaml/dune/archive/$VER/dune-$VER.tar.gz"
-CHKSUMS="sha256::dc260f7f723b17cec104d394d904b402a0b0108d2d3241fe7596e6d473502cef"
+CHKSUMS="sha256::1b45e34d1eacf40be569e4d7ad055508a3242637b098327c91f7ce67772a1889"
 CHKUPDATE="anitya::id=16017"
 SUBDIR=.

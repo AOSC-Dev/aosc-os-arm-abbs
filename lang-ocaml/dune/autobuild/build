@@ -8,7 +8,7 @@ pushd "$_SRCDIR"
 
 abinfo "Building Dune's core executable ..."
 ./configure --libdir /usr/lib/ocaml
-make dune.exe
+make _boot/dune.exe
 
 abinfo "Building Dune packages ..."
 DUNE_RELEASE_PKGS="dune,dune-action-plugin,dune-build-info,dune-configurator,dune-glob,dune-private-libs,dune-site,dyn,stdune,ordering,xdg,fiber"
