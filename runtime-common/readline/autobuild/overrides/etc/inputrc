@@ -6,6 +6,14 @@ set input-meta on
 set convert-meta off
 set output-meta on
 
+# bash-completion
+set show-all-if-ambiguous on
+set menu-complete-display-prefix on
+set colored-completion-prefix on
+set colored-stats on
+TAB: menu-complete
+"\e[Z": menu-complete-backward
+
 $if mode=emacs
 
 # for linux console and RH/Debian xterm
