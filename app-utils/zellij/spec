@@ -2,3 +2,4 @@ VER=0.41.2
 SRCS="git::commit=tags/v${VER}::https://github.com/zellij-org/zellij"
 CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=300087"
+REL=1
