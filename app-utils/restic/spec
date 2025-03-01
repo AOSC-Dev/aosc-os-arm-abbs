@@ -1,4 +1,4 @@
-VER=0.17.1
+VER=0.17.3
 SRCS="git::commit=tags/v$VER::https://github.com/restic/restic"
 CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=16643"

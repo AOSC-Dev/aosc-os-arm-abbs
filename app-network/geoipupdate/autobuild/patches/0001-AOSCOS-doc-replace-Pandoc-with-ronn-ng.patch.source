@@ -1,20 +1,17 @@
-From 432ee78984ca94560ce3145748ba2ef6069dc825 Mon Sep 17 00:00:00 2001
+From ee1c75b9f895231c8f7f05f11ba7f4c11f1c57b6 Mon Sep 17 00:00:00 2001
 From: Camber Huang <camber@aosc.io>
 Date: Sun, 17 Sep 2023 06:30:50 +0000
-Subject: [PATCH] Replace Pandoc with ronn-ng
+Subject: [PATCH] AOSCOS: doc: replace Pandoc with ronn-ng
 
-As pandoc is unavailable to architectures other than amd64 in AOSC OS,
-generation of manpages with upstream-shipped repository is not possible. This
-patch replaces pandoc with architecture-independent ronn-ng, along with minor
-tweaks to markdown source files.
+As Pandoc is unavailable to architectures other than amd64 in AOSC OS,
+generation of man pages is not possible unless we modify the generation
+routine. This patch replaces Pandoc with architecture-independent ronn-ng,
+along with minor tweaks to Markdown source files.
 
-This patch will also replace previous patch which just simply disables the
-generation of manpage.
-
-This patch should be dropped when haskell compiler is available on other
-architectures.
+This patch should not be used on architectures with Haskell compiler.
 
 Signed-off-by: Camber Huang <camber@aosc.io>
+Signed-off-by: Mingcong Bai <jeffbai@aosc.io>
 ---
  dev-bin/make-man-pages.pl | 13 ++++++-------
  doc/GeoIP.conf.md         | 12 ++++++------
@@ -46,7 +43,7 @@ index 82acb07..f191e5c 100755
      return;
  }
 diff --git a/doc/GeoIP.conf.md b/doc/GeoIP.conf.md
-index 6ba9ca5..46454ef 100644
+index 14d4cb2..184ec5c 100644
 --- a/doc/GeoIP.conf.md
 +++ b/doc/GeoIP.conf.md
 @@ -2,18 +2,18 @@
@@ -98,7 +95,7 @@ index 6ba9ca5..46454ef 100644
  
  `geoipupdate`(1)
 diff --git a/doc/geoipupdate.md b/doc/geoipupdate.md
-index e39b88d..98d9e5e 100644
+index c52953d..a695e78 100644
 --- a/doc/geoipupdate.md
 +++ b/doc/geoipupdate.md
 @@ -2,11 +2,11 @@
@@ -136,9 +133,9 @@ index e39b88d..98d9e5e 100644
 -# NOTES
 +## NOTES
  
- Typically you should run `geoipupdate` weekly. On most Unix-like systems,
- this can be achieved by using cron. Below is a sample crontab file that
-@@ -79,11 +79,11 @@ To use with a proxy server, update your `GeoIP.conf` file as specified in
+ Typically you should run `geoipupdate` at least twice a week. Consult
+ our
+@@ -75,11 +75,11 @@ To use with a proxy server, update your `GeoIP.conf` file as specified in
  the `GeoIP.conf` man page. Alternatively, set the `GEOIPUPDATE_PROXY` or
  `http_proxy` environment variable.
  
@@ -152,7 +149,7 @@ index e39b88d..98d9e5e 100644
  
  Written by William Storey.
  
-@@ -92,11 +92,11 @@ This software is Copyright (c) 2018-2023 by MaxMind, Inc.
+@@ -88,11 +88,11 @@ This software is Copyright (c) 2018-2024 by MaxMind, Inc.
  This is free software, licensed under the Apache License, Version 2.0 or
  the MIT License, at your option.
  
@@ -167,5 +164,5 @@ index e39b88d..98d9e5e 100644
  
  `GeoIP.conf`(5)
 -- 
-2.39.1
+2.48.1
 

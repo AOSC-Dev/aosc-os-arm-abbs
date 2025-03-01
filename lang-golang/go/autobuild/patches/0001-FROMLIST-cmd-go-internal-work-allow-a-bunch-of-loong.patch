@@ -1,0 +1,137 @@
+From f88e314e70aedc2485ea7a0d13cdb4a870c250cc Mon Sep 17 00:00:00 2001
+From: WANG Xuerui <wangxuerui@iscas.ac.cn>
+Date: Sun, 9 Feb 2025 18:57:49 +0800
+Subject: [PATCH] FROMLIST: cmd/go/internal/work: allow a bunch of
+ loong64-specific flags
+
+Recognize and allow all LoongArch-specific CFLAGS as standardized
+in the LoongArch Toolchain Conventions v1.1, and implemented in current
+versions of GCC and Clang, to enable advanced cgo use cases on loong64.
+These flags are also allowed for linker invocations in case of possible
+LTO.
+
+See: https://github.com/loongson/la-toolchain-conventions/blob/releases/v1.1/LoongArch-toolchain-conventions-EN.adoc#list
+
+While at it, also add support for -mtls-dialect as some C programs
+may benefit performance-wise from the optional TLSDESC usage. This flag
+is not specific to loong64 though; it is available for amd64, arm,
+arm64, loong64, riscv64 and x86.
+
+Fixes #71597.
+
+Change-Id: I35d2507edb71fa324ae429a3ae3c739644a9cac1
+Reviewed-on: https://go-review.googlesource.com/c/go/+/647956
+LUCI-TryBot-Result: Go LUCI <golang-scoped@luci-project-accounts.iam.gserviceaccount.com>
+Commit-Queue: Ian Lance Taylor <iant@google.com>
+Reviewed-by: Ian Lance Taylor <iant@google.com>
+Auto-Submit: Ian Lance Taylor <iant@google.com>
+Reviewed-by: Cherry Mui <cherryyz@google.com>
+Reviewed-by: abner chenc <chenguoqi@loongson.cn>
+Reviewed-by: Meidan Li <limeidan@loongson.cn>
+
+Link: https://go-review.googlesource.com/c/go/+/647956
+Signed-off-by: Mingcong Bai <jeffbai@aosc.io>
+---
+ src/cmd/go/internal/work/security.go      | 13 ++++++++--
+ src/cmd/go/internal/work/security_test.go | 31 +++++++++++++++++++++++
+ 2 files changed, 42 insertions(+), 2 deletions(-)
+
+diff --git a/src/cmd/go/internal/work/security.go b/src/cmd/go/internal/work/security.go
+index 50bfd0ab70..c3d62ddc23 100644
+--- a/src/cmd/go/internal/work/security.go
++++ b/src/cmd/go/internal/work/security.go
+@@ -96,17 +96,21 @@ var validCompilerFlags = []*lazyregexp.Regexp{
+ 	re(`-g([^@\-].*)?`),
+ 	re(`-m32`),
+ 	re(`-m64`),
+-	re(`-m(abi|arch|cpu|fpu|tune)=([^@\-].*)`),
++	re(`-m(abi|arch|cpu|fpu|simd|tls-dialect|tune)=([^@\-].*)`),
+ 	re(`-m(no-)?v?aes`),
+ 	re(`-marm`),
+ 	re(`-m(no-)?avx[0-9a-z]*`),
+ 	re(`-mcmodel=[0-9a-z-]+`),
+ 	re(`-mfloat-abi=([^@\-].*)`),
++	re(`-m(soft|single|double)-float`),
+ 	re(`-mfpmath=[0-9a-z,+]*`),
+ 	re(`-m(no-)?avx[0-9a-z.]*`),
+ 	re(`-m(no-)?ms-bitfields`),
+ 	re(`-m(no-)?stack-(.+)`),
+ 	re(`-mmacosx-(.+)`),
++	re(`-m(no-)?relax`),
++	re(`-m(no-)?strict-align`),
++	re(`-m(no-)?(lsx|lasx|frecipe|div32|lam-bh|lamcas|ld-seq-sa)`),
+ 	re(`-mios-simulator-version-min=(.+)`),
+ 	re(`-miphoneos-version-min=(.+)`),
+ 	re(`-mlarge-data-threshold=[0-9]+`),
+@@ -166,8 +170,13 @@ var validLinkerFlags = []*lazyregexp.Regexp{
+ 	re(`-flat_namespace`),
+ 	re(`-g([^@\-].*)?`),
+ 	re(`-headerpad_max_install_names`),
+-	re(`-m(abi|arch|cpu|fpu|tune)=([^@\-].*)`),
++	re(`-m(abi|arch|cpu|fpu|simd|tls-dialect|tune)=([^@\-].*)`),
++	re(`-mcmodel=[0-9a-z-]+`),
+ 	re(`-mfloat-abi=([^@\-].*)`),
++	re(`-m(soft|single|double)-float`),
++	re(`-m(no-)?relax`),
++	re(`-m(no-)?strict-align`),
++	re(`-m(no-)?(lsx|lasx|frecipe|div32|lam-bh|lamcas|ld-seq-sa)`),
+ 	re(`-mmacosx-(.+)`),
+ 	re(`-mios-simulator-version-min=(.+)`),
+ 	re(`-miphoneos-version-min=(.+)`),
+diff --git a/src/cmd/go/internal/work/security_test.go b/src/cmd/go/internal/work/security_test.go
+index 35af621764..48f98100a5 100644
+--- a/src/cmd/go/internal/work/security_test.go
++++ b/src/cmd/go/internal/work/security_test.go
+@@ -50,10 +50,35 @@ var goodCompilerFlags = [][]string{
+ 	{"-ftls-model=local-dynamic"},
+ 	{"-g"},
+ 	{"-ggdb"},
++	{"-mabi=lp64d"},
+ 	{"-march=souza"},
+ 	{"-mcmodel=medium"},
+ 	{"-mcpu=123"},
+ 	{"-mfpu=123"},
++	{"-mtls-dialect=gnu"},
++	{"-mtls-dialect=gnu2"},
++	{"-mtls-dialect=trad"},
++	{"-mtls-dialect=desc"},
++	{"-mtls-dialect=xyz"},
++	{"-msimd=lasx"},
++	{"-msimd=xyz"},
++	{"-mdouble-float"},
++	{"-mrelax"},
++	{"-mstrict-align"},
++	{"-mlsx"},
++	{"-mlasx"},
++	{"-mfrecipe"},
++	{"-mlam-bh"},
++	{"-mlamcas"},
++	{"-mld-seq-sa"},
++	{"-mno-relax"},
++	{"-mno-strict-align"},
++	{"-mno-lsx"},
++	{"-mno-lasx"},
++	{"-mno-frecipe"},
++	{"-mno-lam-bh"},
++	{"-mno-lamcas"},
++	{"-mno-ld-seq-sa"},
+ 	{"-mlarge-data-threshold=16"},
+ 	{"-mtune=happybirthday"},
+ 	{"-mstack-overflow"},
+@@ -96,7 +121,13 @@ var badCompilerFlags = [][]string{
+ 	{"-march=@dawn"},
+ 	{"-march=-dawn"},
+ 	{"-mcmodel=@model"},
++	{"-mfpu=@0"},
++	{"-mfpu=-0"},
+ 	{"-mlarge-data-threshold=@12"},
++	{"-mtls-dialect=@gnu"},
++	{"-mtls-dialect=-gnu"},
++	{"-msimd=@none"},
++	{"-msimd=-none"},
+ 	{"-std=@c99"},
+ 	{"-std=-c99"},
+ 	{"-x@c"},
+-- 
+2.48.1
+

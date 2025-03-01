@@ -2,3 +2,4 @@ VER=0.8.5
 SRCS="git::commit=tags/v$VER::https://github.com/tristanisham/zvm"
 CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=363557"
+REL=1

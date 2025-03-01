@@ -1,5 +1,5 @@
 VER=0.9.0
-REL=2
+REL=3
 SRCS="tbl::https://github.com/daeuniverse/dae/releases/download/v$VER/dae-full-src.zip"
 CHKSUMS="sha256::b631e2cc729f28410f5ccf584de18cf6a839c4a313d694df5e326377f6435ab1"
 CHKUPDATE="anitya::id=369479"

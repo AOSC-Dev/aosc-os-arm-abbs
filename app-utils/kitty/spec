@@ -1,4 +1,4 @@
-VER=0.38.1
+VER=0.39.1
 SRCS="tbl::https://github.com/kovidgoyal/kitty/releases/download/v${VER}/kitty-${VER}.tar.xz"
-CHKSUMS="sha256::81b81fb4640588dc630871d48243c0e704535412e66ec500ecec3e436673b643"
+CHKSUMS="sha256::4baa2a59de7569b3b34f44ea8536c53d312aa76d1347121a2d6557abfde21325"
 CHKUPDATE="anitya::id=17405"

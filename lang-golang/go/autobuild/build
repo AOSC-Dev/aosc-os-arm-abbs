@@ -147,7 +147,7 @@ for i in authtest benchcmp bisect callgraph \
 	 compilebench cookieauth digraph eg file2fuzz \
 	 fiximports fuzz-driver fuzz-runner gitauth \
 	 go-contrib-init godex godoc goimports gomvpkg \
-	 gonew gorename gotype goyacc \
+	 gonew gotype goyacc \
 	 html2article netrcauth present present2md \
 	 splitdwarf ssadump stringer toolstash ; do
     install -Dvm755 "$SRCDIR"/bin/$i \
