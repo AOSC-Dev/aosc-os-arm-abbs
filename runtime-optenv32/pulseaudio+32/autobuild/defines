@@ -1,7 +1,22 @@
 PKGNAME=pulseaudio+32
 PKGSEC=sound
-PKGDEP="libasyncns+32 dbus+32 libcap+32 x11-lib+32 libsndfile+32 json-c+32 alsa-lib+32"
-PKGDES="A featureful, general-purpose sound server (optenv32)"
-BUILDDEP="perl-xml-parser"
-NOLTO=1
-ABHOST=noarch
+PKGDEP="aosc-aaa+32 alsa-lib+32 dbus+32 eudev+32 gdbm+32 json-c+32 \
+        libasyncns+32 libcap+32 libsndfile+32 libtool+32 libxcb+32 \
+        openssl+32 x11-lib+32"
+BUILDDEP="devel-base+32"
+PKGDES="A featureful, general-purpose sound server (32-bit x86 runtime)"
+
+ABHOST=optenv32
+
+# Note: Using gdbm as tdb's waf build system would require nothing less
+# than a 32-bit Python 3 toolchain.
+MESON_AFTER=(
+    '-Dudevrulesdir=/usr/lib/udev/rules.d'
+    '-Dtcpwrap=disabled'
+    '-Ddatabase=gdbm'
+    '-Dbluez5=disabled'
+    '-Dtests=false'
+    '-Ddoxygen=false'
+    '-Dman=false'
+    '-Dsystemd=disabled'
+)

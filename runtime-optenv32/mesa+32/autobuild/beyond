@@ -1,0 +1,3 @@
+abinfo "Creating a compatibility symlink for libGLX_indirect.so.0 ..."
+ln -sv libGLX_mesa.so.0 \
+    "$PKGDIR"/opt/32/lib/libGLX_indirect.so.0

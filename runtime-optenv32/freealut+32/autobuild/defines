@@ -1,8 +1,7 @@
 PKGNAME=freealut+32
-PKGDEP="openal-soft+32"
 PKGSEC=sound
-PKGDES="OpenAL Utility Toolkit (optenv32)"
+PKGDEP="aosc-aaa+32 openal-soft+32"
+BUILDDEP="devel-base+32"
+PKGDES="OpenAL Utility Toolkit (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--disable-static"
-NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32

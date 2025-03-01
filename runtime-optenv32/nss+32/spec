@@ -1,4 +1,4 @@
-VER=3.78
-SRCS="https://download-origin.cdn.mozilla.net/pub/security/nss/releases/NSS_${VER//./_}_RTM/src/nss-$VER.tar.gz"
-CHKSUMS="sha256::f455f341e787c1167328e80a84f77b9a557d595066dda6486a1874d72da68800"
+VER=3.107
+SRCS="https://archive.mozilla.org/pub/security/nss/releases/NSS_${VER//./_}_RTM/src/nss-$VER.tar.gz"
+CHKSUMS="sha256::7f7e96473e38150771a615f5d40e8c41ba3a19385301ae0c525091f2fc9d6729"
 CHKUPDATE="anitya::id=2503"

@@ -1,0 +1,18 @@
+abinfo "Appending -fPIC ..."
+export CFLAGS="${CFLAGS} -fPIC"
+export CXXFLAGS="${CXXFLAGS} -fPIC"
+export LDFLAGS="${LDFLAGS} -fPIC"
+# Note: Append flags only for Clang-enabled architectures.
+if bool $USECLANG; then
+    abinfo "Appending target flags ..."
+    export CFLAGS="${CFLAGS} --target=${HOST}"
+    export CXXFLAGS="${CXXFLAGS} --target=${HOST}"
+    export LDFLAGS="${LDFLAGS} --target=${HOST}"
+fi
+
+abinfo "Disabling system libgit2 to minimise dependencies ..."
+export LIBGIT2_NO_PKG_CONFIG=1
+
+abinfo "Deploying config.toml ..."
+cp -v "$SRCDIR"/autobuild/config.toml \
+    "$SRCDIR"/config.toml

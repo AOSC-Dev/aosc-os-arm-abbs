@@ -1,9 +1,12 @@
 PKGNAME=glslang+32
 PKGSEC=graphics
-PKGDEP="glibc+32"
-BUILDDEP="bison 32subsystem"
-PKGDES="An OpenGL and OpenGL ES shader front end and validator (optenv32)"
+PKGDEP="aosc-aaa+32 glibc+32 spirv-tools+32"
+BUILDDEP="devel-base+32"
+PKGDES="An OpenGL and OpenGL ES shader front end and validator (32-bit x86 runtime)"
 
-NOLTO=1
+ABHOST=optenv32
 
-ABHOST=noarch
+CMAKE_AFTER=(
+    '-DALLOW_EXTERNAL_SPIRV_TOOLS=ON'
+    '-DBUILD_SHARED_LIBS=ON'
+)

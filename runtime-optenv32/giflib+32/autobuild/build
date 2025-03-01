@@ -1,16 +1,7 @@
-export PATH=/opt/32/bin:$PATH
-
-CC=i686-pc-linux-gnu-gcc
-
-./configure --build=i686-pc-linux-gnu --target=i686-pc-linux-gnu \
-            --host=i686-pc-linux-gnu \
-            --prefix=/opt/32 ${AUTOTOOLS_AFTER} \
-            PKG_CONFIG_PATH=/opt/32/lib/pkgconfig
+abinfo "Building giflib ..."
 make
-make install DESTDIR="$PKGDIR"
 
-mkdir -pv "$PKGDIR"/opt/32
-mv -v "$PKGDIR"/usr/local/* "$PKGDIR"/opt/32/
-rm -rfv "$PKGDIR"/usr/local
-
-rm -rfv "$PKGDIR"/opt/32/{bin,share}
+abinfo "Installing giflib ..."
+make install \
+    DESTDIR="$PKGDIR" \
+    PREFIX=/opt/32

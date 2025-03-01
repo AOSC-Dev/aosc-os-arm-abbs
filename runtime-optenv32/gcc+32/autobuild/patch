@@ -23,3 +23,14 @@ sed -i "/ac_cpp=/s/\$CPPFLAGS/\$CPPFLAGS -O2/" "$SRCDIR"/{libiberty,gcc}/configu
 abinfo "Setting version string ..."
 echo $PKGVER > "$SRCDIR"/gcc/BASE-VER
 echo 'AOSC OS, optenv(32)' > "$SRCDIR"/gcc/DEV-PHASE
+
+abinfo "Applying patches ..."
+if [ -d "$SRCDIR"/autobuild/patches ]; then
+    ab_apply_patches \
+        "$SRCDIR"/autobuild/patches/*.{patch,diff} \
+        "$SRCDIR"/autobuild/patches/*.{patch,diff}."${CROSS:-$ARCH}"
+    ab_reverse_patches \
+        "$SRCDIR"/autobuild/patches/*.r{patch,diff} \
+        "$SRCDIR"/autobuild/patches/*.r{patch,diff}."${CROSS:-$ARCH}"
+    touch "$SRCDIR"/.patch
+fi

@@ -1,0 +1,33 @@
+From 532f8e1b812909ffe5cb3da708edd746abe7fa8f Mon Sep 17 00:00:00 2001
+From: Xinhui Yang <cyan@cyano.uk>
+Date: Fri, 21 Feb 2025 15:13:47 +0800
+Subject: [PATCH] gcc: add binary dir for OPTENV32 to the search paths
+
+This forces the driver to launch the correct linker and assembler by
+injecting the correct path to find `as' and `ld' to the driver itself,
+simulating the `-B' option:
+
+gcc -B/opt/32/bin ...
+
+The compiler driver also reports the correct path to the linker and
+assmebler for `--print-prog-name'.
+---
+ gcc/gcc.cc | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/gcc/gcc.cc b/gcc/gcc.cc
+index 728332b8153..1e0fe626db7 100644
+--- a/gcc/gcc.cc
++++ b/gcc/gcc.cc
+@@ -5476,6 +5476,8 @@ process_command (unsigned int decoded_options_count,
+ 		  PREFIX_PRIORITY_LAST, 2, 0);
+       add_prefix (&exec_prefixes, standard_exec_prefix, "BINUTILS",
+ 		  PREFIX_PRIORITY_LAST, 2, 0);
++      add_prefix (&exec_prefixes, "/opt/32/bin/", "BINUTILS",
++		  PREFIX_PRIORITY_B_OPT, 0, 0);
+ #endif
+       add_prefix (&startfile_prefixes, standard_exec_prefix, "BINUTILS",
+ 		  PREFIX_PRIORITY_LAST, 1, 0);
+-- 
+2.48.1
+

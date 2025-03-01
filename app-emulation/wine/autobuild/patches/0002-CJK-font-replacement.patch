@@ -1,4 +1,4 @@
-From 5477a958d16d7d02b936726feb343c78ef7247e0 Mon Sep 17 00:00:00 2001
+From 1673337714dbd782884b9efff9e73e794a8e5752 Mon Sep 17 00:00:00 2001
 From: Mingcong Bai <jeffbai@aosc.io>
 Date: Tue, 20 Feb 2024 16:49:43 +0800
 Subject: [PATCH 2/2] CJK font replacement
@@ -8,10 +8,10 @@ Subject: [PATCH 2/2] CJK font replacement
  1 file changed, 12 insertions(+)
 
 diff --git a/loader/wine.inf.in b/loader/wine.inf.in
-index 06551152f3a..85ee5a2beae 100644
+index cedcf16fba7..cbd64211897 100644
 --- a/loader/wine.inf.in
 +++ b/loader/wine.inf.in
-@@ -511,6 +511,18 @@ HKLM,%FontSubStr%,"Times New Roman CE,238",,"Times New Roman,238"
+@@ -519,6 +519,18 @@ HKLM,%FontSubStr%,"Times New Roman CE,238",,"Times New Roman,238"
  HKLM,%FontSubStr%,"Times New Roman CYR,204",,"Times New Roman,204"
  HKLM,%FontSubStr%,"Times New Roman Greek,161",,"Times New Roman,161"
  HKLM,%FontSubStr%,"Times New Roman TUR,162",,"Times New Roman,162"
@@ -31,5 +31,5 @@ index 06551152f3a..85ee5a2beae 100644
  
  [MCI]
 -- 
-2.43.0
+2.48.1
 

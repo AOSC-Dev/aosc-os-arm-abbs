@@ -1,24 +1,82 @@
-export PATH=/opt/32/bin:$PATH
-export CFLAGS+=" -I/opt/32/include"
-export LDFLAGS+=" -L/opt/32/lib"
-
-# FIXME: enable libpsl support
-# https://daniel.haxx.se/blog/2024/01/10/psl-in-curl/
-./configure --prefix=/opt/32 --exec-prefix=/opt/32 \
-            --libdir=/opt/32/lib --bindir=/opt/32/bin --sbindir=/opt/32/bin \
-            --disable-static \
-            --disable-ldap --disable-ldaps --enable-ipv6 \
-            --enable-manual --enable-versioned-symbols \
-            --enable-threaded-resolver --with-gssapi \
-            --without-libidn --with-openssl --with-random=/dev/urandom \
-            --with-ca-bundle=/etc/ssl/ca-bundle.crt \
-            --without-libpsl \
-            CC=i686-aosc-linux-gnu-gcc CXX=i686-aosc-linux-gnu-g++ \
-            PKG_CONFIG_PATH=/opt/32/lib/pkconfig
+abinfo "Configuring cURL (OpenSSL, with versioned symbols) ..."
+"$SRCDIR"/configure \
+     ${AUTOTOOLS_DEF[@]} ${AUTOTOOLS_AFTER[@]} ${AUTOTOOLS_TARGET[@]} \
+     --with-openssl \
+     --with-openssl-quic \
+     --without-gnutls \
+     --without-nss \
+     --enable-versioned-symbols
+abinfo "Building cURL (OpenSSL, with versioned symbols) ..."
 make
-make install DESTDIR="$PKGDIR"
+abinfo "Installing cURL (OpenSSL, with versioned symbols) ..."
+make install \
+    DESTDIR="$PKGDIR"
 
-# FIXME: move to /opt/32, hard-coded /usr/local
-sed -e 's|/usr/local|/opt/32|g' -i "$PKGDIR"/opt/32/lib/pkgconfig/*.pc
+abinfo "Cleaning up ..."
+make distclean
 
-rm -rf $PKGDIR/opt/32/{bin,share}
+abinfo "Configuring cURL (OpenSSL, without versioned symbols) ..."
+"$SRCDIR"/configure \
+     ${AUTOTOOLS_DEF[@]} ${AUTOTOOLS_AFTER[@]} ${AUTOTOOLS_TARGET[@]} \
+     --with-openssl \
+     --with-openssl-quic \
+     --without-gnutls \
+     --without-nss \
+     --disable-versioned-symbols
+abinfo "Building cURL (OpenSSL, without versioned symbols) ..."
+make -C "$SRCDIR"/lib
+abinfo "Renaming unversioned libcurl as libcurl-compat ..."
+patchelf \
+    --set-soname 'libcurl-compat.so.4' \
+    "$SRCDIR"/lib/.libs/libcurl.so
+abinfo "Installing cURL (OpenSSL, without versioned symbols) ..."
+make install \
+    DESTDIR="$SRCDIR"/unversioned \
+    -C "$SRCDIR"/lib
+
+abinfo "Creating symlinks for unversioned libcurl ..."
+mv -v "$SRCDIR"/unversioned/opt/32/lib/libcurl{,-compat}.so.4.8.0
+rm -v "$SRCDIR"/unversioned/opt/32/lib/libcurl.{a,so}*
+for version in 3 4.0.0 4.1.0 4.2.0 4.3.0 4.4.0 4.5.0 4.6.0 4.7.0; do
+    ln -sv libcurl-compat.so.4.8.0 \
+        "$SRCDIR"/unversioned/opt/32/lib/libcurl.so.${version}
+    ln -sv libcurl-compat.so.4.8.0 \
+        "$SRCDIR"/unversioned/opt/32/lib/libcurl-compat.so.${version}
+done
+
+abinfo "Cleaning up ..."
+make distclean
+
+abinfo "Configuring cURL (GnuTLS, without versioned symbols) ..."
+"$SRCDIR"/configure \
+     ${AUTOTOOLS_DEF[@]} ${AUTOTOOLS_AFTER[@]} ${AUTOTOOLS_TARGET[@]} \
+     --without-openssl \
+     --with-gnutls \
+     --without-nss \
+     --disable-versioned-symbols
+abinfo "Building cURL (GnuTLS, without versioned symbols) ..."
+make -C "$SRCDIR"/lib
+abinfo "Renaming libcurl with GnuTLS as libcurl-gnutls ..."
+patchelf \
+    --set-soname 'libcurl-gnutls.so.4' \
+    "$SRCDIR"/lib/.libs/libcurl.so
+abinfo "Installing cURL (GnuTLS, without versioned symbols) ..."
+make install \
+    DESTDIR="$SRCDIR"/gnutls \
+    -C "$SRCDIR"/lib
+
+abinfo "Creating symlinks for unversioned libcurl (GnuTLS) ..."
+mv -v "$SRCDIR"/gnutls/opt/32/lib/libcurl{,-gnutls}.so.4.8.0
+rm -v "$SRCDIR"/gnutls/opt/32/lib/libcurl.{a,so}*
+ln -sv libcurl-gnutls.so.4 \
+    "$SRCDIR"/gnutls/opt/32/lib/libcurl-gnutls.so
+for version in 3 4 4.0.0 4.1.0 4.2.0 4.3.0 4.4.0 4.5.0 4.6.0 4.7.0; do
+    ln -sv libcurl-gnutls.so.4.8.0 \
+        "$SRCDIR"/gnutls/opt/32/lib/libcurl-gnutls.so.${version}
+done
+
+abinfo "Cobbling all variants ..."
+for i in unversioned gnutls; do
+    cp -av "$SRCDIR"/"$i"/* \
+        "$PKGDIR"/
+done

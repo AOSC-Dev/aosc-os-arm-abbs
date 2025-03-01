@@ -1,4 +1,4 @@
-VER=1.2.5.1
+VER=1.2.13
 SRCS="tbl::https://www.alsa-project.org/files/pub/lib/alsa-lib-$VER.tar.bz2"
-CHKSUMS="sha256::628421d950cecaf234de3f899d520c0a6923313c964ad751ffac081df331438e"
+CHKSUMS="sha256::8c4ff37553cbe89618e187e4c779f71a9bb2a8b27b91f87ed40987cc9233d8f6"
 CHKUPDATE="anitya::id=38"

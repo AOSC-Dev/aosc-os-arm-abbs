@@ -1,9 +1,10 @@
 PKGNAME=openssl-1.1+32
-PKGDEP="glibc+32 zlib+32 ca-certs"
 PKGSEC=libs
-PKGDES="Open Source toolkit for Secure Sockets Layer and Transport Layer Security (1.1 compatibility runtime for optenv32)"
-BUILDDEP="linux+api+32 32subsystem"
+PKGDEP="aosc-aaa+32 ca-certs glibc+32 zlib+32"
+BUILDDEP="devel-base+32"
+PKGDES="Open Source toolkit for Secure Sockets Layer and Transport Layer Security (1.1, 32-bit x86 runtime)"
 
+# FIXME: Installation may fail with parallelism.
 NOPARALLEL=1
-NOLTO=1
-ABHOST=noarch
+
+ABHOST=optenv32

@@ -1,0 +1,16 @@
+abinfo "Creating runtime skeleton ..."
+mkdir -pv "$PKGDIR"/opt/32/{bin,include,lib,libexec}
+
+abinfo "Creating symlinks for internal paths ..."
+ln -sv bin \
+    "$PKGDIR"/opt/32/sbin
+
+abinfo "Creating symlinks for shared runtime data ..."
+ln -sv ../../etc \
+    "$PKGDIR"/opt/32/etc
+ln -sv ../../usr/share \
+    "$PKGDIR"/opt/32/share
+ln -sv ../../var \
+    "$PKGDIR"/opt/32/var
+ln -sv ../../../usr/lib/locale \
+    "$PKGDIR"/opt/32/lib

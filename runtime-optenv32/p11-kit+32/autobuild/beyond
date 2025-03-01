@@ -1,0 +1,2 @@
+abinfo "Dropping unneeded shared data ..."
+rm -rv "$PKGDIR"/usr/share

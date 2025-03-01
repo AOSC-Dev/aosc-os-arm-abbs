@@ -1,7 +1,14 @@
 PKGNAME=openal-soft+32
 PKGSEC=libs
-BUILDDEP="libsndfile+32 32subsystem"
-PKGDEP="glibc+32"
-PKGDES="A cross platform 3D audio library (optenv32)"
+PKGDEP="aosc-aaa+32 glibc+32 libsndfile+32"
+BUILDDEP="devel-base+32"
+PKGDES="A cross platform 3D audio library (32-bit x86 runtime)"
 
-ABHOST=noarch
+ABHOST=optenv32
+
+CMAKE_AFTER=(
+    '-DALSOFT_BACKEND_PORTAUDIO=OFF'
+    '-DALSOFT_NO_CONFIG_UTIL=ON'
+    '-DALSOFT_EXAMPLES=OFF'
+    '-DALSOFT_BACKEND_JACK=OFF'
+)

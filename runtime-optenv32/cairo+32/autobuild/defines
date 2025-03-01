@@ -1,10 +1,14 @@
 PKGNAME=cairo+32
-PKGDEP="x11-lib+32 libdrm+32 libpng-1.6+32 fontconfig+32 glib+32 pixman+32 libspectre+32 poppler+32 librsvg+32"
-BUILDDEP="32subsystem"
 PKGSEC=libs
-PKGDES="A 2D graphics library with support for multiple output devices."
+PKGDEP="aosc-aaa+32 fontconfig+32 glib+32 libdrm+32 libpng+32 lzo+32 \
+        pixman+32 x11-lib+32"
+BUILDDEP="devel-base+32"
+PKGDES="A 2D graphics library with support for multiple output devices (32-bit x86 runtime)"
 
 ABHOST=optenv32
-AUTOTOOLS_AFTER="--enable-gl --enable-tee --disable-static --enable-egl \
-                 --enable-svg --enable-ps --enable-pdf --enable-gobject --disable-lto \
-                 --disable-test-surfaces --disable-full-testing"
+
+# FIXME: Tests sources were unable to find cairo.h...
+# Well it's not installed yet.
+MESON_AFTER=(
+    '-Dtests=disabled'
+)

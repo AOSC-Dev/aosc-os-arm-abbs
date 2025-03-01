@@ -1,11 +1,41 @@
 PKGNAME=llvm+32
 PKGSEC=devel
-PKGDEP="libffi+32"
-BUILDDEP="32subsystem"
-PKGDES="Low Level Virtual Machine Infrastructure"
+PKGDEP="aosc-aaa+32 libffi+32 llvm zstd+32"
+BUILDDEP="devel-base+32"
+PKGDES="Low Level Virtual Machine Infrastructure (32-bit x86 runtime)"
 
 NOSTATIC=0
 NOLTO=1
 
 PKGPROV="clang+32"
-ABHOST=noarch
+ABHOST=optenv32
+
+# FIXME: debuginfo depletes 32-bit addressing space.
+ABSPLITDBG=0
+
+ABTYPE=cmakeninja
+CMAKE_AFTER=(
+    '-DLLVM_BUILD_LLVM_DYLIB=ON'
+    '-DLLVM_DYLIB_EXPORT_ALL=ON'
+    '-DLLVM_LINK_LLVM_DYLIB=ON'
+    '-DLLVM_ENABLE_RTTI=ON'
+    '-DLLVM_ENABLE_FFI=OFF'
+    '-DLLVM_BUILD_DOCS=OFF'
+    '-DLLVM_BUILD_STATIC=OFF'
+    '-DLLVM_INCLUDE_TOOLS=ON'
+    '-DPTHREAD_LIBRARY_PATH=/opt/32/lib/libpthread.so'
+    '-DDL_LIBRARY_PATH=/opt/32/lib/libdl.so'
+    '-DLLVM_BINUTILS_INCDIR=/opt/32/include'
+    '-Dzstd_LIBRARY=/opt/32/lib/libzstd.so'
+    '-DLLVM_ENABLE_PROJECTS=llvm;clang'
+    '-DLLVM_ENABLE_RUNTIMES=compiler-rt'
+    '-DCOMPILER_RT_DEFAULT_TARGET_ONLY=ON'
+    '-DCOMPILER_RT_SANITIZERS_TO_BUILD="asan;ubsan_minimal;asan_abi;safestack;cfi"'
+    '-DCOMPILER_RT_BUILD_MEMPROF=OFF'
+    '-DCOMPILER_RT_INCLUDE_TESTS=OFF'
+    '-DCOMPILER_RT_BUILD_XRAY=OFF'
+    '-DCMAKE_TOOLCHAIN_FILE=../autobuild/fake-toolchain.cmake'
+    '-DCMAKE_BUILD_TYPE=Release'
+    '-DDEFAULT_SYSROOT=/opt/32'
+    '-DLLVM_DEFAULT_TARGET_TRIPLE=i686-aosc-linux-gnu'
+)

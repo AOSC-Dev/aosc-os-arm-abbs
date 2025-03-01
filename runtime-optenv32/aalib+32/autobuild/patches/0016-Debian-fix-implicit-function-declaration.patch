@@ -1,0 +1,109 @@
+Description: Add missing header includes.
+Author: Andrey Rakhmatullin <wrar@debian.org>
+Bug-Debian: https://bugs.debian.org/1066351
+Last-Update: 2024-03-13
+
+Index: aalib-1.4p5/src/aainfo.c
+===================================================================
+--- aalib-1.4p5.orig/src/aainfo.c
++++ aalib-1.4p5/src/aainfo.c
+@@ -1,3 +1,4 @@
++#include <stdlib.h>
+ 
+ #include "aalib.h"
+ #include "aaint.h"
+Index: aalib-1.4p5/src/aalinuxkbd.c
+===================================================================
+--- aalib-1.4p5.orig/src/aalinuxkbd.c
++++ aalib-1.4p5/src/aalinuxkbd.c
+@@ -22,6 +22,7 @@
+ #include <linux/vt.h>		/* for VT stuff - nah, really? :) */
+ #include <string.h>
+ #include <setjmp.h>
++#include <stdlib.h>
+ #ifdef GPM_MOUSEDRIVER
+ #include <gpm.h>
+ #endif
+Index: aalib-1.4p5/src/aaxkbd.c
+===================================================================
+--- aalib-1.4p5.orig/src/aaxkbd.c
++++ aalib-1.4p5/src/aaxkbd.c
+@@ -7,6 +7,7 @@
+ #include <X11/Xlib.h>
+ #include <X11/keysymdef.h>
+ #include <X11/keysym.h>
++#include <X11/Xutil.h>
+ #include "aalib.h"
+ #include "aaint.h"
+ #include "aaxint.h"
+Index: aalib-1.4p5/src/aalib.c
+===================================================================
+--- aalib-1.4p5.orig/src/aalib.c
++++ aalib-1.4p5/src/aalib.c
+@@ -1,6 +1,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <malloc.h>
++#include <stdlib.h>
+ #include "aalib.h"
+ #include "aaint.h"
+ 
+Index: aalib-1.4p5/src/aaregist.c
+===================================================================
+--- aalib-1.4p5.orig/src/aaregist.c
++++ aalib-1.4p5/src/aaregist.c
+@@ -1,4 +1,5 @@
+ #include <malloc.h>
++#include <string.h>
+ #include "config.h"
+ #include "aalib.h"
+ #include "aaint.h"
+Index: aalib-1.4p5/src/aakbdreg.c
+===================================================================
+--- aalib-1.4p5.orig/src/aakbdreg.c
++++ aalib-1.4p5/src/aakbdreg.c
+@@ -1,4 +1,5 @@
+ #include <malloc.h>
++#include <string.h>
+ #include "config.h"
+ #include "aalib.h"
+ #include "aaint.h"
+Index: aalib-1.4p5/src/aamoureg.c
+===================================================================
+--- aalib-1.4p5.orig/src/aamoureg.c
++++ aalib-1.4p5/src/aamoureg.c
+@@ -1,4 +1,5 @@
+ #include <malloc.h>
++#include <string.h>
+ #include "config.h"
+ #include "aalib.h"
+ #include "aaint.h"
+Index: aalib-1.4p5/src/aatest.c
+===================================================================
+--- aalib-1.4p5.orig/src/aatest.c
++++ aalib-1.4p5/src/aatest.c
+@@ -1,3 +1,5 @@
++#include <stdlib.h>
++#include <string.h>
+ #include "aalib.h"
+ int main(int argc, char **argv)
+ {
+Index: aalib-1.4p5/src/aafire.c
+===================================================================
+--- aalib-1.4p5.orig/src/aafire.c
++++ aalib-1.4p5/src/aafire.c
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "aalib.h"
+ 
+ #define XSIZ aa_imgwidth(context)
+Index: aalib-1.4p5/src/aasavefont.c
+===================================================================
+--- aalib-1.4p5.orig/src/aasavefont.c
++++ aalib-1.4p5/src/aasavefont.c
+@@ -1,3 +1,4 @@
++#include <stdlib.h>
+ #include "aalib.h"
+ int main(int argc, char **argv)
+ {

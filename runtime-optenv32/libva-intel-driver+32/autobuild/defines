@@ -1,8 +1,12 @@
 PKGNAME=libva-intel-driver+32
 PKGSEC=libs
-PKGDEP="libva+32"
-BUILDDEP="32subsystem"
-PKGDES="VA-API implementation for Intel G45 chipsets and Intel HD Graphics for Intel Core processor family."
+PKGDEP="aosc-aaa+32 libva+32 wayland+32"
+BUILDDEP="devel-base+32"
+PKGDES="VA-API implementation for Intel G45 and HD Graphics family (32-bit x86 runtime)"
 
-NOLTO=1
-ABHOST=noarch
+ABTYPE=meson
+MESON_AFTER=(
+    '-Dwith_wayland=yes'
+)
+
+ABHOST=optenv32

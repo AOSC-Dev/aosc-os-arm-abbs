@@ -1,9 +1,0 @@
-PKGNAME=srtp+32
-PKGSEC=net
-PKGDEP="glibc+32"
-PKGDES="Open-source implementation of the Secure Real-time Transport Protocol (SRTP) (optenv32)"
-
-ABMK="libsrtp.a shared_library"
-NOSTATIC=no
-NOLTO=1
-ABHOST=noarch

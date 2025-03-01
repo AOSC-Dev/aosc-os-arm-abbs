@@ -1,8 +1,9 @@
 PKGNAME=s2tc+32
 PKGSEC=libs
-PKGDES="S2tc texture compress library"
-PKGDEP="mesa+32"
-BUILDDEP="32subsystem"
+PKGDEP="aosc-aaa+32 mesa+32"
+BUILDDEP="devel-base+32"
+PKGDES="S2TC texture compress library (32-bit x86 runtime)"
 
-NOLTO=1
-ABHOST=noarch
+PKGEPOCH=1
+
+ABHOST=optenv32

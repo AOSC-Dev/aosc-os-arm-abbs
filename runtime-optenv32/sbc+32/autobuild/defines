@@ -1,6 +1,7 @@
 PKGNAME=sbc+32
 PKGSEC=libs
-PKGDEP="glibc+32"
-PKGDES="Bluetooth SubBand Codec (SBC) library (optenv32)"
-NOLTO=1
-ABHOST=noarch
+PKGDEP="aosc-aaa+32 glibc+32 libsndfile+32"
+BUILDDEP="devel-base+32"
+PKGDES="Bluetooth SubBand Codec (SBC) library (32-bit x86 runtime)"
+
+ABHOST=optenv32

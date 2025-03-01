@@ -1,7 +1,10 @@
 PKGNAME=libxnvctrl+32
 PKGSEC=libs
-PKGDEP="x11-lib+32"
-BUILDDEP="32subsystem"
-PKGDES="X extension for the NVIDIA NV-CONTROL API (optenv32)"
+PKGDEP="aosc-aaa+32 x11-lib+32"
+BUILDDEP="devel-base+32"
+PKGDES="X extension for the NVIDIA NV-CONTROL API (32-bit x86 runtime)"
 
-ABHOST=noarch
+ABHOST=optenv32
+
+PKGBREAK="nvidia<=565.77 565.77+utils565.57.01<=565.77+utils565.57.01"
+PKGREP="nvidia<=565.77 565.77+utils565.57.01<=565.77+utils565.57.01"

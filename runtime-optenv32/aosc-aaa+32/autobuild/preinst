@@ -1,0 +1,6 @@
+for i in etc share var; do
+	if [ -L /opt/32/$i ]; then
+		echo "Cleaning up shared symlink: /opt/32/$i ..."
+		rm /opt/32/$i
+	fi
+done

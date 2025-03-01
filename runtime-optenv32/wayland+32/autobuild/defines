@@ -1,11 +1,13 @@
 PKGNAME=wayland+32
 PKGSEC=libs
-PKGDEP="libffi+32 expat+32 libxml2+32 wayland-protocols"
-BUILDDEP="32subsystem"
-PKGDES="A display server to replace X.Org (optenv32)"
+PKGDEP="aosc-aaa+32 libffi+32 expat+32 libxml2+32 wayland-protocols"
+BUILDDEP="devel-base+32"
+PKGDES="A display server to replace X.Org (32-bit x86 runtime)"
 
 ABHOST=optenv32
 ABTYPE=meson
-NOLTO=1
-MESON_AFTER="-Ddocumentation=false \
-             -Dtests=false"
+
+MESON_AFTER=(
+    '-Ddocumentation=false'
+    '-Dtests=false'
+)

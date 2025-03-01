@@ -1,7 +1,9 @@
 PKGNAME=proxychains-ng+32
 PKGSEC=net
-PKGDEP="glibc+32"
-BUILDDEP="32subsystem"
-PKGDES="A hook preloader that allows redirecting TCP traffics of existing dynamically linked programs through one or more SOCKS or HTTP proxies (optenv32)"
+PKGDEP="aosc-aaa+32 glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="A hook preloader that allows redirecting TCP traffics of existing dynamically linked programs through one or more SOCKS or HTTP proxies (32-bit x86 runtime)"
 
-ABHOST=noarch
+ABHOST=optenv32
+
+PKGEPOCH=1

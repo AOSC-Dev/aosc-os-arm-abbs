@@ -1,7 +1,7 @@
 PKGNAME=libavc1394+32
 PKGSEC=libs
-PKGDEP="libraw1394+32"
-BUILDDEP="32subsystem"
-PKGDES="A library to control A/V devices using the 1394ta AV/C commands (optenv32)"
-NOLTO=1
-ABHOST=noarch
+PKGDEP="aosc-aaa+32 libraw1394+32"
+BUILDDEP="devel-base+32"
+PKGDES="A library to control A/V devices using the 1394ta AV/C commands (32-bit x86 runtime)"
+
+ABHOST=optenv32

@@ -1,4 +1,4 @@
-VER=2.31
+VER=2.73
 SRCS="tbl::https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-$VER.tar.xz"
-CHKSUMS="sha256::c6088de41e1c97fa8047e2e7de0e4ee0cd13e6cc16538022230ae76727a87c46"
+CHKSUMS="sha256::6405f6089cf4cdd8c271540cd990654d78dd0b1989b2d9bda20f933a75a795a5"
 CHKUPDATE="anitya::id=1569"

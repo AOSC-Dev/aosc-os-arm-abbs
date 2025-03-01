@@ -1,0 +1,7 @@
+PKGNAME=lm-sensors+32
+PKGSEC=utils
+PKGDEP="aosc-aaa+32 glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="Collection of userspace tools for general SMBus access and hardware monitoring (32-bit x86 runtime)"
+
+ABHOST=optenv32

@@ -1,25 +1,65 @@
-export PATH=/opt/32/bin:$PATH
+abinfo "Removing bundled SQLite ..."
+rm -rv "$SRCDIR"/../pkgs/sqlite3*
 
-rm -rf pkgs/sqlite3*
+abinfo "Configuring Tcl ..."
+"$SRCDIR"/configure \
+    --prefix=/opt/32 \
+    --mandir=/opt/32/share/man \
+    --enable-threads \
+    --enable-64bit \
+    LIBS=-lm
 
-cd unix
-./configure --prefix=/opt/32 \
-            --mandir=/opt/32/share/man \
-            --enable-threads \
-            CC=i686-pc-linux-gnu-gcc CXX=i686-pc-linux-gnu-g++ \
-            LDFLAGS="${LDFLAGS} -L/opt/32/lib" \
-            CFLAGS="${CFLAGS} -I/opt/32/include" \
-            PKG_CONFIG_PATH=/opt/32/lib/pkgconfig
+abinfo "Building Tcl ..."
 make
 
-sed -e "s@^\(TCL_SRC_DIR='\).*@\1/usr/include'@" \
-    -e "/TCL_B/s@='\(-L\)\?.*unix@='\1/usr/lib@" \
-    -i tclConfig.sh
+abinfo "Fixing header and library install paths ..."
+sed -e "s@^\(TCL_SRC_DIR='\).*@\1/opt/32/include'@" \
+    -e "/TCL_B/s@='\(-L\)\?.*unix@='\1/opt/32/lib@" \
+    -i "$SRCDIR"/tclConfig.sh
 
-make DESTDIR="$PKGDIR" install
-make DESTDIR="$PKGDIR" install-private-headers
+abinfo "Installing Tcl ..."
+make install \
+    DESTDIR="$PKGDIR"
 
-chmod -v 755 "$PKGDIR"/opt/32/lib/libtcl8.6.so 
-cd ..
+abinfo "Installing Tcl private headers ..."
+make install-private-headers \
+    DESTDIR="$PKGDIR"
 
-rm -rf "$PKGDIR"/opt/32/{bin,share}
+abinfo "Symlinking tclsh => tclsh${PKGVER%.*} ..."
+ln -sv tclsh${PKGVER%.*} \
+    "$PKGDIR"/opt/32/bin/tclsh
+
+abinfo "Symlinking libtcl.so => libtcl${PKGVER%.*}.so ..."
+ln -sv libtcl${PKGVER%.*}.so \
+    "$PKGDIR"/opt/32/lib/libtcl.so
+chmod -v 755 "$PKGDIR"/opt/32/lib/libtcl8.6.so
+
+abinfo "Fixing paths in tclConfig.sh ..."
+sed -e "s#$SRCDIR/unix#/opt/32/lib#" \
+    -e "s#$SRCDIR#/opt/32/include#" \
+    -i "$PKGDIR/opt/32/lib/tclConfig.sh"
+
+abinfo "Tweaking tdbcConfig.sh ..."
+tdbcver=tdbc1.1.7
+sed -e "s#$SRCDIR/unix/pkgs/$tdbcver#/opt/32/lib/$tdbcver#" \
+    -e "s#$SRCDIR/pkgs/$tdbcver/generic#/opt/32/include#" \
+    -e "s#$SRCDIR/pkgs/$tdbcver/library#/opt/32/lib/tcl${PKGVER%.*}#" \
+    -e "s#$SRCDIR/pkgs/$tdbcver#/opt/32/include#" \
+    -i "$PKGDIR/opt/32/lib/$tdbcver/tdbcConfig.sh"
+
+abinfo "Tweaking itclConfig.sh ..."
+itclver=itcl4.2.4
+sed -e "s#$SRCDIR/unix/pkgs/$itclver#/opt/32/lib/$itclver#" \
+    -e "s#$SRCDIR/pkgs/$itclver/generic#/opt/32/include#" \
+    -e "s#$SRCDIR/pkgs/$itclver#/opt/32/include#" \
+    -i "$PKGDIR/opt/32/lib/$itclver/itclConfig.sh"
+
+abinfo "Removing -lieee linkage from tcl.pc ..."
+sed -e 's|-lieee||g' \
+    -i "$PKGDIR"/opt/32/lib/pkgconfig/tcl.pc
+
+abinfo "Renaming man page to add Tcl_ prefix ..."
+mv -v "$PKGDIR"/opt/32/share/man/man3/{,Tcl_}Thread.3
+
+abinfo "Removing executable bit from static libraries ..."
+chmod -v -x "$PKGDIR"/opt/32/lib/*.a

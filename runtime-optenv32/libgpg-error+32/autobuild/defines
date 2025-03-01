@@ -1,8 +1,7 @@
 PKGNAME=libgpg-error+32
-PKGDES="Support library for libgcrypt (optenv32)"
 PKGSEC=libs
-PKGDEP="glibc+32"
-BUILDDEP="32subsystem"
+PKGDEP="aosc-aaa+32 glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="Support library for GnuPG components (32-bit x86 runtime)"
 
-NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32

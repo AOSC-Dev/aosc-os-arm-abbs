@@ -1,0 +1,4 @@
+abinfo "Linking /opt/32/include/clc => usr/include/clc ..."
+install -dv "$PKGDIR"/opt/32/include
+ln -sv ../../../usr/include/clc \
+    "$PKGDIR"/opt/32/include/clc

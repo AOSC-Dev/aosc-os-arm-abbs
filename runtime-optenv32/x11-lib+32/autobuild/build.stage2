@@ -1,0 +1,58 @@
+for package in `cat "$SRCDIR"/autobuild/build-order.stage2`; do
+    abinfo "Starting to build $package ..."
+    pushd "$package"-*
+
+    abinfo "Configuring ${package} ..."
+    case $package in
+        libXfont )
+            ./configure \
+                ${AUTOTOOLS_DEF[@]} \
+                --disable-devel-docs
+            ;;
+        libXt )
+            ./configure \
+                ${AUTOTOOLS_DEF[@]} \
+                --with-appdefaultdir=/etc/X11/app-defaults
+            ;;
+        libX11 )
+            ./configure \
+                ${AUTOTOOLS_DEF[@]} \
+                --disable-xf86bigfont
+            ;;
+        libpciaccess )
+            meson setup $BLDDIR ${MESON_DEF[@]}
+            ;;
+        * )
+            ./configure ${AUTOTOOLS_DEF[@]}
+            ;;
+    esac
+
+    abinfo "Building ${package} ..."
+    case $package in
+        libpciaccess )
+            ninja -C "$BLDDIR"
+            ;;
+        * )
+            make
+            ;;
+    esac
+
+    abinfo "Installing ${package} ..."
+    case $package in
+        libpciaccess )
+            ninja -C "$BLDDIR" install
+            DESTDIR="$PKGDIR" ninja -C "$BLDDIR" install
+            ;;
+        * )
+            make install
+            make install \
+                DESTDIR="$PKGDIR"
+            ;;
+    esac
+    popd
+done
+
+abinfo "Removing some files found in x11-proto..."
+rm -v \
+    "$PKGDIR"/opt/32/include/X11/extensions/XKBgeom.h \
+    "$PKGDIR"/opt/32/include/X11/extensions/vldXvMC.h

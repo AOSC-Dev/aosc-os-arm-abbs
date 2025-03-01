@@ -1,14 +1,18 @@
 PKGNAME=freetype+32
-PKGDES="Font rendering engine (optenv32)"
-PKGDEP="libpng-1.6+32 zlib+32 bzip2+32 x11-lib+32 harfbuzz+32"
-BUILDDEP="32subsystem"
 PKGSEC=libs
-NOLTO=1
-ABHOST=noarch
+PKGDEP="aosc-aaa+32 brotli+32 bzip2+32 harfbuzz+32 libpng+32 x11-lib+32 \
+        zlib+32"
+BUILDDEP="devel-base+32"
+PKGDES="Font rendering engine (32-bit x86 runtime)"
 
-MESON_AFTER="-Dbrotli=disabled \
-             -Dbzip2=enabled \
-             -Dharfbuzz=enabled \
-             -Dmmap=enabled \
-             -Dpng=enabled \
-             -Dzlib=system"
+ABHOST=optenv32
+
+ABTYPE=meson
+MESON_AFTER=(
+    '-Dbrotli=enabled'
+    '-Dbzip2=enabled'
+    '-Dharfbuzz=enabled'
+    '-Dmmap=enabled'
+    '-Dpng=enabled'
+    '-Dzlib=system'
+)

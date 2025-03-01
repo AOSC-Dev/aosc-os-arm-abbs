@@ -1,8 +1,10 @@
 PKGNAME=libjpeg-turbo+32
-PKGDES="JPEG image codec with accelerated baseline compression and decompression (optenv32)"
-PKGDEP="glibc"
-BUILDDEP="32subsystem"
 PKGSEC=libs
+PKGDEP="aosc-aaa+32 glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="JPEG image codec with accelerated baseline compression and decompression (32-bit x86 runtime)"
 
-NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
+
+PKGBREAK="libjpeg+legacy+32<=6b-1"
+PKGREP="libjpeg+legacy+32<=6b-1"

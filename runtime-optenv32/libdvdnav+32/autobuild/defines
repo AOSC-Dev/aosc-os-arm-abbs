@@ -1,6 +1,7 @@
 PKGNAME=libdvdnav+32
 PKGSEC=libs
-PKGDES="Library for xine-dvdnav plugin (optenv32)"
-PKGDEP="libdvdread+32"
-NOLTO=1
-ABHOST=noarch
+PKGDEP="aosc-aaa+32 libdvdread+32"
+BUILDDEP="devel-base+32"
+PKGDES="Library for xine-dvdnav plugin (32-bit x86 runtime)"
+
+ABHOST=optenv32

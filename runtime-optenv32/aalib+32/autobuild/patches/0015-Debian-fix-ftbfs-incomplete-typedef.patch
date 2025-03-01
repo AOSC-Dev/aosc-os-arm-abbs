@@ -1,0 +1,19 @@
+Description: fix-ftbfs-incomplete-typedef 
+ This has been caused by a recent change in ncurses which makes the
+ WINDOW structure opaque.  Accessing its members directly is no longer
+ possible
+Bug-Debian: 1057381
+Last-Update: 2024-01-25
+
+--- aalib-1.4p5.orig/src/aacurses.c
++++ aalib-1.4p5/src/aacurses.c
+@@ -77,8 +77,7 @@ static void curses_getsize(aa_context *
+ {
+     if (__resized_curses)
+ 	curses_uninit(c), curses_init(&c->params, NULL,&c->driverparams, NULL), __resized_curses = 0;
+-    *width = stdscr->_maxx + 1;
+-    *height = stdscr->_maxy + 1;
++    getmaxyx(stdscr, *width, *height);
+ #ifdef GPM_MOUSEDRIVER
+     gpm_mx = *width;
+     gpm_my = *height;

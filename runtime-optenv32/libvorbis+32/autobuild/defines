@@ -1,7 +1,7 @@
 PKGNAME=libvorbis+32
-PKGDES="Vorbis codec library (optenv32)"
 PKGSEC=libs
-PKGDEP="libogg+32"
-BUILDDEP="32subsystem"
-NOLTO=1
-ABHOST=noarch
+PKGDEP="aosc-aaa+32 libogg+32"
+BUILDDEP="devel-base+32"
+PKGDES="Vorbis codec library (32-bit x86 runtime)"
+
+ABHOST=optenv32

@@ -1,4 +1,4 @@
-VER=4.7.10
-SRCS="git::commit=tags/v$VER::https://github.com/AOSC-Dev/autobuild4"
+VER=4.7.10+git20250228
+SRCS="git::commit=29d700d6c978eed6344728f40daf3a9bbf24e43e::https://github.com/AOSC-Dev/autobuild4"
 CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=372345"

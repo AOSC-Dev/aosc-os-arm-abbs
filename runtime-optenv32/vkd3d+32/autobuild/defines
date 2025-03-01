@@ -1,5 +1,7 @@
 PKGNAME=vkd3d+32
-PKGDES="Direct3D 12 to Vulkan translation library By WineHQ (optenv32)"
-PKGDEP="glibc+32"
-PKGSEC="libs"
-BUILDDEP="32subsystem spirv-headers"
+PKGSEC=libs
+PKGDEP="aosc-aaa+32 glibc+32 vulkan-loader+32"
+BUILDDEP="devel-base+32 spirv-headers vulkan-headers+32"
+PKGDES="Direct3D 12 to Vulkan translation library By WineHQ (32-bit x86 runtime)"
+
+ABHOST=optenv32

@@ -1,7 +1,7 @@
 PKGNAME=alsa-lib+32
 PKGSEC=libs
-PKGDES="The ALSA interface library (optenv32)"
-PKGDEP="glibc+32"
-BUILDDEP="32subsystem"
-NOLTO=1
-ABHOST=noarch
+PKGDEP="aosc-aaa+32 glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="The ALSA interface library (32-bit x86 runtime)"
+
+ABHOST=optenv32

@@ -1,2 +1,0 @@
-rm -rf "$PKGDIR"/opt/32/{var,etc,libexec,share}
-rm -r "$PKGDIR"/etc

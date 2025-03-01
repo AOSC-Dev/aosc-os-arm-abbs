@@ -1,8 +1,11 @@
 PKGNAME=libmpeg2+32
-PKGDES="Library for decoding MPEG-1 and MPEG-2 video streams (optenv32)"
-PKGDEP="sdl+32 x11-lib+32"
 PKGSEC=libs
+PKGDEP="aosc-aaa+32 sdl+32 x11-lib+32"
+BUILDDEP="devel-base+32"
+PKGDES="Library for decoding MPEG-1 and MPEG-2 video streams (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--enable-shared"
-NOLTO=1
-ABHOST=noarch
+# FIXME: Not adapted for Automake >= 1.16 (and it's not necessary until we
+# patch Autotools scripts).
+RECONF=0
+
+ABHOST=optenv32

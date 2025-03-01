@@ -1,9 +1,14 @@
 PKGNAME=at-spi2-core+32
-PKGDEP="dbus+32 glib+32 x11-lib+32"
-BUILDDEP="32subsystem"
-PKGDES="Protocol definitions and daemon for D-Bus at-spi (optenv32)"
 PKGSEC=gnome
+PKGDEP="aosc-aaa+32 dbus+32 glib+32 x11-lib+32"
+BUILDDEP="devel-base+32"
+PKGDES="Protocol definitions and daemon for D-Bus at-spi (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--disable-xevie --disable-introspection"
-NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
+
+MESON_AFTER=(
+    '-Dintrospection=disabled'
+)
+
+PKGBREAK="atk+32<=2.26.1-1 at-spi2-atk+32<=2.26.3"
+PKGREP="atk+32<=2.26.1-1 at-spi2-atk+32<=2.26.3"

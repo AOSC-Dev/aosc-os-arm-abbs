@@ -1,0 +1,15 @@
+Description: fix netscape typo 
+ Replace Nestcape with Netscape.
+Author: Jonathan Carter <jcc@debian.org>
+
+--- aalib-1.4p5.orig/src/aasave.c
++++ aalib-1.4p5/src/aasave.c
+@@ -28,7 +28,7 @@ __AA_CONST struct aa_format aa_nhtml_for
+     0,
+     AA_NORMAL_MASK | AA_BOLD_MASK | AA_BOLDFONT_MASK | AA_DIM_MASK,
+     &aa_fontcourier,
+-    "Nestcapeized html",
++    "Netscapeized html",
+     ".html",
+     "<HTML>\n<HEAD><TITLE>Ascii arted image done using aalib</TITLE>\n</HEAD>\n<BODY BGCOLOR=\"#000000\" TEXT=\"#b2b2b2\" LINK=\"#FFFFFF\">\n<FONT COLOR=#b2b2b2 SIZE=2><PRE>\n",
+     "</PRE></FONT></BODY>\n</HTML>\n",

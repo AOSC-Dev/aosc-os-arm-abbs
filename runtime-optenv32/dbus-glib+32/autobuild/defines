@@ -1,6 +1,7 @@
 PKGNAME=dbus-glib+32
-PKGDES="D-Bus GLib Binding (optenv32)"
 PKGSEC=libs
-PKGDEP="glib+32 dbus+32"
-NOLTO=1
-ABHOST=noarch
+PKGDEP="aosc-aaa+32 glib+32 dbus+32"
+BUILDDEP="devel-base+32 gtk-doc"
+PKGDES="D-Bus GLib Binding (32-bit x86 runtime)"
+
+ABHOST=optenv32

@@ -1,10 +1,12 @@
 PKGNAME=sqlite+32
 PKGSEC=database
-PKGDES="A C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine for 32subsystem"
-PKGDEP="readline+32"
-BUILDDEP="32subsystem"
+PKGDEP="aosc-aaa+32 readline+32 tcl+32"
+BUILDDEP="devel-base+32"
+PKGDES="A self-contained SQL database engine (32-bit x86 runtime)"
 
-NOLTO=1
+# FIXME: Build fails with shadow build.
 ABSHADOW=0
+# FIXME: Installation may fail with parallelism.
 NOPARALLEL=1
-ABHOST=noarch
+
+ABHOST=optenv32

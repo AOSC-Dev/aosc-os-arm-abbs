@@ -1,0 +1,14 @@
+PKGNAME=libbsd+32
+PKGSEC=libs
+PKGDEP="aosc-aaa+32 glibc+32 libmd+32"
+BUILDDEP="devel-base+32"
+PKGDES="Utility functions from BSD systems (32-bit x86 runtime)"
+
+# Excerpt from Fedora:
+# This package uses top level ASM constructs which are incompatible with LTO.
+# Top level ASMs are often used to implement symbol versioning.  gcc-10
+# introduces a new mechanism for symbol versioning which works with LTO.
+# Converting packages to use that mechanism instead of toplevel ASMs is
+# recommended.
+NOLTO=1
+ABHOST=optenv32

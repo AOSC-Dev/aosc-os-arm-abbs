@@ -1,7 +1,9 @@
 PKGNAME=nlohmann-json+32
 PKGSEC=libs
-PKGDES="JSON for Modern C++ (optenv32 symlink to nlohmann-json headers)"
-PKGDEP="nlohmann-json"
+PKGDEP="aosc-aaa+32 nlohmann-json"
+PKGDES="JSON for Modern C++ (32-bit x86 runtime)"
 
 ABHOST=optenv32
+
+# Note: Header-only package.
 ABSPLITDBG=0

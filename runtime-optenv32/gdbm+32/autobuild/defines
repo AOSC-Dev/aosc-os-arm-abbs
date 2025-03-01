@@ -1,6 +1,7 @@
 PKGNAME=gdbm+32
-PKGDES="GNU Database Manager library"
 PKGSEC=libs
-PKGDEP="glibc+32"
-NOLTO=1
-ABHOST=noarch
+PKGDEP="aosc-aaa+32 glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="GNU Database Manager library (32-bit x86 runtime)"
+
+ABHOST=optenv32

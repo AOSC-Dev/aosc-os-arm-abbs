@@ -1,7 +1,7 @@
 PKGNAME=mpfr+32
 PKGSEC=libs
-PKGDEP="gmp+32 glibc+32"
-PKGDES="Functions for multiple precision math"
+PKGDEP="aosc-aaa+32 gmp+32 glibc+32"
+PKGDES="Functions for multiple precision math (32-bit x86 runtime)"
 BUILDDEP="devel-base+32"
 
 # Configuration:
@@ -9,9 +9,11 @@ BUILDDEP="devel-base+32"
 # 1. Enables threaded safety;
 # 2. Enables shared libraries (DO NOT disable, you will need this for shared GCC build);
 # 3. Declares documentation directory;
-AUTOTOOLS_AFTER="--enable-thread-safe \
-                 --enable-shared \
-                 --docdir=/usr/share/doc/mpfr"
+AUTOTOOLS_AFTER=(
+    '--enable-thread-safe'
+    '--enable-shared'
+)
+
 AB_FLAGS_O3=1
 AB_FLAGS_SPECS=0
 

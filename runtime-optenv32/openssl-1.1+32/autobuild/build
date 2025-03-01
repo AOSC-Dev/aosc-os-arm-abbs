@@ -1,13 +1,14 @@
-abinfo "Setting up the environment ..."
-export PATH="/opt/32/bin:$PATH"
-export CC=i686-pc-linux-gnu-gcc
+abinfo "Setting up build environment ..."
 export CPPFLAGS="${CPPFLAGS} ${CFLAGS}"
 
 abinfo "Configuring openssl-1.1+32 ..."
 # Disable tests to speed-up building process for optenv32
-"$SRCDIR"/Configure --prefix=/opt/32 --openssldir=/opt/32/etc/ssl --libdir=lib \
-            shared zlib enable-ssl2 no-tests\
-            -Wa,--noexecstack linux-elf 
+"$SRCDIR"/Configure \
+    --prefix=/opt/32 \
+    --openssldir=/opt/32/etc/ssl \
+    --libdir=lib \
+    shared zlib enable-ssl2 no-tests \
+    -Wa,--noexecstack linux-x86
 
 abinfo "Building openssl-1.1+32 ..."
 make

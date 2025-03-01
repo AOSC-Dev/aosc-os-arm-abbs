@@ -1,6 +1,10 @@
 PKGNAME=gsm+32
 PKGSEC=libs
-PKGDEP="glibc+32"
-BUILDDEP="32subsystem"
-PKGDES="Shared libraries for GSM 06.10 lossy speech compression (optenv32)"
-ABHOST=noarch
+PKGDEP="aosc-aaa+32 glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="Shared libraries for GSM 06.10 lossy speech compression (32-bit x86 runtime)"
+
+ABHOST=optenv32
+
+# FIXME: Causes installation to fail.
+NOPARALLEL=1

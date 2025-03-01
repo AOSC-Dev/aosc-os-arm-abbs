@@ -1,9 +1,11 @@
 PKGNAME=gcc+32
-PKGDES="GNU Compiler Collection (optenv32)"
+PKGDES="GNU Compiler Collection (32-bit x86 runtime)"
 PKGSEC=devel
 PKGDEP="binutils+32 gmp mpfr mpc zlib"
 
 NOSTATIC=0
-NOLTO=1
 
 ABSPLITDBG=0
+
+PKGBREAK="32subsystem<=1:2"
+PKGREP="32subsystem<=1:2"

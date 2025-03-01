@@ -1,0 +1,7 @@
+PKGNAME=libunwind+32
+PKGSEC=libs
+PKGDEP="aosc-aaa+32 glibc+32 xz+32"
+BUILDDEP="devel-base+32"
+PKGDES="Portable and efficient C programming interface (API) to determine the call-chain of a program (32-bit x86 runtime)"
+
+ABHOST=optenv32

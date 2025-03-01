@@ -1,0 +1,33 @@
+[llvm]
+download-ci-llvm = false
+link-shared = true
+ninja = true
+
+[build]
+python = "/usr/bin/python3"
+extended = true
+verbose = 2
+sanitizers = true
+profiler = true
+vendor = true
+print-step-timings = true
+rustc = "/usr/bin/rustc"
+cargo = "/usr/bin/cargo"
+target = [ "i686-unknown-linux-gnu" ]
+
+[rust]
+download-rustc = false
+# Working around limited VM space on 32-bit x86.
+codegen-units = 1
+codegen-units-std = 1
+debuginfo-level = 0
+channel = "stable"
+rpath = false
+
+[target.i686-unknown-linux-gnu]
+cc = "/opt/32/bin/i686-aosc-linux-gnu-clang"
+cxx = "/opt/32/bin/i686-aosc-linux-gnu-clang++"
+ar = "/opt/32/bin/i686-aosc-linux-gnu-ar"
+linker = "/opt/32/bin/i686-aosc-linux-gnu-clang"
+# Use the host system LLVM
+llvm-config = "/usr/bin/llvm-config"

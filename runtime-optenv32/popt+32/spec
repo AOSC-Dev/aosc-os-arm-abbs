@@ -1,5 +1,4 @@
-VER=1.16
-SRCS="tbl::http://rpm5.org/files/popt/popt-$VER.tar.gz"
-CHKSUMS="sha256::d6a01d72cf18dbe20d173fed7bc32cf87daafe62cf6b87672f6b434daff1ed74"
-REL=3
+VER=1.18
+SRCS="tbl::https://ftp.osuosl.org/pub/blfs/conglomeration/popt/popt-$VER.tar.gz"
+CHKSUMS="sha256::5159bc03a20b28ce363aa96765f37df99ea4d8850b1ece17d1e6ad5c24fdc5d1"
 CHKUPDATE="anitya::id=3689"

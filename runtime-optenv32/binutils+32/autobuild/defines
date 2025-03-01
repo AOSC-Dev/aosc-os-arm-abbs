@@ -1,12 +1,11 @@
 PKGNAME=binutils+32
-PKGDES="A set of programs to assemble and manipulate binary and object files (optenv32)"
+PKGDES="A set of programs to assemble and manipulate binary and object files (32-bit x86 runtime)"
 PKGSEC=devel
-PKGDEP="glibc+32 zlib+32"
+PKGDEP="aosc-aaa+32 glibc+32 zlib+32"
 BUILDDEP="devel-base+32"
 
 # Flags from the main tree.
 NOSTATIC=0
-NOLTO=1
 AB_FLAGS_O3=1
 RECONF=0
 

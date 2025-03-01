@@ -1,8 +1,8 @@
 PKGNAME=glibc+32
 PKGSEC=libs
-PKGDEP="tzdata"
+PKGDEP="aosc-aaa+32 tzdata"
 BUILDDEP="devel-base+32"
-PKGDES="GNU C Library (optenv32)"
+PKGDES="GNU C Library (32-bit x86 runtime)"
 
 AUTOTOOLS_STRICT=0
 AUTOTOOLS_AFTER=(
@@ -27,7 +27,6 @@ AUTOTOOLS_AFTER=(
 	"--disable-crypt"
 )
 
-NOLTO=1
 NOSTATIC=0
 AB_FLAGS_FTF=0
 AB_FLAGS_SSP=0

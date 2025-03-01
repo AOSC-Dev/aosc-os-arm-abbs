@@ -1,8 +1,9 @@
 PKGNAME=xvidcore+32
-PKGDES="XviD is an open source MPEG-4 video codec (optenv32)"
 PKGSEC=libs
-PKGDEP="glibc+32"
-BUILDDEP="32subsystem"
+PKGDEP="aosc-aaa+32 glibc+32"
+BUILDDEP="devel-base+32 nasm+32"
+PKGDES="Open source MPEG-4 video codec (32-bit x86 runtime)"
 
-NOLTO=1
-ABHOST=noarch
+ABSHADOW=0
+
+ABHOST=optenv32

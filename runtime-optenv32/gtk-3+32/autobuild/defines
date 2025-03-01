@@ -1,19 +1,14 @@
 PKGNAME=gtk-3+32
 PKGSEC=x11
-PKGDEP="adwaita-icon-theme atk+32 cairo+32 x11-lib+32 pango+32 shared-mime-info \
-        at-spi2-atk+32 libxkbcommon+32 libepoxy+32"
-BUILDDEP="gtk-doc 32subsystem"
-PKGDES="GIMP toolkit version 3 (optenv32)"
+PKGDEP="aosc-aaa+32 adwaita-icon-theme at-spi2-core+32 cairo+32 gdk-pixbuf+32 \
+        libepoxy+32 libxkbcommon+32 pango+32 shared-mime-info+32 wayland+32 \
+        x11-lib+32"
+BUILDDEP="devel-base+32 gtk-doc"
+PKGDES="GIMP toolkit version 3 (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--enable-gtk2-dependency \
-                 --disable-schemas-compile \
-                 --enable-x11-backend \
-                 --enable-broadway-backend \
-                 --disable-wayland-backend \
-                 --disable-introspection \
-                 --disable-gtk-doc --disable-cups \
-                 --disable-libcanberra --disable-colord \
-                 --disable-modules --includedir=/opt/32/include"
-ABSHADOW=no
-NOLTO=1
-ABHOST=noarch
+MESON_AFTER=(
+    '-Dintrospection=false'
+    '-Dgtk_doc=false'
+)
+
+ABHOST=optenv32

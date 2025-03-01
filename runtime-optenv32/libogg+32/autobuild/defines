@@ -1,7 +1,7 @@
 PKGNAME=libogg+32
-PKGDES="Ogg analyzing library for 32Subsystem"
-PKGDEP=glibc+32
-BUILDDEP="32subsystem"
 PKGSEC=libs
-NOLTO=1
-ABHOST=noarch
+PKGDEP="aosc-aaa+32 glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="Ogg analyzing library (32-bit x86 runtime)"
+
+ABHOST=optenv32

@@ -4,3 +4,7 @@ make
 abinfo "Installing libXNVCtrl.so ..."
 install -dvm755 "$PKGDIR"/usr/lib/
 cp -Pv "$SRCDIR"/_out/Linux_*/libXNVCtrl.so* "$PKGDIR"/usr/lib/
+
+abinfo "Installing headers ..."
+install -Dvm644 "$SRCDIR"/*.h \
+    -t "$PKGDIR"/usr/include/NVCtrl/

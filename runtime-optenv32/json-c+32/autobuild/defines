@@ -1,7 +1,7 @@
 PKGNAME=json-c+32
-PKGDES="A JSON implementation in C"
 PKGSEC=libs
-PKGDEP=glibc+32
-BUILDDEP="32subsystem"
-NOLTO=1
-ABHOST=noarch
+PKGDEP="aosc-aaa+32 glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="A JSON implementation in C (32-bit x86 runtime)"
+
+ABHOST=optenv32

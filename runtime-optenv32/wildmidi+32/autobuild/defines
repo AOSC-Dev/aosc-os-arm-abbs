@@ -1,7 +1,11 @@
 PKGNAME=wildmidi+32
 PKGSEC=sound
-PKGDEP="alsa-lib+32"
-BUILDDEP="32subsystem"
-PKGDES="Open source MIDI synthesizer (optenv32)"
-NOLTO=1
-ABHOST=noarch
+PKGDEP="aosc-aaa+32 alsa-lib+32"
+BUILDDEP="devel-base+32"
+PKGDES="Open source MIDI synthesizer (32-bit x86 runtime)"
+
+CMAKE_AFTER=(
+    '-DALSA_LIBRARY=/opt/32/lib/libasound.so.2'
+)
+
+ABHOST=optenv32

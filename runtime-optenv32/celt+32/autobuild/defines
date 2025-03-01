@@ -1,8 +1,17 @@
 PKGNAME=celt+32
 PKGSEC=libs
-PKGDEP="libogg+32"
-PKGDES="Low-latency audio communication codec (optenv32)"
+PKGDEP="aosc-aaa+32 libogg+32"
+BUILDDEP="devel-base+32"
+PKGDES="Low-latency audio communication codec (32-bit x86 runtime)"
 
-AUTOTOOLS_AFTER="--enable-custom-modes"
-NOLTO=1
-ABHOST=noarch
+AUTOTOOLS_AFTER=(
+    '--enable-custom-modes'
+)
+
+ABHOST=optenv32
+
+# FIXME: /var/cache/acbs/build/acbs.9ujm7voh/celt-0.11.3/configure: line
+# 13698: syntax error near unexpected token `tools="tools",
+# '# /var/cache/acbs/build/acbs.9ujm7voh/celt-0.11.3/configure: line
+# 13698: `  XIPH_PATH_OGG(tools="tools", tools="")'
+RECONF=0

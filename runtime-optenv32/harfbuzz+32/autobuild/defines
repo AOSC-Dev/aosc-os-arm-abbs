@@ -1,7 +1,15 @@
 PKGNAME=harfbuzz+32
-PKGDES="OpenType text shaping engine (optenv32)"
 PKGSEC=libs
-PKGDEP="glibc+32 glib+32 icu+32 freetype+32"
-BUILDDEP="32subsystem"
-NOLTO=1
-ABHOST=noarch
+PKGDEP="aosc-aaa+32 cairo+32 freetype+32 glibc+32 glib+32 icu+32"
+BUILDDEP="devel-base+32 ragel"
+PKGDES="OpenType text shaping engine (32-bit x86 runtime)"
+
+ABHOST=optenv32
+
+AUTOTOOLS_AFTER=(
+    '--with-gobject'
+    '--with-glib'
+    '--with-freetype'
+    '--with-icu'
+    '--with-cairo'
+)

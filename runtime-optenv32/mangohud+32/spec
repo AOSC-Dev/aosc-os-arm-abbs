@@ -1,4 +1,4 @@
-VER=0.7.2
+VER=0.8.0
 SRCS="tbl::https://github.com/flightlessmango/MangoHud/releases/download/v${VER/\+/-}/MangoHud-v${VER/\+/-}-Source.tar.xz"
-CHKSUMS="sha256::114ad3ea87b1db7358816c7b8e7843aaee356ff048b9e15d6fff02d89414841b"
+CHKSUMS="sha256::c860c733b1328f0fb479fc880281110799ebc13a4183033affc591c6d10719d9"
 CHKUPDATE="anitya::id=138139"

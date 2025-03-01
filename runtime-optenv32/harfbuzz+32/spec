@@ -1,4 +1,4 @@
-VER=2.6.7
-SRCS="tbl::https://www.freedesktop.org/software/harfbuzz/release/harfbuzz-$VER.tar.xz"
-CHKSUMS="sha256::49e481d06cdff97bf68d99fa26bdf785331f411614485d892ea4c78eb479b218"
+VER=8.4.0
+SRCS="git::commit=tags/$VER::https://github.com/harfbuzz/harfbuzz"
+CHKSUMS="SKIP"
 CHKUPDATE="anitya::id=1299"

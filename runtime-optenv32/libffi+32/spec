@@ -1,4 +1,4 @@
-VER=3.4.2
-SRCS="tbl::https://github.com/libffi/libffi/archive/refs/tags/v${VER}.tar.gz"
-CHKSUMS="sha256::0acbca9fd9c0eeed7e5d9460ae2ea945d3f1f3d48e13a4c54da12c7e0d23c313"
+VER=3.4.7
+SRCS="tbl::https://github.com/libffi/libffi/releases/download/v${VER}/libffi-${VER}.tar.gz"
+CHKSUMS="sha256::138607dee268bdecf374adf9144c00e839e38541f75f24a1fcf18b78fda48b2d"
 CHKUPDATE="anitya::id=1611"

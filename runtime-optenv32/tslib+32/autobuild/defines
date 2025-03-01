@@ -1,0 +1,7 @@
+PKGNAME=tslib+32
+PKGSEC=libs
+PKGDEP="aosc-aaa+32 glibc+32"
+BUILDDEP="devel-base+32"
+PKGDES="Touchscreen access library (32-bit x86 runtime)"
+
+ABHOST=optenv32

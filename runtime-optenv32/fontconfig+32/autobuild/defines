@@ -1,17 +1,20 @@
 PKGNAME=fontconfig+32
-PKGDES="A library for configuring and customizing font access (optenv32)"
 PKGSEC=libs
-PKGDEP="glibc+32 freetype+32 expat+32 libxml2+32 util-linux+32"
-BUILDDEP="32subsystem gperf"
+PKGDEP="aosc-aaa+32 expat+32 freetype+32 glibc+32 json-c+32 libpng+32 \
+        libxml2+32 util-linux+32"
+BUILDDEP="devel-base+32 gperf"
+PKGDES="A library for configuring and customizing font access (32-bit x86 runtime)"
 
-NOLTO=1
-ABHOST=noarch
+ABHOST=optenv32
 
-MESON_AFTER="-Ddoc=disabled \
-             -Ddoc-txt=disabled \
-             -Ddoc-man=disabled \
-             -Ddoc-pdf=disabled \
-             -Ddoc-html=disabled \
-             -Dnls=disabled \
-             -Dtools=enabled \
-             -Dcache-build=disabled"
+ABTYPE=meson
+MESON_AFTER=(
+    '-Ddoc=disabled'
+    '-Ddoc-txt=disabled'
+    '-Ddoc-man=disabled'
+    '-Ddoc-pdf=disabled'
+    '-Ddoc-html=disabled'
+    '-Dnls=disabled'
+    '-Dtools=enabled'
+    '-Dcache-build=disabled'
+)

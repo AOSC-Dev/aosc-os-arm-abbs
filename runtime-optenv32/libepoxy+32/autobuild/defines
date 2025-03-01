@@ -1,7 +1,7 @@
 PKGNAME=libepoxy+32
 PKGSEC=libs
-PKGDEP="glibc+32"
-BUILDDEP="32subsystem"
-PKGDES="A library for handling OpenGL function pointer management for you"
-NOLTO=1
-ABHOST=noarch
+PKGDEP="aosc-aaa+32 mesa+32 x11-lib+32"
+BUILDDEP="devel-base+32"
+PKGDES="A library for handling OpenGL function pointer management for you (32-bit x86 runtime)"
+
+ABHOST=optenv32

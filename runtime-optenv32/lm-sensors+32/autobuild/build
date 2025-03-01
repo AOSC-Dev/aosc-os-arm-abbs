@@ -1,0 +1,22 @@
+abinfo "Configuring make parameters ..."
+MAKE_OPTS=(
+    "DESTDIR=$PKGDIR"
+    'PREFIX=/opt/32'
+    'SBINDIR=/opt/32/bin'
+    'LIBDIR=/opt/32/lib'
+    'MANDIR=/opt/32/share/man'
+    'ETCDIR=/opt/32/etc'
+    'BUILD_STATIC_LIB=0'
+    'PROG_EXTRA='
+    'CC=i686-aosc-linux-gnu-gcc'
+)
+
+abinfo "Building lm-sensors ..."
+make user \
+    ${MAKE_OPTS[@]} \
+    CFLAGS="${CPPFLAGS} ${CFLAGS} ${LDFLAGS}" \
+    EXLDFLAGS="${LDFLAGS}"
+
+abinfo "Installing lm-sensors ..."
+make user_install \
+    ${MAKE_OPTS[@]}

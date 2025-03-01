@@ -1,8 +1,16 @@
 PKGNAME=fluidsynth+32
 PKGSEC=sound
-PKGDEP="glib+32 pulseaudio+32"
-PKGDES="A real-time software synthesizer based on the SoundFont 2 specifications (optenv32)"
+PKGDEP="aosc-aaa+32 glib+32 pulseaudio+32"
+BUILDDEP="devel-base+32"
+PKGDES="A real-time software synthesizer based on the SoundFont 2 specifications (32-bit x86 runtime)"
 
-CMAKE_AFTER="-Denable-ladspa=ON -DLIB_SUFFIX= -Denable-jack=OFF"
-NOLTO=1
-ABHOST=noarch
+CMAKE_AFTER=(
+    '-Denable-ladspa=ON'
+    '-Denable-jack=OFF'
+    '-DCMAKE_FIND_ROOT_PATH=/opt/32'
+    '-DCMAKE_FIND_ROOT_PATH_MODE_LIBRARY=ONLY'
+    '-DCMAKE_SHARED_LINKER_FLAGS_INIT=-lncursesw'
+    '-DFLUID_HOST_COMPILER=/opt/32/bin/i686-aosc-linux-gnu-gcc'
+)
+
+ABHOST=optenv32

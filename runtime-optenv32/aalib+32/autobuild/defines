@@ -1,9 +1,17 @@
 PKGNAME=aalib+32
 PKGSEC=libs
-PKGDES="ASCII Art Library (optenv32)"
-PKGDEP="x11-lib+32"
+PKGDEP="aosc-aaa+32 ncurses+32 x11-lib+32"
+BUILDDEP="devel-base+32"
+PKGDES="ASCII Art Library (32-bit x86 runtime)"
 
-ABSHADOW=no
-AUTOTOOLS_AFTER="--with-ncurses=/opt/32"
-NOLTO=1
-ABHOST=noarch
+# FIXME: /opt/32/bin/ld: cannot open linker script file aalib.1.4.ver:
+# No such file or directory
+ABSHADOW=0
+
+AUTOTOOLS_AFTER=(
+    '--with-ncurses=/opt/32'
+)
+
+ABHOST=optenv32
+
+PKGEPOCH=1
